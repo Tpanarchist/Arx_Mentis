@@ -1,14 +1,16 @@
-Status: unwritten — by design
+# Working thesis
 
-# Thesis
+**Status:** Provisional foundation; not an accepted language contract.
 
-Arx Mentis does not yet have enough independent evidence for a language thesis.
-Possible themes may be discussed experimentally, but this document will not turn an
-early implementation preference into a project identity.
+Arx Mentis is a language of exact, inspectable construction. Its information takes
+Form through Point and Line. Its operations are directed by Will, expressed as
+Spells, performed as Casts within explicit Contexts, and judged by their Effects. Its
+knowledge is organized into Ars and developed through definitions, postulates,
+constructions, and demonstrations. It treats unresolved alternatives as Potential
+rather than hiding them behind defaults, and it requires its own rules to remain
+subject to the same discipline they impose.
 
-Synthesis becomes warranted when the same nameable tension appears in three
-genuinely unrelated programs, domains, or implementation situations, as recorded in
-`friction.md`. That trigger permits thesis work; it neither mandates immediate
-publication nor prevents earlier exploratory language. Repeated wording from one
-design episode is not independent evidence.
-
+This thesis supplies direction for experiments; it does not let one implementation
+preference become language identity. Promotion requires independent evidence in
+`friction.md`, accepted examples and conformance tests, and explicit decisions where
+observable behavior would otherwise harden accidentally.

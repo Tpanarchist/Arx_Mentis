@@ -28,10 +28,11 @@ ordering prevents Python's `int` behavior from becoming an unreviewed decision.
 
 ## Evidence and synthesis
 
-Record design friction as it is observed under `friction.md`. Thesis work becomes
-warranted when the same nameable tension appears in three genuinely unrelated
-programs, domains, or implementation situations. Repeated wording or variants from
-one design episode count as one source of evidence.
+Record design friction as it is observed under `friction.md`. Promotion or broader
+synthesis beyond the provisional working thesis becomes warranted when the same
+nameable tension appears in three genuinely unrelated programs, domains, or
+implementation situations. Repeated wording or variants from one design episode
+count as one source of evidence.
 
 The trigger permits synthesis. It does not require immediate publication of a
 thesis, and it does not prohibit earlier exploratory language about a possible
@@ -45,4 +46,3 @@ thesis. Evidence remains useful even when the team decides not to synthesize it 
 - Keep experiments disposable and prevent their APIs from crossing semantic seams.
 - Keep generated artifacts, local environments, caches, wheels, and reports out of
   version control.
-

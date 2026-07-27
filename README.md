@@ -1,9 +1,10 @@
 # Arx Mentis
 
-Arx Mentis is a language-design project at **Stage 0**. This repository contains
-only the executable bootstrap, architectural boundaries, decision records, and
-evidence practices needed to explore the language without turning Python behavior
-into accidental language semantics.
+Arx Mentis is a language-design project at **Stage 0** exploring exact, inspectable
+construction through Point, Line, Form, Will, Spell, Cast, Context, Effect,
+Potential, and Ars. Its [foundation](docs/foundation.md) is provisional: executable
+experiments must test its distinctions before syntax or implementation choices are
+allowed to harden around them.
 
 The distribution and import package are `arx_mentis`; the installed command is
 `arx-mentis`. The bootstrap requires Python 3.13 or newer and is licensed under
@@ -17,8 +18,15 @@ arx-mentis status
 python -m arx_mentis status
 ```
 
-Stage 0 intentionally implements no syntax, AST, semantics, evaluator, runtime
-values, or IR. Start with [the documentation map](docs/README.md), especially the
-[bootstrap contract](docs/bootstrap.md) and
-[development process](docs/development-process.md).
+Stage 0 intentionally implements no syntax, AST, permanent semantics, evaluator,
+runtime values, or IR. The first disposable probe models Euclid I.1 without entering
+the installable package:
 
+```console
+python -m experiments.euclid_i_1
+python -m pytest tests/experiments/test_euclid_i_1.py
+```
+
+Start with [the documentation map](docs/README.md), the
+[foundation](docs/foundation.md), and the
+[experiment contract](experiments/euclid_i_1/README.md).

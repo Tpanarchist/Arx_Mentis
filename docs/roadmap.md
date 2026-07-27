@@ -4,30 +4,35 @@ This order is a constraint on learning, not a release schedule.
 
 1. Preserve Stage 0 packaging, diagnostic boundaries, evidence records, and open
    decisions.
-2. Introduce the smallest tokenizer probe with spans originating at the first token.
-3. Add the handwritten recursive-descent parser with Pratt expression parsing and
-   preserve spans into a deliberately small AST.
-4. Establish resolution/checking and a **typed checked representation**.
-5. Add an owned value representation in the commit that first produces an
-   observable value, following the ADR 0005 integer trigger.
-6. Exercise the Python reference evaluator and high-level lowering sketches as
-   sibling consumers of checked programs.
-7. Use failed lowering attempts to decide whether a high-level IR is justified.
-8. Select a backend target only after the backend interface has real consumers.
+2. Formalize only the Forms needed by Euclid I.1 in a disposable experiment.
+3. Model its Spell as one inspectable Form with declared Will and requirements.
+4. Cast that same Form through an explicit Context without mutating the given Forms.
+5. Produce a new Effect, compare it with Will, and trace its Demonstration to named
+   Definitions, Postulates, and Common Notions.
+6. Expose the two circle intersections as `Potential(options, trigger)` when Context
+   provides no orientation; test that no host-language ordering is exposed as a
+   default.
+7. Record representational friction and revise or reject the provisional foundation
+   where the executable proposition does not support it.
+8. Design the smallest source notation capable of expressing the distinctions the
+   experiment actually needed, with spans originating at the first token.
+9. Only then introduce parsing, checking, owned runtime values, evaluation, lowering,
+   IR discovery, and backend selection through the existing reversible seams.
 
-The typed checked representation must precede freezing evaluation order, equality,
-mutability, or error propagation. Those choices need typed programs and observable
-examples; deciding them from untyped evaluator convenience would make reversal
-needlessly expensive.
+The typed checked representation must still precede freezing evaluation order,
+equality, mutability, or error propagation. Those choices need typed programs and
+observable examples; deciding them from untyped evaluator convenience would make
+reversal needlessly expensive.
 
-## Primary early horizontal probe
+## Primary foundation probe
 
-Self-host the tokenizer first and the parser second. This is the primary early
-horizontal probe because it crosses text processing, collections, control flow,
-diagnostics, modules, and performance pressure without requiring the entire toolchain
-to be self-hosted. The probe is evidence, not a promise that self-hosting is a final
-product goal.
+Euclid I.1 is the first horizontal probe because one small construction crosses
+Point, Line, Form, Will, Spell, Cast, Effect, Context, Potential, Demonstration, Ars,
+and code/data identity. It lives under `experiments/euclid_i_1` and is evidence, not
+a permanent API.
+
+Self-hosting the tokenizer and parser remains a useful later horizontal probe after
+there is evidence for the notation they would process.
 
 Package adapters are optional and late. They should follow a stable semantic core
 and a concrete interoperability need, never drive core naming or value semantics.
-

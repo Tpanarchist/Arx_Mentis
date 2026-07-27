@@ -23,3 +23,12 @@ bootstrap command examples exercise packaging rather than a language idea, so th
 must not be counted as language evidence. This single repository-design episode does
 not satisfy the evidence trigger.
 
+2026-07-27 — Euclid I.1 foundation probe. The observed difficulty is naming both
+circle intersections without allowing storage or presentation order to become a
+selection. The recurring design tension is between the relation needed to describe
+an alternative and the additional orientation needed to choose it. Python could leak
+Enum iteration, set iteration, object identity, or dictionary binding behavior; the
+experiment contains those behind owned immutable Forms and represents options as an
+unordered set, but this is not yet a language guarantee. Euclid I.1 is one design
+episode, so its construction, tests, and mirrored cases count as one source of
+evidence rather than several.

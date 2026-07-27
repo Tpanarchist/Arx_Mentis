@@ -12,10 +12,13 @@ Stage 0 provides:
 - importable boundary packages for the handwritten frontend, syntax, semantics,
   runtime, diagnostics, adapters, backends, Python reference backend, and future IR;
 - policy, evidence, architecture, test, and decision documentation.
+- disposable experiments outside the installable package when a named proposition
+  can test provisional foundations.
 
-It explicitly provides no tokens, grammar, parser, AST nodes, name resolution,
-checker, evaluator, runtime values, lowering, IR nodes, or backend implementation.
-In particular, there is no `runtime/values.py` and no placeholder value class.
+The installable package explicitly provides no tokens, grammar, parser, AST nodes,
+name resolution, checker, evaluator, runtime values, lowering, IR nodes, or backend
+implementation. In particular, there is no `runtime/values.py` and no placeholder
+value class. Experimental Forms do not alter that package contract.
 
 ## Deferred bootstrap machinery
 
@@ -23,4 +26,3 @@ There is no lockfile, CI configuration, documentation generator, author metadata
 repository URL, release automation, parser implementation, or package adapter.
 Those additions need a concrete use case. Publication remains out of scope, and
 package-name availability must be checked when publication becomes concrete.
-

@@ -9,8 +9,10 @@ Testing separates implementation correctness from language acceptance.
 - **Generative tests** will eventually construct well-typed programs independently
   of the production checker.
 
-Stage 0 tests only bootstrap behavior. Empty future categories contain guidance so
-their purpose is explicit without inventing language cases.
+Stage 0 package tests cover only bootstrap behavior. Focused experiment tests may
+make provisional behavior executable under `tests/experiments`; they are evidence,
+not backend-neutral language conformance tests. Empty future categories retain
+guidance without inventing accepted language cases.
 
 ## Constructive well-typed generation
 
@@ -31,4 +33,3 @@ with itself.
 Cross-backend comparisons cannot default to Python equality. They must use the
 policies eventually filled in `equivalence.md`, including results, errors,
 side-effects, I/O, floats, ordering, and finalization.
-
