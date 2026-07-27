@@ -1,0 +1,32 @@
+# Project environments and local Python installations
+.venv/
+.python/
+.uv-cache/
+
+# Python bytecode and tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Packaging outputs
+build/
+dist/
+*.egg-info/
+*.whl
+
+# Test and analysis reports
+reports/
+junit.xml
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+.DS_Store
+
