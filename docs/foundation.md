@@ -18,14 +18,16 @@ Arx Mentis is conceived where four traditions meet:
 These are not themes placed over an ordinary programming language. Each contributes
 a different part of the language's operation.
 
-Distinctions remain Potential until settlement makes Points. Points connect through
-Lines to make Forms. Will supplies the criterion an acceptable Effect must satisfy. A
-Spell states exact steps and that Will contract. An Interpreter elaborates those
-steps under an Ars, discovering their capabilities rather than trusting a handwritten
-requirement list. Cast produces an Effect, Refusal, or Failure. Demonstration supplies
-evidence of Conformity. Shared symmetry correlates Potential across constructions.
-Related definitions, equality, transformation groups, Postulates, Forms, Spells, and
-demonstrations belong to an Ars.
+When an unresolved construction's alternatives are related by declared symmetry,
+Potential preserves that structure until settlement makes a Point. Unequal causal
+hypotheses, open propositions, hidden facts, and other incomplete knowledge are not
+Potential merely because they remain unresolved. Points connect through Lines to make
+Forms. Will supplies the criterion an acceptable Effect must satisfy. A Spell states
+exact steps and that Will contract. An Interpreter elaborates those steps under an
+Ars, discovering their capabilities rather than trusting a handwritten requirement
+list. Cast produces an Effect, Refusal, or Failure. Demonstration supplies evidence
+of Conformity. Related definitions, equality, transformation groups, Postulates,
+Forms, Spells, and demonstrations belong to an Ars.
 
 ## 2. The four sources
 
@@ -107,8 +109,8 @@ perform real work.
 
 | Foundation | Arx Mentis term | Meaning |
 | --- | --- | --- |
-| Open or settled difference | Distinction[A] | The phased family `Potential[A]` or `Point[A]` |
-| Unsettled distinction | Potential[H, K, A] | An equivariant family `K → A` over an `H`-torsor, plus partial settlement by evidence |
+| Symmetry-indexed open or settled construction | Distinction[A] | The provisional phased family `Potential[A]` or `Point[A]` |
+| Symmetry-indexed unresolved construction | Potential[H, K, A] | An equivariant family `K → A` over an `H`-frame, plus partial settlement by evidence |
 | Settled distinction | Point[A] | A selected `A` together with settlement evidence or provenance |
 | Relationship or passage | Line | A connection between Points; whether direction is intrinsic remains experimental |
 | Structured information | Form | Points and Lines arranged into a readable whole |
@@ -127,7 +129,8 @@ These terms are roles inside one system, not unrelated substances.
 
 ### 4.1 Distinction, Potential, and Point
 
-A Potential and Point are the open and settled phases of one typed family:
+Within the currently evidenced symmetry-indexed scope, Potential and Point are the
+open and settled phases of one typed family:
 
 ```text
 Distinction[A] = Potential[A, K] | Point[A]
@@ -142,6 +145,11 @@ information an untyped geometric location.
 A settled distinction still requires real alternatives, actual settlement, and
 something capable of responding differently because of it. Ink, voltage, sound,
 memory, or another medium may carry the distinction without defining its meaning.
+
+This phased family is not a universal model of unresolvedness. Experiment 006 has a
+settled event, one definite but unavailable world cause, and several unequal
+Reader-relative causal hypotheses. Forcing those hypotheses into a transitive frame
+destroys their declared structure.
 
 ### 4.2 Line
 
@@ -194,6 +202,13 @@ Will is an acceptance predicate over Effect within Context:
 ```text
 Conforms(W, E, C) iff W(C, E)
 ```
+
+This remains the working acceptance role, not a decision that every source target is
+only a Will. Experiment 007 derives an AcceptanceRule and an ActionPolicy separately
+from one neutral TargetForm. Targets with the same acceptance rule can guide different
+paths, and targets with the same guidance can impose different thresholds. The
+experiment therefore keeps acceptance and guidance distinct while leaving open
+whether a future Reader derives either role from a shared Form.
 
 A single target Form is one special case. The Euclid I.1 Will accepts any Effect
 that is a triangle on the given AB whose three side-lengths are Equal. Without Will,
@@ -270,7 +285,8 @@ prove(Proposition, Context) → Demonstration | Refutation | Open
 ## 6. Potential
 
 Potential is neither a third truth value nor null, unknown-as-a-value, or a hidden
-default. Its approximate type is:
+default. It applies when the unresolved alternatives are related by a declared
+symmetry. Across the three current positive experiments, its approximate type is:
 
 ```text
 Potential[H, K, A]:
@@ -279,8 +295,10 @@ Potential[H, K, A]:
 ```
 
 The ambient transformation group `G` belongs to the Ars. The stabilizer `H` of the
-givens is derived from `G`; it is not authored per Potential. `K` is an `H`-torsor for
-a default-free choice. A family must be equivariant:
+givens is derived from `G`; it is not authored per Potential. In the current regular
+examples, `K` is an `H`-torsor for a default-free choice. Whether more general actions,
+multiple orbits, or partial transformation relations belong under the same term
+remains open. A symmetry-indexed family must be equivariant:
 
 ```text
 p(h · k) = h · p(k)
@@ -372,7 +390,7 @@ The seven Liberal Ars are:
 - **Ars Grammatica:** formation and reading of Forms; names, composition, syntax,
   and preservation of meaning through transformation.
 - **Ars Dialectica:** inference, alternatives, contradiction, consistency, valid
-  consequence, and unresolved Potential.
+  consequence, symmetric Potential, unequal attribution, and other unresolved states.
 - **Ars Rhetorica:** Effects of Forms upon Readers; interpretation, presentation,
   persuasion, translation, and preservation or distortion of meaning.
 - **Ars Arithmetica:** discrete quantity, number, equality, ratio, combination, and
@@ -567,10 +585,13 @@ The foundation does not yet settle:
 - how demonstrations become executable or mechanically checkable;
 - how one Ars imports or extends another;
 - how structured choice-spaces and Frames are represented across Contexts;
-- whether visibility, availability, resolution, construction, and verification are
-  independent dimensions in the eventual type structure;
+- whether observability, availability, resolution, verification, and construction
+  success are independent dimensions in the eventual type structure;
 - whether one construction may retain both a settled public outcome and an
   unresolved internal mechanism, and how either relates to Effect;
+- how unequal evidence, partial narrowing, probability, multiple orbits, or the
+  absence of a meaningful transformation action are represented;
+- how a definite world state relates to Reader-relative knowledge and attribution;
 - surface syntax, type discipline, evaluation order, concurrency, memory behavior,
   and backend target.
 
@@ -579,8 +600,10 @@ not automatically values of the `Potential` type.
 
 ## 14. Working thesis
 
-Arx Mentis is a language of exact, inspectable construction. Distinctions move from
-structured Potential to settled Point. Lines relate Points into Forms. Interpreters
+Arx Mentis is a language of exact, inspectable construction. Symmetry-indexed
+constructions may move from structured Potential to settled Point; unresolvedness in
+general has no single accepted representation. Lines relate Points into Forms.
+Interpreters
 elaborate Spells and perform capability-checked Casts in explicit Contexts, producing
 Effects, Refusals,
 or Failures. Will supplies a contract and Demonstration supplies evidence of

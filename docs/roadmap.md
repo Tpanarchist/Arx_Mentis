@@ -13,15 +13,24 @@ This order is a constraint on learning, not a release schedule.
 5. Test production, proof verification, Will comparison, and open propositions
    independently in Dialectica.
 6. Count each domain once in `foundation-evidence.md`; preserve disagreements as
-   unresolved Potentials rather than resolving them through Python representation.
+   explicit unresolved questions rather than forcing them into Potential or resolving
+   them through Python representation.
 7. Use State Zero Experiment 005 to test three-channel virtual mediation in neutral
    terms, an adversarial option-bag countermodel, and only then a foundation mapping.
-8. Keep the resulting Potential algebra in open ADR 0008 while targeting Bridge
-   laws, full Ars declarations, typed Reader composition, defaults, and verification
-   with separate probes.
-9. Only after the complete synthesis gate passes, write non-executable source
+8. Use State Zero Experiment 006 to test unequal causal hypotheses, partial evidence
+   updates, and definite world state against a forced symmetric representation.
+9. Keep accepted ADR 0008 scoped to constructions with declared symmetry while
+   deferring every carrier, syntax, runtime, and API decision.
+10. Use State Zero Experiment 007 to test criterion-only targets against
+   target-derived policy, sustained and released control, explicit hidden weighting,
+   direct assignment, constraints, and outcome-only causal attribution. Preserve the
+   resulting acceptance/guidance split without broadening Will from one domain.
+11. Continue investigating non-symmetric epistemic uncertainty separately while
+   targeting Bridge laws, full Ars declarations, typed Reader composition, defaults,
+   and verification.
+12. Only after the complete synthesis gate passes, write non-executable source
    examples for every accepted proposition.
-10. Derive notation requirements from gated distinctions, then introduce tokenizing,
+13. Derive notation requirements from gated distinctions, then introduce tokenizing,
    parsing, checking, owned runtime values, evaluation, lowering, IR discovery, and
    backend selection through the existing reversible seams.
 
@@ -35,14 +44,16 @@ reversal needlessly expensive.
 Euclid I.1 is the first horizontal probe because one small construction crosses
 Point, Line, Form, Will, Spell, Cast, Effect, Context, Potential, Demonstration, Ars,
 and code/data identity. It lives under `experiments/euclid_i_1` and is evidence, not
-permanent API. Astronomica, Grammatica, Dialectica, and Virtual Mediation deliberately
-use independent representations so agreement cannot arise from a shared Python
-foundation.
+permanent API. Astronomica, Grammatica, Dialectica, Virtual Mediation, Omen
+Attribution, and Actualization deliberately use independent representations so
+agreement cannot arise from a shared Python foundation.
 
-The current synthesis gate is closed. The central equivariant Potential behavior now
-has three domain sources and qualifies for ADR discussion, but several other
-foundation rows remain below threshold. No source notation work begins merely
-because an individual group of rows reached three.
+The current synthesis gate is closed. Symmetry-indexed Potential behavior has three
+positive domain sources and the five scoped semantic obligations are accepted by ADR
+0008. Omen Attribution rejects treating that algebra as universal unresolvedness;
+Actualization keeps target acceptance, production guidance, and causal attribution
+separate; and several other foundation rows remain below threshold. No source
+notation work begins merely because an individual group of rows reached three.
 
 Self-hosting the tokenizer and parser remains a useful later horizontal probe after
 there is evidence for the notation they would process.

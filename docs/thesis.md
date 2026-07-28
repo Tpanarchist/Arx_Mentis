@@ -3,12 +3,14 @@
 **Status:** Provisional foundation; not an accepted language contract.
 
 Arx Mentis is a language of exact, inspectable construction. Its information takes
-Form through Point and Line. Its operations are directed by Will, expressed as exact
-Spell steps, elaborated and performed as Casts within explicit Contexts, and judged
-separately against their Effects. Its
+Form through Point and Line. Its construction follows exact Spell steps, elaborated
+and performed as Casts within explicit Contexts; actual Effects are judged separately
+against Will. Experiment 007 leaves open whether one source target can supply both an
+acceptance reading and distinct construction guidance. Its
 knowledge is organized into Ars and developed through definitions, postulates,
-constructions, and demonstrations. It treats unresolved alternatives as equivariant
-families over unsettled frames rather than hiding them behind defaults. Qualified
+constructions, and demonstrations. It treats symmetry-related unresolved
+constructions as equivariant families rather than hiding them behind defaults, while
+keeping unequal hypotheses and other incomplete knowledge distinct. Qualified
 equality, transformation groups, construction laws, Will fragments, and Bridges
 belong to an Ars rather than to the host language.
 

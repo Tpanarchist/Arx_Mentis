@@ -1,6 +1,6 @@
 # ADR 0008: Equivariant Potential algebra
 
-Status: Open question (evidence threshold reached)
+Status: Accepted
 
 ## Context
 
@@ -14,18 +14,30 @@ Three independent domains now require structured unresolved results:
 Each domain uses an independent Python representation. Agreement therefore exists
 only in observable algebra, not in shared implementation types.
 
-## Candidate distinction
+State Zero Experiment 006 supplies an adversarial boundary rather than a fourth
+positive instance. Its unequal causal hypotheses cannot participate in one
+structure-preserving transitive action: forcing a cycle changes their causal
+variables, evidence requirements, or prior support.
 
-The evidence supports discussion of these backend-neutral requirements:
+## Decision
 
-1. An unresolved result is a lawful family indexed by a frame, not merely a bag of
-   local options; its possible values are the derived image of that family.
-2. A uniform construction maps through the indexed family without choosing or
-   inspecting its frame.
-3. Shared, twisted, and independent frame composition preserve distinct
-   correlations even when their local images agree.
-4. Later admissible evidence may identify a frame while preserving prior results and
-   every declared correlation; irrelevant evidence preserves the unresolved family.
+Accept this semantic law:
+
+> An unresolved construction whose alternatives are related by a declared symmetry
+> must preserve that symmetry, its frame correlations, and its settlement conditions
+> through lawful operations.
+
+The accepted law has five separable backend-neutral obligations:
+
+1. **Equivariance:** uniform operations cannot inspect or select a frame.
+2. **Correlation preservation:** shared, twisted, and independent frames remain
+   distinguishable even when their local images agree.
+3. **Invariant descent:** an invariant projection may become settled without
+   settling its source family.
+4. **Evidence-driven settlement:** relevant evidence identifies a frame and preserves
+   declared correlations; irrelevant evidence preserves the unresolved construction.
+5. **Historical persistence:** later identification adds knowledge rather than
+   rewriting the earlier construction.
 
 Invariant projection may expose a settled aggregate or truth without identifying the
 underlying frame. Virtual Mediation adds one-domain pressure to retain that aggregate
@@ -39,6 +51,35 @@ alongside its unresolved internal mechanism.
 - Cyclic and reflection actions provide no symmetry-respecting first result.
 - Irrelevant, insufficient, contradictory, and undeclared evidence exercise the
   observation boundary without silently selecting a coordinate.
+- In Omen Attribution, a forced transitive cycle among chance, selection, behavior,
+  social response, self-organization, and anomalous mediation violates their
+  declared causal and evidential structure. The lawful relation has six disconnected
+  orbits, not one symmetric frame.
+
+## Scope boundary
+
+ADR 0008 does not claim that every unresolved value is an equivariant family. In
+particular, Experiment 006 separates a settled event from uncertain causal
+attribution. The world record has one definite but unavailable cause while the
+observer retains several unequally supported explanations.
+
+The working boundary is therefore:
+
+```text
+too little structure       symmetry-indexed construction       false extra structure
+option bag                 accepted scoped obligations        forced causal symmetry
+```
+
+Potential, Uncertainty, Open, Chance, and Search remain provisional names. The
+evidence establishes that their semantic jobs cannot be collapsed merely because
+each involves something unresolved.
+
+## Explicitly not decided
+
+Acceptance does not select a Python carrier, torsor representation, general group or
+groupoid model, source syntax, AST shape, runtime storage, public API, nominal
+`Potential` construct, or one implementation shared by every symmetric case. The
+accepted decision is the observable obligation only.
 
 ## Unresolved questions
 
@@ -50,15 +91,18 @@ alongside its unresolved internal mechanism.
 - Whether settlement changes semantic state or adds knowledge about an unchanged
   construction.
 - How non-invariant truth families affect control flow and continuation typing.
-- Whether visibility, availability, resolution, constructibility, and verification
-  become independent type dimensions.
+- Whether observability, availability, resolution, verification, and construction
+  success become independent type dimensions.
+- How Reader-relative knowledge relates to a definite but unavailable world state.
+- How unequal support, partial narrowing, probabilities, multiple orbits, partial
+  actions, or an absence of any action are represented.
 - How source notation, checked representation, runtime ownership, serialization,
   lowering, and diagnostics express the algebra.
 
-## Safe deferral
+## Implementation deferral
 
 Do not add shared foundation classes, source tokens, AST nodes, runtime values, or
-package APIs from this candidate. Keep all carriers local to disposable experiments.
-Acceptance requires explicit answers to the relevant unresolved questions, source
+package APIs merely because the semantic law is accepted. Keep all carriers local to
+disposable experiments until the relevant open representation questions have source
 examples, tests at the eventual semantic boundary, and a lowering sketch. The wider
-foundation gate remains closed independently of this ADR's evidence threshold.
+foundation gate remains closed independently of this accepted law.

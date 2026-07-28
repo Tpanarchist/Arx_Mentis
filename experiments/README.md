@@ -21,6 +21,12 @@ The independent foundation probes are:
 - [State Zero Experiment 005](virtual_mediation/README.md): neutral three-channel
   mediation, adversarial option-bag loss, later observation, and a deliberately
   separate provisional foundation mapping.
+- [State Zero Experiment 006](omen_attribution/README.md): occurrence,
+  correspondence, surprise, unequal causal attribution, intervention, and a forced
+  false-symmetry countermodel.
+- [State Zero Experiment 007](actualization/README.md): criterion-only execution,
+  target-derived guidance, explicit hidden weighting, released policy, causal trace,
+  and rejected direct assignment.
 
 These experiments intentionally do not import one another. Agreement counts only at
 the backend-neutral behavior recorded in `docs/foundation-evidence.md`.

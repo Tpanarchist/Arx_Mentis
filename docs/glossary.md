@@ -59,13 +59,14 @@
   behavior does not answer it implicitly.
 
 **Point**
-: The settled phase of a typed Distinction: a selected value with settlement evidence
-  or provenance. A geometric Point is a Point of location.
+: The settled phase of a symmetry-indexed Distinction: a selected value with
+  settlement evidence or provenance. A geometric Point is a Point of location.
 
 **Potential**
-: The open phase of a Distinction: an equivariant family from an unsettled frame to
-  results, plus partial settlement by evidence. Its possible results are the derived
-  image of the family, not a stored option bag.
+: The open phase of a symmetry-indexed construction: an equivariant family from an
+  unsettled frame to results, plus partial settlement by evidence. Its possible
+  results are the derived image of the family, not a stored option bag. Potential is
+  not a universal synonym for uncertainty, invisibility, failed proof, or search.
 
 **Reader**
 : A family of concrete typed roles: Interpreter, Inspector, Audience, and Witness.
@@ -86,3 +87,5 @@
 **Will**
 : An executable, terminating acceptance predicate over Effect within Context, drawn
   from the fragment declared by an Ars. A target Form is only one special case.
+  Experiment 007 leaves open whether that same source Form may also derive a separate
+  guidance role; guidance is not folded into Will by the working definition.

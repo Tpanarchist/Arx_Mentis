@@ -13,6 +13,11 @@ All notable changes will be documented in this file.
   verification probes with a cross-domain evidence ledger.
 - Add neutral three-channel virtual mediation with 3/3/9 composition, a lossy
   option-bag countermodel, cross-Situation identification, and post-hoc mapping.
-- Open ADR 0008 after the equivariant Potential algebra reaches three independent
-  evidence domains, without accepting a representation or language feature.
+- Accept ADR 0008 after the equivariant Potential algebra reaches three independent
+  evidence domains and an adversarial scope boundary, while deferring every carrier,
+  representation, and language feature.
+- Add neutral omen attribution with chance, selection, behavior, intervention, and a
+  counterexample that narrows ADR 0008 to declared symmetric constructions.
+- Add neutral actualization countermodels separating acceptance, production guidance,
+  causal trace, observer attribution, sustained feedback, and released policy.
 - Bootstrap the Stage 0 repository around reversible architectural seams.

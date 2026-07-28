@@ -4,8 +4,10 @@ Arx Mentis explores a language of exact, inspectable construction. Points connec
 through Lines to make Forms; Will supplies a terminating acceptance criterion; a
 Spell supplies exact steps; elaboration derives their capabilities under an Ars; a
 Cast performs them in explicit Context; and Effect records what happens. Real
-alternatives remain equivariant Potential families until Witness evidence chooses a
-frame. Construction and conformity do not require settlement when they are invariant.
+alternatives related by declared symmetry remain Potential families until evidence
+chooses a frame. Unequal hypotheses, hidden facts, and open propositions retain their
+own structure rather than being collapsed into Potential. Construction and conformity
+do not require settlement when they are invariant.
 
 This [foundation](foundation.md) is provisional. The language must be learned through
 executable propositions rather than made into a Python library whose incidental
@@ -13,7 +15,8 @@ behavior is retroactively declared semantic law.
 
 ## Stage 0 principles
 
-1. Preserve Potential where Context cannot justify settlement.
+1. Preserve the actual structure of unresolved information; use Potential only where
+   a declared symmetry and its correlations justify it.
 2. Keep a Spell inspectable as Form while allowing a Reader to Cast it.
 3. Preserve source Forms and make Effects new Forms.
 4. Derive required capabilities from stated steps and trace claimed Demonstrations.

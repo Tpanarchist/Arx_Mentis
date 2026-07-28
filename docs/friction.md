@@ -89,3 +89,37 @@ mechanism. Enum and frozen-set ordering could leak a first channel; reversed-ord
 tests and the cyclic fixed-point check reject that selection. The occult analogy is
 motivation only and contributes no evidence that the mechanism describes reality.
 All witnesses in this experiment count as one virtual-mediation source.
+
+2026-07-28 — State Zero Experiment 006, omen attribution. The neutral model separates
+event occurrence, rule-governed correspondence, baseline surprise, and causal
+attribution. A chance process produces a real match; reporting only that match changes
+the apparent rate from 1/6 to 1/1 without changing event production; and operator
+behavior supplies a distinct inspectable causal chain. Blocking behavior changes
+support without selecting one explanation. The hostile symmetry attempt is
+transitive only by changing the six hypotheses' causal variables, evidence
+requirements, or unequal prior support; the structure-preserving relation has six
+orbits. This is a boundary counterexample, not a fourth Potential witness: symmetric
+construction laws survive, universal equivariant unresolvedness does not. A definite
+but unavailable world cause coexists with underdetermined Reader-relative attribution,
+adding pressure to separate world state from knowledge state. Tuple hypothesis order
+could leak a winner, so attribution selects only when exactly one support score is
+positive; the tested scenarios remain explicitly underdetermined. Declared streams
+and integer scores are harness assumptions, not empirical, probabilistic, magical, or
+language claims. All witnesses count as one omen-attribution source.
+
+2026-07-28 — State Zero Experiment 007, actualization. The neutral transition model
+separates a prior TargetForm, a derived AcceptanceRule, a derived ActionPolicy, the
+WorldState produced, and its privileged CausalTrace. Targets with the same acceptance
+rule choose shortest and safe paths, while targets with different thresholds derive
+the same path ordering. Criterion-only execution, policy guidance, and explicit
+hidden weighting reach the same accepted state without becoming the same cause; an
+outcome-only observer cannot recover the actual trace. Sustained Feedback consults a
+live target, whereas a released compiled policy continues with only provenance.
+Removing the guidance channel restores the baseline path; blocked routes expose
+Unreachable or partial nonconforming states; direct target assignment is rejected as
+causally circular. The recurring tension is now between a target as acceptance and a
+target as a source of construction guidance. Python tuples, rankings, and integer
+weights could leak a mechanism, so every channel is explicit and compared by owned
+records. The graph and occult analogy are harness assumptions, not physical,
+magical, control-theoretic, or language claims. This experiment counts as one
+actualization source and does not broaden Will by itself.
