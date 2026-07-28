@@ -141,3 +141,20 @@ symbolic analogy is motivation only and supplies no evidence that symbols act on
 external reality. This counts as one symbolic-release domain: it is the second direct
 witness for contextual reading after Grammatica and for released derived execution
 after Actualization, so neither distinction crosses the gate.
+
+2026-07-28 — State Zero Experiment 009, stress and discharge. The neutral network
+separates distributed StressField, loading history, topology, constraints, Trigger,
+Discharge, mechanical resolution, external acceptance, progress, and
+HistoricalResidue. Equal scalar totals with different load distributions select
+different first paths under one trigger and capacity profile. Gradual and sudden
+loading reach the same present field while retaining distinct histories. The network
+exhibits load-preserving displacement, partial release, sudden rupture, dissipation,
+and damped oscillation; exact mechanical ties stay ambiguous under reversed storage
+order. Dissipation can resolve the network while failing delivery acceptance and
+making no progress. Blocking one path exposes another, while blocking both returns an
+owned no-path result. The recurring tension is between latent capacity and candidate
+outcomes, and between present state and the causal history that produced it. Python
+tuple order and integer scoring could leak a preferred path, so the experiment uses
+declared conductance and capacity and refuses exact ties. These symbolic mechanics
+make no physical, psychological, magical, or occult claim. This counts as one
+stress-discharge domain and promotes no new distinction.

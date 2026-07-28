@@ -214,36 +214,90 @@ evidence.
 - Any package representation, source notation, foundation mapping, external action,
   or claim that symbols act on reality.
 
+## State Zero Experiment 009 baseline
+
+### Observed
+
+- Stress is represented as a load field over three sites. Two unequal distributions
+  with the same scalar total select different first discharge paths under the same
+  network, constraints, trigger, and transfer law.
+- Gradual and sudden loading reach the same present field while retaining distinct
+  load histories. Equal final fields after discharge preserve that distinction in
+  HistoricalResidue.
+- A Trigger below threshold remains dormant. Once fired, the causal trace still names
+  the initial field, network, constraints, loading history, and transfer steps; the
+  trigger alone does not determine the path.
+- Exact path ties return AmbiguousDischarge, and reversing link storage order leaves
+  the same candidates rather than selecting a first link.
+- The network exhibits load-preserving displacement, partial release, overload
+  rupture, dissipation without delivery, damped oscillation with reversals, and full
+  release.
+- A Discharge may leave the system unresolved. A dissipated field may be mechanically
+  resolved while failing delivery acceptance, and reduced total stress may provide no
+  progress toward delivery.
+- Blocking one source path exposes the other, while blocking both returns an owned
+  NoDischargePath result.
+- The nominal discharge operation receives no target, preferred path, progress rule,
+  or acceptance criterion.
+- Link capacity constrains transfer but does not encode the path: one CapacityProfile
+  supports different paths under different fields. Its unequal capacities and link
+  roles do not form a transitive family of candidate outcomes.
+
+### Assumed by the disposable representation
+
+- A finite deterministic network adequately isolates distributed load and causal
+  discharge without claiming a physical, psychological, magical, or occult theory.
+- Integer loads, capacities, conductances, and thresholds are symbolic harness values,
+  not proposed units or runtime semantics.
+- The declared local scoring and damping laws are experimental mechanics. Exact ties
+  remain explicit so tuple order cannot become a path-selection rule.
+
+### Not established
+
+- A general stress, flow, causation, progress, resolution, rupture, dissipation, or
+  oscillation algebra.
+- Where distributed state, triggers, causal traces, or residue belong in foundation
+  vocabulary.
+- Whether historical residue affects equality, identity, replay, or validity.
+- That stored capacity is always unrelated to symmetry; only this heterogeneous
+  network is a counterexample to automatic classification as Potential.
+- Any package representation, source notation, external action, empirical law, or
+  accepted foundation mapping.
+
 ## Positive recurrence matrix
 
-| Foundational claim | Geometrica | Astronomica | Grammatica | Dialectica | Virtual mediation | Actualization | Symbolic release | Gate result |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Elaboration derives capabilities from stated steps | Supports + boundary | Supports + boundary | Not exercised: no nominal Spell | Supports + boundary | Not applied in neutral layer | Not exercised | Not exercised | **ADR candidate:** three domains |
-| Context permissions can refuse otherwise known construction | Supports + boundary | Supports + boundary | Supports + boundary | Supports + boundary | Neutral analogue + boundary | Constraint analogue + boundary | Key/derivation analogues + boundaries | **ADR candidate:** at least four domains |
-| Source remains available and construction creates an owned result | Supports | Supports | Supports | Supports | Supports | Supports | Supports before explicit release | **ADR candidate:** seven domains |
-| Spell is solely a contextual reading role | Conflicts: nominal Spell | Conflicts: nominal Spell | Supports: no Spell class | Conflicts: nominal Spell | Mapping deliberately unresolved | Target roles mapped only post hoc | Neutral carrier roles + boundary | Unresolved Potential; contextual role has two direct domains |
-| A symmetry-related unresolved construction preserves an equivariant family whose image is derived | Supports + boundary | Supports + boundary | Not exercised | Not exercised | Neutral analogue + option-bag boundary | Not exercised | Not exercised | **Accepted ADR 0008 obligation:** scoped by Experiment 006 |
-| Uniform construction maps through unresolved Potential | Supports + boundary | Supports + boundary | Not exercised | Not exercised | Neutral aggregate/signature lifts + boundary | Not exercised | Not exercised | **Accepted ADR 0008 obligation:** uniform operations remain equivariant |
-| Settlement is distinct and can use later Context evidence | Supports | Supports + irrelevant/contradictory boundaries | Not exercised | Not exercised | Neutral later-observation analogue + boundaries | Not exercised | Not exercised | **Accepted ADR 0008 obligation:** evidence-driven settlement and persistence |
-| Shared, twisted, and independent frames preserve distinct correlations | Supports: 2/2/4 | Supports: 2/2/4 | Not exercised | Not exercised | Supports: 3/3/9 + lossy countermodel | Not exercised | Not exercised | **Accepted ADR 0008 obligation:** correlation preservation |
-| Reader is a family of typed roles | Partial: Interpreter/Witness jobs | Partial: Witness job | Supports + unsupported-role boundary | Not exercised | Observation role intentionally unmapped | Role pressure, no Reader | Keyed role analogue + unsupported boundary | Jobs differ; two direct role domains, below gate |
-| Effect production is separate from Will comparison | Supports + non-invariant boundary | Not exercised | Supports + counterexample | Supports + counterexample | Neutral assessment analogue | Neutral analogue + counterexamples | Policy/acceptance artifacts separate | **Accepted ADR 0009 obligation:** production does not perform acceptance |
-| Refusal precedes work; Failure follows permitted but unsuccessful work | Supports + boundary | Partial: Refusal only | Supports + boundary | Supports + boundary | Neutral Denied/Breakdown analogue | Neutral rejection/unreachable analogue | Owned unsupported/rejected/missing results | **ADR candidate:** at least three domains |
-| Equality is qualified by an Ars | Supports + Bridge boundary | Partial declaration | Supports + counterexample | Supports + counterexample | Not applied | Not applied | Local value/provenance split, no Ars | **ADR candidate:** three domains, structure incomplete |
-| Bridges preserve equality and commute equivariantly | Supports | Not exercised | Not exercised | Not exercised | Not applied | Not applied | Not applied | One domain; below gate |
-| A default requires stabilizer-fixedness and constructibility | Supports + two counterexamples | Not exercised | Not exercised | Not exercised | Partial: invariant aggregate, no fixed channel | Not exercised | Not exercised | Two domains; below gate |
-| Invariant criteria can settle truth without settling the indexed result | Supports + non-invariant boundary | Not exercised | Not exercised | Not exercised | Neutral analogue + nonconstant boundary | Not exercised | Not exercised | Two domains; below gate |
-| Open proposition and Potential Effect are different states | Partial | Not exercised | Not exercised | Supports + open case | Not exercised | Not exercised | Not exercised | One direct domain; below gate |
-| Production and proof verification are independent | Partial | Not exercised | Not exercised | Supports + corrupted-proof boundary | Not exercised | Not exercised | Derivation checked, not proof verification | One direct domain; below gate |
-| Every Ars declaration carries the complete provisional algebra | Supports | Partial | Partial | Partial | Foundation deliberately not applied | Foundation deliberately not applied | Foundation deliberately not applied | One complete domain; below gate |
-| Indirectly observed is distinct from unresolved | Not exercised | Not exercised | Not exercised | Not exercised | Supports: orthogonal dimensions | Outcome-only attribution analogue | Not exercised | One direct domain; below gate |
-| One construction may retain a settled public outcome and unresolved internal mechanism | Not exercised | Not exercised | Not exercised | Not exercised | Shape pressure observed | Supports: definite trace, unresolved attribution | Not exercised | Two domains; below gate |
-| Acceptance criterion and production guidance are distinct roles | Supports: Spell/Will split | Not exercised | Partial: instructions and Will are related Forms | Supports: inference/Will split | Neutral assessment/mechanism split | Supports + two counterexamples | Supports: separately decoded artifacts | **Accepted ADR 0009 separation;** source identity unresolved |
-| A source target can derive both acceptance and guidance | Not exercised | Not exercised | Partial contextual-reading pressure | Not exercised | Not exercised | Supports + counterexamples | Supports through keyed carrier | Two direct neutral domains; below gate |
-| One carrier supports different lawful reading roles | Not exercised | Not exercised | Supports + unsupported role | Not exercised | Not exercised | Not exercised | Supports + unsupported key boundary | Two domains; below gate |
-| A derived mechanism continues without rereading its source | Not exercised | Not exercised | Not exercised | Not exercised | Partial historical persistence | Supports: released policy | Supports: released compiled carrier | Two direct domains; below gate |
-| Representation, interpretation, activation, execution, and outcome are distinct stages | Partial code/data pressure | Not exercised | Partial reading boundary | Not exercised | Not exercised | Partial activation/execution pressure | Supports + skip-stage boundaries | One complete domain; below gate |
-| Local value equality is distinct from shared derivation | Partial provenance | Not exercised | Partial preservation trace | Not exercised | Supports historical correlation | Supports causal trace distinction | Supports collision/local-equality boundaries | Recurs, but laws remain underspecified |
+| Foundational claim | Geometrica | Astronomica | Grammatica | Dialectica | Virtual mediation | Actualization | Symbolic release | Stress/discharge | Gate result |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Elaboration derives capabilities from stated steps | Supports + boundary | Supports + boundary | Not exercised: no nominal Spell | Supports + boundary | Not applied in neutral layer | Not exercised | Not exercised | Not exercised | **ADR candidate:** three domains |
+| Context permissions can refuse otherwise known construction | Supports + boundary | Supports + boundary | Supports + boundary | Supports + boundary | Neutral analogue + boundary | Constraint analogue + boundary | Key/derivation analogues + boundaries | Path constraints + boundaries | **ADR candidate:** at least four domains |
+| Source remains available and construction creates an owned result | Supports | Supports | Supports | Supports | Supports | Supports | Supports before explicit release | Supports | **ADR candidate:** eight domains |
+| Spell is solely a contextual reading role | Conflicts: nominal Spell | Conflicts: nominal Spell | Supports: no Spell class | Conflicts: nominal Spell | Mapping deliberately unresolved | Target roles mapped only post hoc | Neutral carrier roles + boundary | Not exercised | Unresolved Potential; contextual role has two direct domains |
+| A symmetry-related unresolved construction preserves an equivariant family whose image is derived | Supports + boundary | Supports + boundary | Not exercised | Not exercised | Neutral analogue + option-bag boundary | Not exercised | Not exercised | Capacity counterexample only | **Accepted ADR 0008 obligation:** scoped by Experiment 006 |
+| Uniform construction maps through unresolved Potential | Supports + boundary | Supports + boundary | Not exercised | Not exercised | Neutral aggregate/signature lifts + boundary | Not exercised | Not exercised | Not exercised | **Accepted ADR 0008 obligation:** uniform operations remain equivariant |
+| Settlement is distinct and can use later Context evidence | Supports | Supports + irrelevant/contradictory boundaries | Not exercised | Not exercised | Neutral later-observation analogue + boundaries | Not exercised | Not exercised | Not exercised | **Accepted ADR 0008 obligation:** evidence-driven settlement and persistence |
+| Shared, twisted, and independent frames preserve distinct correlations | Supports: 2/2/4 | Supports: 2/2/4 | Not exercised | Not exercised | Supports: 3/3/9 + lossy countermodel | Not exercised | Not exercised | Heterogeneous paths, no transitive frame | **Accepted ADR 0008 obligation:** correlation preservation |
+| Reader is a family of typed roles | Partial: Interpreter/Witness jobs | Partial: Witness job | Supports + unsupported-role boundary | Not exercised | Observation role intentionally unmapped | Role pressure, no Reader | Keyed role analogue + unsupported boundary | Not exercised | Jobs differ; two direct role domains, below gate |
+| Effect production is separate from Will comparison | Supports + non-invariant boundary | Not exercised | Supports + counterexample | Supports + counterexample | Neutral assessment analogue | Neutral analogue + counterexamples | Policy/acceptance artifacts separate | Discharge/acceptance separate + boundaries | **Accepted ADR 0009 obligation:** production does not perform acceptance |
+| Refusal precedes work; Failure follows permitted but unsuccessful work | Supports + boundary | Partial: Refusal only | Supports + boundary | Supports + boundary | Neutral Denied/Breakdown analogue | Neutral rejection/unreachable analogue | Owned unsupported/rejected/missing results | Dormant/no-path/ambiguity analogues | **ADR candidate:** at least three domains |
+| Equality is qualified by an Ars | Supports + Bridge boundary | Partial declaration | Supports + counterexample | Supports + counterexample | Not applied | Not applied | Local value/provenance split, no Ars | Present field/history split, no Ars | **ADR candidate:** three domains, structure incomplete |
+| Bridges preserve equality and commute equivariantly | Supports | Not exercised | Not exercised | Not exercised | Not applied | Not applied | Not applied | Not applied | One domain; below gate |
+| A default requires stabilizer-fixedness and constructibility | Supports + two counterexamples | Not exercised | Not exercised | Not exercised | Partial: invariant aggregate, no fixed channel | Not exercised | Not exercised | Exact tie stays ambiguous | Two domains; below gate |
+| Invariant criteria can settle truth without settling the indexed result | Supports + non-invariant boundary | Not exercised | Not exercised | Not exercised | Neutral analogue + nonconstant boundary | Not exercised | Not exercised | Not exercised | Two domains; below gate |
+| Open proposition and Potential Effect are different states | Partial | Not exercised | Not exercised | Supports + open case | Not exercised | Not exercised | Not exercised | Not exercised | One direct domain; below gate |
+| Production and proof verification are independent | Partial | Not exercised | Not exercised | Supports + corrupted-proof boundary | Not exercised | Not exercised | Derivation checked, not proof verification | Causation traced, not proof verification | One direct domain; below gate |
+| Every Ars declaration carries the complete provisional algebra | Supports | Partial | Partial | Partial | Foundation deliberately not applied | Foundation deliberately not applied | Foundation deliberately not applied | Foundation deliberately not applied | One complete domain; below gate |
+| Indirectly observed is distinct from unresolved | Not exercised | Not exercised | Not exercised | Not exercised | Supports: orthogonal dimensions | Outcome-only attribution analogue | Not exercised | Not exercised | One direct domain; below gate |
+| One construction may retain a settled public outcome and unresolved internal mechanism | Not exercised | Not exercised | Not exercised | Not exercised | Shape pressure observed | Supports: definite trace, unresolved attribution | Not exercised | Definite trace and residue | Two domains; below gate |
+| Acceptance criterion and production guidance are distinct roles | Supports: Spell/Will split | Not exercised | Partial: instructions and Will are related Forms | Supports: inference/Will split | Neutral assessment/mechanism split | Supports + two counterexamples | Supports: separately decoded artifacts | Acceptance absent from path selection | **Accepted ADR 0009 separation;** source identity unresolved |
+| A source target can derive both acceptance and guidance | Not exercised | Not exercised | Partial contextual-reading pressure | Not exercised | Not exercised | Supports + counterexamples | Supports through keyed carrier | Not exercised | Two direct neutral domains; below gate |
+| One carrier supports different lawful reading roles | Not exercised | Not exercised | Supports + unsupported role | Not exercised | Not exercised | Not exercised | Supports + unsupported key boundary | Not exercised | Two domains; below gate |
+| A derived mechanism continues without rereading its source | Not exercised | Not exercised | Not exercised | Not exercised | Partial historical persistence | Supports: released policy | Supports: released compiled carrier | Not exercised | Two direct domains; below gate |
+| Representation, interpretation, activation, execution, and outcome are distinct stages | Partial code/data pressure | Not exercised | Partial reading boundary | Not exercised | Not exercised | Partial activation/execution pressure | Supports + skip-stage boundaries | Trigger/discharge/assessment pressure | One complete domain; below gate |
+| Local value equality is distinct from shared derivation | Partial provenance | Not exercised | Partial preservation trace | Not exercised | Supports historical correlation | Supports causal trace distinction | Supports collision/local-equality boundaries | Equal fields/distinct residue | Recurs, but laws remain underspecified |
+| Distributed state cannot be reduced to one scalar without observational loss | Not exercised | Not exercised | Not exercised | Not exercised | Partial multi-channel state | Partial world-state structure | Not exercised | Supports + equal-total counterexample | One direct domain; below gate |
+| Triggering is distinct from a complete causal account | Not exercised | Not exercised | Not exercised | Not exercised | Partial intervention mechanics | Supports causal-channel separation | Not exercised | Supports + dormant/different-path boundaries | Two direct causal domains; below gate |
+| Mechanical resolution, external acceptance, and progress are distinct | Partial construction/conformity | Not exercised | Partial transformation/preservation | Supports effect/conformity | Partial endpoint assessment | Supports + approximation boundary | Partial policy/acceptance split | Supports + counterexamples | ADR 0009 covers production/acceptance only; progress remains open |
+| State change retains causally relevant historical residue | Supports within scoped Potential | Supports settlement history | Partial relation trace | Partial proof history | Supports mediation history | Supports causal trace | Supports release provenance | Supports loading/rupture/oscillation residue | Recurs broadly; representation and equality consequences unresolved |
 
 ## Adversarial scope matrix
 
@@ -286,6 +340,21 @@ evidence.
 | Well-shaped implies admissible | Counterexample: forged carrier has valid shape but no declared derivation | Shape, derivability, authorization, meaning, and operation are distinct |
 | Same local artifact value implies shared origin | Counterexample: equal policies from different sources have disjoint provenance | Local comparison and derivational comparison are separate relations |
 
+## Stress and Discharge scope matrix
+
+| Claim under test | Stress and Discharge result | Cross-domain implication |
+| --- | --- | --- |
+| Stress is one scalar total | Counterexample: equal totals with different distributions select different paths | Distributed state cannot be replaced by an aggregate when local structure affects behavior |
+| Stress encodes a preferred discharge | Counterexample: the nominal API has no target and path follows field plus mechanics | Desired result and causal mechanism remain separate under ADR 0009 |
+| A trigger is the complete cause | Counterexamples: an unloaded trigger is dormant and one trigger permits different paths | Trigger, antecedent state, topology, constraints, and law remain distinct |
+| Discharge is resolution | Counterexample: one lawful displacement leaves the field unresolved | Process occurrence does not establish completion |
+| Resolution is acceptance | Counterexample: complete dissipation resolves the field but fails delivery acceptance | Reinforces ADR 0009 without broadening acceptance semantics |
+| Stress reduction is progress | Counterexample: dissipation lowers total load while delivery remains zero | Progress requires a declared relation and cannot be inferred from one state measure |
+| Release erases history | Counterexamples: equal final fields retain gradual/sudden history, rupture, and oscillation residue | Current state and causal history may require separate comparisons |
+| One blocked path means no path | Counterexample: blocking `a-b` exposes `a-c`; blocking both returns NoDischargePath | Constraints remove capabilities individually rather than globally |
+| Stored capacity is equivariant Potential | Counterexample: heterogeneous capacities constrain but neither enumerate outcomes nor form one transitive action | Do not classify latent ability as Potential merely because several paths exist |
+| Exact ties may use declaration order | Counterexample: forward and reversed link storage return the same AmbiguousDischarge | Undeclared ordering cannot choose a causal path |
+
 ## Synthesis gate
 
 A distinction becomes an ADR candidate only when it:
@@ -316,6 +385,14 @@ carrier may take different lawful roles, matching Grammatica. It also matches
 Actualization's released-policy result: a derived mechanism can continue without
 rereading its source. Each stronger derivation, reading, and release claim remains at
 two direct domains, below the promotion gate.
+
+Experiment 009 adds no accepted foundation category. It establishes within one
+neutral domain that stress can be distributed, triggers can be causally incomplete,
+and discharge, resolution, acceptance, and progress can disagree. Its capacity
+countermodel reinforces Experiment 006's warning that not every latent or unresolved
+structure is Potential. Historical persistence now recurs in settlement, derivation,
+causal trace, and residue, but those histories do not yet perform one sufficiently
+specified semantic job to justify another ADR.
 
 The foundation gate as a whole remains **closed**. Accepting ADRs 0008 and 0009 does
 not satisfy the independent gaps in full Ars declarations, Bridges, default
@@ -353,7 +430,15 @@ types, runtime values, shared foundation classes, or executable source notation.
 - provenance stored on an artifact versus recorded in append-only history;
 - local value equality versus shared derivation and historical identity;
 - encoding as construction, compilation or execution as Cast, and activation as
-  general semantics versus domain machinery.
+  general semantics versus domain machinery;
+- distributed stress as Context state, Effect state, or another owned record;
+- trigger, antecedent state, topology, constraints, and transfer law as separate parts
+  of a causal account;
+- displacement, release, rupture, dissipation, and oscillation as one construction
+  family versus domain-specific mechanics;
+- mechanical resolution, external acceptance, and progress as distinct relations;
+- historical residue as artifact state, causal provenance, append-only history, or a
+  combination of these.
 
 ## Next evidence
 
@@ -362,6 +447,8 @@ production/acceptance separation; neither selects a carrier or source feature. S
 third independent domain for contextual reading and for source-independent derived
 execution before promotion. Acceptance and guidance must remain independently
 observable even when one source derives both. Continue investigating unequal
-epistemic support separately from Potential, then target Bridge laws, complete Ars
-declarations, typed Reader composition, default legitimacy, and independent proof
-verification. The full gate remains closed to source notation.
+epistemic support separately from Potential. Test distributed state, causal triggers,
+progress, and historical residue in unrelated domains before giving them foundation
+names. Then target Bridge laws, complete Ars declarations, typed Reader composition,
+default legitimacy, and independent proof verification. The full gate remains closed
+to source notation.

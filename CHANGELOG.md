@@ -25,4 +25,7 @@ All notable changes will be documented in this file.
 - Add neutral symbolic encoding and release with transparent, compiled, keyed,
   opaque, colliding, and forged carriers; staged activation; and persistent
   provenance.
+- Add neutral stress and discharge with distributed load, constrained path selection,
+  gradual and sudden loading, displacement, partial release, rupture, dissipation,
+  oscillation, historical residue, and hostile scalar and target-coded models.
 - Bootstrap the Stage 0 repository around reversible architectural seams.

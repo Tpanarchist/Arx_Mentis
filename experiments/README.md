@@ -30,6 +30,9 @@ The independent foundation probes are:
 - [State Zero Experiment 008](symbolic_release/README.md): transparent and compiled
   encoding, keyed interpretation, inert and hostile carriers, staged activation,
   release, and derivation provenance.
+- [State Zero Experiment 009](stress_discharge/README.md): distributed load,
+  constrained causal discharge, rupture, dissipation, oscillation, residue, and
+  hostile scalar, target-coded, trigger-only, and history-erasing models.
 
 These experiments intentionally do not import one another. Agreement counts only at
 the backend-neutral behavior recorded in `docs/foundation-evidence.md`.

@@ -603,6 +603,11 @@ The foundation does not yet settle:
   where derivation provenance belongs;
 - whether local value and shared historical derivation require separate equality or
   identity relations;
+- whether distributed stress belongs to Context, Effect, or another state record and
+  how displacement, release, dissipation, rupture, and oscillation compose;
+- how triggers participate in causation without being treated as complete causes;
+- how mechanical resolution, declared acceptance, and progress relate without being
+  collapsed into one success state;
 - surface syntax, type discipline, evaluation order, concurrency, memory behavior,
   and backend target.
 

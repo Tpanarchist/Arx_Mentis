@@ -30,12 +30,16 @@ This order is a constraint on learning, not a release schedule.
 12. Use State Zero Experiment 008 to test symbolic carriers, keyed interpretation,
    staged activation, lawful release, information loss, forgery, collisions, and
    shared derivation without treating symbols as self-executing.
-13. Continue investigating non-symmetric epistemic uncertainty separately while
+13. Use State Zero Experiment 009 to test whether distributed stress can discharge
+   through explicit topology, constraints, triggers, and transfer laws without a
+   preferred outcome encoded in advance. Keep discharge, resolution, acceptance,
+   progress, capacity, and history separate.
+14. Continue investigating non-symmetric epistemic uncertainty separately while
    targeting Bridge laws, full Ars declarations, typed Reader composition, defaults,
    and verification.
-14. Only after the complete synthesis gate passes, write non-executable source
+15. Only after the complete synthesis gate passes, write non-executable source
    examples for every accepted proposition.
-15. Derive notation requirements from gated distinctions, then introduce tokenizing,
+16. Derive notation requirements from gated distinctions, then introduce tokenizing,
    parsing, checking, owned runtime values, evaluation, lowering, IR discovery, and
    backend selection through the existing reversible seams.
 
@@ -50,17 +54,19 @@ Euclid I.1 is the first horizontal probe because one small construction crosses
 Point, Line, Form, Will, Spell, Cast, Effect, Context, Potential, Demonstration, Ars,
 and code/data identity. It lives under `experiments/euclid_i_1` and is evidence, not
 permanent API. Astronomica, Grammatica, Dialectica, Virtual Mediation, Omen
-Attribution, Actualization, and Symbolic Release deliberately use independent
-representations so agreement cannot arise from a shared Python foundation.
+Attribution, Actualization, Symbolic Release, and Stress and Discharge deliberately
+use independent representations so agreement cannot arise from a shared Python
+foundation.
 
 The current synthesis gate is closed. Symmetry-indexed Potential behavior has three
 positive domain sources and the five scoped semantic obligations are accepted by ADR
 0008. ADR 0009 accepts the independent separation of production and acceptance. Omen
 Attribution rejects treating Potential as universal unresolvedness; Actualization
 keeps target acceptance, guidance, and causation separate; Symbolic Release separates
-carrier, reading, activation, execution, and provenance; and several other rows
-remain below threshold. No source notation work begins merely because an individual
-group of rows reached three.
+carrier, reading, activation, execution, and provenance; Stress and Discharge rejects
+scalar load, target-coded paths, trigger-only causation, and capacity-as-Potential;
+and several other rows remain below threshold. No source notation work begins merely
+because an individual group of rows reached three.
 
 Self-hosting the tokenizer and parser remains a useful later horizontal probe after
 there is evidence for the notation they would process.
