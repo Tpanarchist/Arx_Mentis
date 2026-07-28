@@ -15,3 +15,4 @@ trigger so host-language behavior cannot resolve them silently.
 | 0007 | Open question | Backend target |
 | 0008 | Accepted | Equivariant Potential algebra, narrowly scoped |
 | 0009 | Accepted | Production and acceptance are separate operations |
+| 0010 | Accepted | Incidental representation order supplies no discriminator |

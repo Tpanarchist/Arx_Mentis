@@ -264,6 +264,117 @@ evidence.
 - Any package representation, source notation, external action, empirical law, or
   accepted foundation mapping.
 
+## State Zero Experiment 010 baseline
+
+### Observed
+
+- One exact sixty-seed baseline assigns ten outcomes to each of six results. A
+  declared intervention changes the target weight to twenty and the other five to
+  eight without changing support or commanding the next result.
+- Kernel, produced sample, observation window, and report are distinct immutable
+  records. Short observation and target-only reporting leave the source stream and
+  its production kernel unchanged.
+- Every TrialPlan declares its outcome space, target, kernel, interventions, count,
+  seeds, context schedule, observation window, report policy, stopping rule, and
+  comparison rule before production begins.
+- A fixed biased kernel and a precommitted hidden-context mixture have exactly the
+  same public frequencies while retaining different causal records. Public
+  distribution equality does not identify the production mechanism.
+- Target occurrence, sample acceptance, and observer attribution are independent:
+  the target may fail to occur, non-target outcomes remain possible, acceptance
+  requires a separate criterion, and an outcome-only observer cannot infer the
+  privileged causal record.
+- Direct command, option-bag loss, sample-as-kernel, match-implies-bias,
+  report-as-stream, post-hoc target choice, hidden optional stopping, hidden mixture,
+  seed-only causation, and order-based intervention resolution return owned hostile
+  results.
+- Incompatible equal-priority interventions return one owned conflict. Reversing
+  declaration order preserves the same unordered candidates and does not select a
+  winner.
+- Unequal weighted production has neither a declared transitive frame nor a later
+  settlement operation, so it does not satisfy ADR 0008's scoped Potential
+  obligations.
+
+### Assumed by the disposable representation
+
+- Exact integer mass over sixty declared seeds adequately isolates influence from
+  command without statistical sampling or empirical inference.
+- Seed order and the two context kernels are declared harness mechanics, not hidden
+  causes or proposed probability semantics.
+- Frozen Python records, enums, and rational frequency comparisons are disposable
+  carriers.
+
+### Not established
+
+- A general probability, statistics, intervention, causal inference, sampling, or
+  observation algebra.
+- Whether probabilities are declared, inferred, exact, approximate, frequentist,
+  Bayesian, or represented in the language at all.
+- Where kernels, plans, samples, reports, stopping rules, causal records, or observer
+  attributions belong in foundation vocabulary.
+- That every bias preserves support or that every intervention has one target.
+- Any package representation, source notation, external action, empirical claim, or
+  accepted mapping from probability records to foundation types.
+
+## State Zero Experiment 011 baseline
+
+### Observed
+
+- Predictions over twelve fixed cases are committed from feature-only inputs before
+  corresponding outcomes occur or become observable. Later outcomes do not mutate
+  those predictions.
+- TrialPlan, Prediction, occurrence, Observation, Assessment, EvidenceSet, Revision,
+  ModelVersion, Lineage, and Replay remain separate immutable records.
+- Revision consumes only admitted calibration evidence from `C00` through `C05` and
+  constructs a new persistent version. Evidence containing sealed holdout cases
+  `C06` through `C11` returns an owned leakage result.
+- Initial Model A scores 3/6 on calibration and 4/6 on holdout. A memorizing revision
+  scores 6/6 then 2/6; a generalizing revision scores 6/6 on both. Perfect fit to
+  revision evidence therefore does not establish improvement outside it.
+- Structurally different XOR and lookup revisions score 6/6 on both partitions.
+  Equal score with no secondary policy returns the same conflict under reversed
+  candidate order; a declared lower-complexity policy selects lawfully.
+- No-revision and evidence-evaluated no-op revision are explicit results rather than
+  implicit mutation.
+- Replay records what a later version would predict without replacing what the
+  historical version did predict. Old versions remain replayable.
+- Invalidated observation evidence produces a Correction, revised EvidenceSet, new
+  Assessment, and new lineage while preserving the original observation, evidence,
+  and assessment.
+- Equal current model behavior can retain different lineage. Filtering failures
+  changes a report without changing the historical trials.
+- A revision-derived adaptive Intervention can change later outcomes to match its
+  model. Its improved outcome score remains causally distinct from passive predictive
+  improvement.
+- Observer confidence and compatible-model attribution remain separate from the
+  privileged causal record. Selecting a working model does not declare it world
+  truth.
+
+### Assumed by the disposable representation
+
+- The fixed binary-feature world adequately isolates history and information
+  boundaries without making a learning-theoretic, statistical, or causal claim.
+- Exact-match scores, the XOR rule, memorizer fallback, and lower-complexity policy
+  are declared harness mechanics.
+- Integer record order, frozen Python records, and exact finite replay are disposable
+  carriers rather than proposed runtime semantics.
+
+### Not established
+
+- A general learning, revision, evidence, correction, replay, intervention, model
+  selection, or causal inference algebra.
+- Whether revision is Cast or ordinary construction, whether Model is Form or
+  Ars-local theory, or whether Assessment belongs to acceptance, verification, or a
+  third relation.
+- Whether lineage participates in identity, equality, provenance, validity, or only
+  audit history.
+- Whether correction changes Context, evidence ownership, historical truth, or some
+  combination of these.
+- That prospective-not-retroactive revision is an accepted foundation law; this is
+  one domain and remains below the synthesis gate.
+- Any package representation, source notation, external action, statistical claim,
+  or accepted foundation mapping.
+
 ## Positive recurrence matrix
 
 | Foundational claim | Geometrica | Astronomica | Grammatica | Dialectica | Virtual mediation | Actualization | Symbolic release | Stress/discharge | Gate result |
@@ -298,6 +409,35 @@ evidence.
 | Triggering is distinct from a complete causal account | Not exercised | Not exercised | Not exercised | Not exercised | Partial intervention mechanics | Supports causal-channel separation | Not exercised | Supports + dormant/different-path boundaries | Two direct causal domains; below gate |
 | Mechanical resolution, external acceptance, and progress are distinct | Partial construction/conformity | Not exercised | Partial transformation/preservation | Supports effect/conformity | Partial endpoint assessment | Supports + approximation boundary | Partial policy/acceptance split | Supports + counterexamples | ADR 0009 covers production/acceptance only; progress remains open |
 | State change retains causally relevant historical residue | Supports within scoped Potential | Supports settlement history | Partial relation trace | Partial proof history | Supports mediation history | Supports causal trace | Supports release provenance | Supports loading/rupture/oscillation residue | Recurs broadly; representation and equality consequences unresolved |
+
+## Experiment 010 recurrence addendum
+
+This addendum keeps Experiment 010 visible without retroactively pretending its
+neutral records share the earlier experiments' carriers. It counts as one domain no
+matter how many witnesses its test module contains.
+
+| Backend-neutral claim | Prior independent evidence | Probability Bias result | Gate result |
+| --- | --- | --- | --- |
+| Incidental representation order cannot discriminate among distinct admissible alternatives when declared semantics do not | Geometrica: reflected construction; Virtual Mediation: channel order; Stress and Discharge: tied path order | Supports + hostile boundary: equal-priority incompatible interventions preserve the same conflict when reversed | **Accepted ADR 0010:** four unrelated domains and an explicit hostile witness |
+| Production and acceptance are distinct | Geometrica, Grammatica, Dialectica, Virtual Mediation, Actualization, Symbolic Release, Stress and Discharge | Supports: kernel production and sample acceptance vary independently | Reinforces ADR 0009 without selecting probability semantics |
+| Weighted support is not an unordered option bag | Virtual Mediation exposes option-bag correlation loss; Stress and Discharge rejects capacity-as-Potential | Supports + counterexample: equal support with unequal weights changes exact production | One direct probability domain; no shared representation or foundation category |
+| Generator, sample, observation, and report are distinct | Omen Attribution separates stream and selective report; Symbolic Release separates staged artifacts | Supports + hostile boundaries for sample-as-kernel and report-as-stream | Recurs, but the stages do not yet perform one sufficiently specified semantic job |
+| Equal public results need not identify equal causes | Virtual Mediation, Omen Attribution, Actualization, Symbolic Release, and Stress and Discharge retain hidden mechanism or history | Supports: fixed kernel and hidden-context mixture have identical public distributions and different causal records | Strong recurrence; observer and privileged-record semantics remain unresolved |
+| Probability is not automatically Potential | Omen Attribution rejects forced symmetry; Stress and Discharge rejects capacity-as-Potential | Supports: weighted alternatives have no declared transitive action or settlement | Boundary evidence only; ADR 0008 remains narrowly scoped |
+
+## Experiment 011 recurrence addendum
+
+Experiment 011 remains one domain regardless of witness count. Its neutral records
+are not treated as shared representations of earlier histories.
+
+| Backend-neutral claim | Prior independent evidence | Feedback and Model Revision result | Gate result |
+| --- | --- | --- | --- |
+| Incidental order cannot choose among distinct admissible alternatives without a declared discriminator | Geometrica, Virtual Mediation, Stress and Discharge, Probability Bias | Supports + hostile boundary: equal-scoring revisions preserve the same conflict when reversed; declared lower complexity may select | Reinforces ADR 0010 without adding a response type |
+| Production and acceptance are distinct | ADR 0009 domains plus Probability Bias | Supports: committed prediction, outcome production, and later assessment remain separate | Reinforces ADR 0009; assessment's foundation role remains unresolved |
+| Local behavior equality is distinct from shared derivation | Virtual Mediation, Actualization, Symbolic Release, Stress and Discharge | Supports: equal current models and equal-score distinct models retain different lineage | Strong recurrence, but identity and provenance consequences remain underspecified |
+| State change retains causally relevant history | Potential settlement, relation traces, proof history, mediation, causal traces, release provenance, stress residue | Supports: revision, correction, and replay retain prior records | Broad recurrence; prospective-not-retroactive revision is one direct domain |
+| Public success does not identify passive cause | Omen Attribution, Actualization, Probability Bias | Supports: adaptive intervention produces perfect apparent accuracy with an explicit self-fulfilling causal record | Reinforces cause/result separation without a general causal semantics |
+| Observation, judgment, update, and validation are distinct | Dialectica, Omen Attribution, Actualization, Symbolic Release, Probability Bias provide partial stage boundaries | Supports directly: Observation, Assessment, Revision, and holdout evaluation vary independently | One complete revision domain; exact cross-domain job remains unresolved |
 
 ## Adversarial scope matrix
 
@@ -355,6 +495,39 @@ evidence.
 | Stored capacity is equivariant Potential | Counterexample: heterogeneous capacities constrain but neither enumerate outcomes nor form one transitive action | Do not classify latent ability as Potential merely because several paths exist |
 | Exact ties may use declaration order | Counterexample: forward and reversed link storage return the same AmbiguousDischarge | Undeclared ordering cannot choose a causal path |
 
+## Probability Bias scope matrix
+
+| Claim under test | Probability Bias result | Cross-domain implication |
+| --- | --- | --- |
+| Bias is a direct command | Counterexample: reweighting preserves all six outcomes while direct command removes alternatives | Influence and installed outcome are observably different mechanics |
+| Support alone preserves weighted behavior | Counterexample: baseline and biased kernels have equal support but different exact frequencies | An unordered option bag loses behavior that a weighted generator exposes |
+| A sample is its kernel | Counterexample: a short uneven observation leaves the declared kernel unchanged | Realized events do not retroactively redefine their production rule |
+| A report is its source stream | Counterexample: target-only reporting retains a source-linked complete stream | Observation and presentation may filter without rewriting history |
+| A matching target proves prior bias | Counterexample: the baseline produces the target and biased production may produce non-targets | Correspondence does not identify intervention or cause |
+| A target may be chosen after observation | Counterexample: the post-hoc target record is explicit and cannot become the precommitted plan target | Intention timing is part of the causal record |
+| Stopping may remain hidden | Counterexample: optional stopping is declared in the precommitted TrialPlan | Sample boundaries cannot silently change after outcomes are known |
+| Equal public distributions have equal causes | Counterexample: fixed bias and context mixture match exactly but retain different causal records | Outcome equality cannot recover mechanism or privileged history |
+| A seed is the complete cause | Counterexample: one seed maps differently under different kernels | Declared seed, kernel, intervention, and context retain separate causal roles |
+| Probability is Potential | Counterexample: weighted production has no declared transitive frame or evidence-driven settlement | Unresolved alternatives do not share one universal representation |
+| Equal-priority conflict may use declaration order | Counterexample: forward and reversed interventions return the same unordered conflict | Supplies the fourth hostile domain for ADR 0010 |
+
+## Feedback and Model Revision scope matrix
+
+| Claim under test | Feedback and Model Revision result | Cross-domain implication |
+| --- | --- | --- |
+| Learning may rewrite past predictions | Counterexample: frozen committed predictions remain in history after every revision | Revision is prospective in this domain; a general law remains below threshold |
+| Failed trials may be deleted | Counterexample: success-only reporting retains the complete source assessment and trial history | Presentation cannot silently repair evidence |
+| Success criteria may follow outcomes | Counterexample: a later rule produces a new Assessment while the original remains | Assessment history preserves which rule judged which result |
+| Holdout cases may guide revision | Counterexample: admitted holdout evidence returns EvidenceLeakage | Construction evidence and independent evaluation remain distinct |
+| One successful event validates a model | Counterexample: one observation is compatible with several models | Outcome correspondence does not uniquely establish model or cause |
+| Perfect calibration fit is general improvement | Counterexample: memorization scores 6/6 on calibration and 2/6 on holdout | Fit to construction evidence and out-of-evidence performance differ |
+| Equal current behavior implies shared identity | Counterexample: equal models retain distinct version identifiers and Lineage | Local equality and historical derivation remain different comparisons |
+| Replay may replace history | Counterexample: Replay stores would-predict records and references original did-predict identifiers | Counterfactual execution and historical occurrence must not collapse |
+| Self-fulfilled outcomes confirm passive prediction | Counterexample: adaptive alignment scores 6/6 while its passive score is 2/6 and its causal record names intervention | A model changing the world is not independent descriptive confirmation |
+| Equal revision scores may use candidate order | Counterexample: forward and reversed candidates return the same conflict | Reinforces ADR 0010; declared lower complexity is a legitimate discriminator |
+| Correction may erase contradiction | Counterexample: original observation, assessment, and evidence survive beside Correction and reassessment | Changed admissibility requires history rather than retroactive repair |
+| A selected working model is world truth | Counterexample: selection records policy and candidate only; observer attribution lacks privileged cause | Operational choice and causal ontology remain distinct |
+
 ## Synthesis gate
 
 A distinction becomes an ADR candidate only when it:
@@ -377,6 +550,16 @@ whether it satisfies an acceptance criterion are observably separate operations.
 That decision does not accept the name Will, a checking phase, representation,
 universality, or control-flow behavior.
 
+ADR 0010 accepts a third narrow law: when declared semantics provide no discriminator
+among distinct admissible alternatives, incidental storage, traversal, declaration,
+hash, and presentation order cannot select among them. Geometrica, Virtual
+Mediation, Stress and Discharge, and the
+hostile reversed-order intervention witness in Probability Bias perform this same
+backend-neutral job with unrelated carriers. The decision permits an owned ambiguity
+or a request for explicit policy; it also permits declared sequence, priority, or
+canonicalization. It does not prescribe a conflict representation, ordering
+discipline, selection policy, syntax, or runtime feature.
+
 Experiment 007 supplied the final independent and adversarial evidence for ADR 0009
 and a direct counterexample to identifying acceptance with guidance. Experiment 008
 adds a second direct neutral witness that one source can derive separate policy and
@@ -394,8 +577,28 @@ structure is Potential. Historical persistence now recurs in settlement, derivat
 causal trace, and residue, but those histories do not yet perform one sufficiently
 specified semantic job to justify another ADR.
 
-The foundation gate as a whole remains **closed**. Accepting ADRs 0008 and 0009 does
-not satisfy the independent gaps in full Ars declarations, Bridges, default
+Experiment 010 adds no probability foundation category. It establishes within one
+neutral domain that support, weight, kernel, sample, observation, report, target,
+acceptance, and causal attribution can vary independently. Its exact fixed-kernel and
+hidden-mixture equality strengthens the recurring distinction between public outcome
+and privileged cause. Its option-bag and probability-as-Potential countermodels keep
+weighted production outside ADR 0008 unless a declared symmetry and settlement law
+are actually present. Only its equal-priority hostile witness crosses the gate, and
+only as the carrier-independent ADR 0010 selection prohibition.
+
+Experiment 011 adds no accepted revision category. It establishes within one neutral
+domain that feedback can construct future model versions without rewriting committed
+predictions, occurrences, observations, assessment rules, or prior assessments. Its
+calibration/holdout split gives exact counterexamples to identifying fit with
+improvement, and its adaptive intervention distinguishes passive prediction from a
+self-fulfilled outcome. Correction, replay, equal behavior with different lineage,
+and observer attribution strengthen existing historical and causal pressures. The
+equal-score hostile witness reinforces ADR 0010, including its allowance for a
+declared secondary policy. The prospective-not-retroactive finding remains
+provisional because this is its first complete domain.
+
+The foundation gate as a whole remains **closed**. Accepting ADRs 0008, 0009, and
+0010 does not satisfy the independent gaps in full Ars declarations, Bridges, default
 legitimacy, typed Reader composition, independent proof verification, or the identity
 and derivation roles of Will. Therefore this phase produces no tokens, grammar, AST,
 types, runtime values, shared foundation classes, or executable source notation.
@@ -438,17 +641,39 @@ types, runtime values, shared foundation classes, or executable source notation.
   family versus domain-specific mechanics;
 - mechanical resolution, external acceptance, and progress as distinct relations;
 - historical residue as artifact state, causal provenance, append-only history, or a
-  combination of these.
+  combination of these;
+- exact declared probability versus inferred or approximate probability, including
+  the representation and ownership of kernels, samples, observation windows,
+  reports, stopping rules, and precommitment;
+- causal equivalence versus distributional equivalence when an observer cannot see
+  the privileged production record;
+- explicit intervention composition policy versus owned ambiguity when priorities
+  and declared semantics do not choose;
+- prospective revision as construction, Cast, interpretation, or another operation;
+- Model as Form, Ars-local theory, or a role read through an Ars;
+- Assessment as acceptance, verification, proof, or a third comparison relation;
+- counterfactual Replay as execution, simulation, interpretation, or comparison;
+- version Lineage as identity, equality qualification, provenance, validity, or
+  audit-only history;
+- correction as a change to Context, evidence admissibility, recorded history, or
+  some combination of these;
+- model supersession without retroactively declaring the earlier model false;
+- passive prediction versus adaptive intervention when a model changes the Context
+  it attempts to describe.
 
 ## Next evidence
 
-Keep ADR 0008 scoped to declared symmetric constructions and ADR 0009 scoped to
-production/acceptance separation; neither selects a carrier or source feature. Seek a
+Keep ADR 0008 scoped to declared symmetric constructions, ADR 0009 scoped to
+production/acceptance separation, and ADR 0010 scoped to the prohibition on
+accidental selection; none selects a carrier or source feature. Seek a
 third independent domain for contextual reading and for source-independent derived
 execution before promotion. Acceptance and guidance must remain independently
 observable even when one source derives both. Continue investigating unequal
-epistemic support separately from Potential. Test distributed state, causal triggers,
-progress, and historical residue in unrelated domains before giving them foundation
-names. Then target Bridge laws, complete Ars declarations, typed Reader composition,
-default legitimacy, and independent proof verification. The full gate remains closed
-to source notation.
+epistemic support and weighted probability separately from Potential. Test
+distributed state, causal triggers, progress, historical residue, and
+distribution-versus-cause in unrelated domains before giving them foundation names.
+Seek independent prospective-revision witnesses before considering a historical
+obligation; preserve correction, replay, assessment, and lineage as separate open
+pressures. Then target Bridge laws, complete Ars declarations, typed Reader
+composition, default legitimacy, and independent proof verification. The full gate
+remains closed to source notation.

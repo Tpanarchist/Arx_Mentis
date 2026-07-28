@@ -28,4 +28,14 @@ All notable changes will be documented in this file.
 - Add neutral stress and discharge with distributed load, constrained path selection,
   gradual and sudden loading, displacement, partial release, rupture, dissipation,
   oscillation, historical residue, and hostile scalar and target-coded models.
+- Add neutral probability bias with exact finite kernels, explicit precommitment,
+  observation and reporting boundaries, causally distinct equal distributions, and
+  hostile command, post-hoc, hidden-stopping, and order-based models.
+- Accept ADR 0010's narrow requirement that incidental representation order cannot
+  discriminate among distinct admissible alternatives when declared semantics do
+  not, while preserving legitimate declared sequence, priority, and canonicalization.
+- Add neutral feedback and model revision with committed prediction history,
+  calibration/holdout isolation, prospective model versions, correction records,
+  counterfactual replay, overfit and generalizing revisions, adaptive intervention,
+  and hostile retroactive-rewriting models.
 - Bootstrap the Stage 0 repository around reversible architectural seams.

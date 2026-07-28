@@ -34,12 +34,22 @@ This order is a constraint on learning, not a release schedule.
    through explicit topology, constraints, triggers, and transfer laws without a
    preferred outcome encoded in advance. Keep discharge, resolution, acceptance,
    progress, capacity, and history separate.
-14. Continue investigating non-symmetric epistemic uncertainty separately while
+14. Use State Zero Experiment 010 to test exact weighted production without command,
+   complete precommitment, sample and report boundaries, causally distinct equal
+   distributions, and incompatible equal-priority interventions.
+15. Keep accepted ADR 0010 scoped to the observable ban on accidental selection;
+   defer ambiguity carriers, conflict shapes, and explicit policy design.
+16. Use State Zero Experiment 011 to test feedback-driven prospective model revision
+   while preserving committed predictions, observations, assessments, correction
+   history, calibration/holdout boundaries, replay, lineage, and adaptive causation.
+17. Keep prospective-not-retroactive revision provisional until the same semantic
+   job appears independently in unrelated domains.
+18. Continue investigating non-symmetric epistemic uncertainty separately while
    targeting Bridge laws, full Ars declarations, typed Reader composition, defaults,
    and verification.
-15. Only after the complete synthesis gate passes, write non-executable source
+19. Only after the complete synthesis gate passes, write non-executable source
    examples for every accepted proposition.
-16. Derive notation requirements from gated distinctions, then introduce tokenizing,
+20. Derive notation requirements from gated distinctions, then introduce tokenizing,
    parsing, checking, owned runtime values, evaluation, lowering, IR discovery, and
    backend selection through the existing reversible seams.
 
@@ -54,9 +64,9 @@ Euclid I.1 is the first horizontal probe because one small construction crosses
 Point, Line, Form, Will, Spell, Cast, Effect, Context, Potential, Demonstration, Ars,
 and code/data identity. It lives under `experiments/euclid_i_1` and is evidence, not
 permanent API. Astronomica, Grammatica, Dialectica, Virtual Mediation, Omen
-Attribution, Actualization, Symbolic Release, and Stress and Discharge deliberately
-use independent representations so agreement cannot arise from a shared Python
-foundation.
+Attribution, Actualization, Symbolic Release, Stress and Discharge, Probability Bias,
+and Feedback and Model Revision deliberately use independent representations so
+agreement cannot arise from a shared Python foundation.
 
 The current synthesis gate is closed. Symmetry-indexed Potential behavior has three
 positive domain sources and the five scoped semantic obligations are accepted by ADR
@@ -65,7 +75,12 @@ Attribution rejects treating Potential as universal unresolvedness; Actualizatio
 keeps target acceptance, guidance, and causation separate; Symbolic Release separates
 carrier, reading, activation, execution, and provenance; Stress and Discharge rejects
 scalar load, target-coded paths, trigger-only causation, and capacity-as-Potential;
-and several other rows remain below threshold. No source notation work begins merely
+Probability Bias separates weight, support, sample, report, acceptance, and cause;
+and ADR 0010 accepts only the cross-domain ban on accidental order-based selection.
+Feedback and Model Revision preserves prediction and correction history while
+separating calibration fit, holdout evaluation, replay, lineage, and adaptive cause;
+its prospective revision finding remains provisional. Several other rows remain
+below threshold. No source notation work begins merely
 because an individual group of rows reached three.
 
 Self-hosting the tokenizer and parser remains a useful later horizontal probe after

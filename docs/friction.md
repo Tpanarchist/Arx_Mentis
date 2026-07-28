@@ -158,3 +158,43 @@ tuple order and integer scoring could leak a preferred path, so the experiment u
 declared conductance and capacity and refuses exact ties. These symbolic mechanics
 make no physical, psychological, magical, or occult claim. This counts as one
 stress-discharge domain and promotes no new distinction.
+
+2026-07-28 — State Zero Experiment 010, bias without command. The neutral exact
+model separates six-outcome support, weighted production kernel, precommitted plan,
+produced stream, observation window, report, sample acceptance, and causal record.
+One sixty-seed baseline produces each outcome ten times; a declared bias produces
+its target twenty times and every other outcome eight times without removing any
+alternative. A short sample does not rewrite its kernel, selective reporting does
+not rewrite its stream, and target occurrence does not identify bias. Fixed biased
+production and a precommitted hidden-context mixture expose the same exact public
+distribution while retaining different privileged causal records. Direct command,
+post-hoc target choice, hidden optional stopping, option-bag loss, sample-as-kernel,
+report-as-stream, seed-only causation, and hidden mixture remain owned hostile
+results. The recurring tension is among weighted possibility, realized event,
+public evidence, and causal explanation; none automatically supplies the others.
+Exact integer mass, seed order, and context kernels are harness assumptions rather
+than empirical or magical claims. Incompatible equal-priority interventions remain
+the same conflict when declaration order is reversed. That hostile witness supplies
+the fourth independent domain for ADR 0010's narrow anti-accidental-choice law; it
+promotes no probability representation or other Experiment 010 machinery.
+
+2026-07-28 — State Zero Experiment 011, feedback and model revision. The neutral
+finite world separates committed Prediction, later occurrence, Observation,
+Assessment, admitted EvidenceSet, RevisionRule, persistent ModelVersion, Lineage,
+holdout evaluation, Correction, Replay, and CausalRecord. Initial feature-X behavior
+scores 3/6 on calibration and 4/6 on holdout. A calibration memorizer reaches 6/6
+then falls to 2/6, while XOR and a structurally different lookup both reach 6/6 on
+both partitions. Revision produces a new version and leaves old predictions
+replayable; later replay records what another version would predict without replacing
+what happened. An invalidated observation adds correction evidence and reassessment
+rather than erasing its original assessment. Equal current behavior retains distinct
+lineage. An adaptive intervention can force later outcomes to match an overfit model,
+raising apparent accuracy from 2/6 to 6/6 while explicitly changing the causal
+mechanism. Equal-score revision candidates preserve the same conflict under reversed
+order; a declared lower-complexity policy selects lawfully under corrected ADR 0010.
+The recurring tensions are prospective learning versus retroactive repair, local
+behavior versus derivation history, and passive prediction versus a model changing
+its world. Fixed cases, exact-match scores, XOR, memorizer fallback, record order, and
+complexity are harness assumptions, not statistical, empirical, magical, or language
+claims. This counts as one feedback-revision domain. It reinforces ADRs 0009 and 0010
+but promotes no new law; prospective-not-retroactive revision remains provisional.

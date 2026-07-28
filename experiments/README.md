@@ -33,6 +33,13 @@ The independent foundation probes are:
 - [State Zero Experiment 009](stress_discharge/README.md): distributed load,
   constrained causal discharge, rupture, dissipation, oscillation, residue, and
   hostile scalar, target-coded, trigger-only, and history-erasing models.
+- [State Zero Experiment 010](probability_bias/README.md): exact finite weighted
+  production, explicit precommitment, observation and reporting boundaries,
+  causally distinct equal distributions, and hostile command and order-selection
+  models.
+- [State Zero Experiment 011](feedback_revision/README.md): committed predictions,
+  persistent model versions, calibration/holdout isolation, correction, replay,
+  adaptive intervention, and hostile retroactive-rewriting models.
 
 These experiments intentionally do not import one another. Agreement counts only at
 the backend-neutral behavior recorded in `docs/foundation-evidence.md`.

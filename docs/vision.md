@@ -22,7 +22,10 @@ behavior is retroactively declared semantic law.
 4. Derive required capabilities from stated steps and trace claimed Demonstrations.
 5. Keep experimental observations owned by Arx Mentis, even when Python performs
    internal work.
-6. Design notation only after executable propositions reveal the distinctions it
+6. When declared semantics provide no discriminator among distinct admissible
+   alternatives, preserve ambiguity or require an explicit policy; incidental
+   representation order is not a choice rule.
+7. Design notation only after executable propositions reveal the distinctions it
    must preserve.
 
 Stage 0 remains infrastructure plus disposable experiments, not a small language.

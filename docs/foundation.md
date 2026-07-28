@@ -420,14 +420,17 @@ been earned through concrete constructions.
 6. **Preserved source:** transformation creates a new Form without silently
    destroying the old one.
 7. **No false settlement:** Potential has no default result and no null substitute.
-8. **Evidence over convenience:** implementation pressure cannot establish truth.
-9. **Demonstrable effects:** an Effect is compared with Will and justified from the
+8. **No accidental choice:** when declared semantics provide no discriminator among
+   distinct admissible alternatives, incidental representation order cannot supply
+   one. Declared sequence, priority, canonicalization, or policy remains legitimate.
+9. **Evidence over convenience:** implementation pressure cannot establish truth.
+10. **Demonstrable effects:** an Effect is compared with Will and justified from the
    construction where such justification is claimed.
-10. **No privileged metalayer:** Arx Mentis rules are Forms open to inspection and
+11. **No privileged metalayer:** Arx Mentis rules are Forms open to inspection and
     revision.
-11. **Incompleteness is expected:** a system that represents its own instructions
+12. **Incompleteness is expected:** a system that represents its own instructions
     cannot settle every expressible claim.
-12. **Symbolism must work:** geometric and magical names must correspond to real
+13. **Symbolism must work:** geometric and magical names must correspond to real
     language behavior.
 
 These principles remain provisional until executable experiments expose where they
@@ -596,6 +599,19 @@ The foundation does not yet settle:
   unresolved internal mechanism, and how either relates to Effect;
 - how unequal evidence, partial narrowing, probability, multiple orbits, or the
   absence of a meaningful transformation action are represented;
+- whether probability is always exact and declared or may be inferred, where a
+  production kernel belongs, and how samples, reports, stopping rules, and
+  precommitted plans are represented;
+- how causally distinct mechanisms with the same public distribution remain
+  distinguishable to a privileged record without overstating an observer's
+  attribution;
+- whether prospective revision is ordinary construction, Cast, interpretation, or
+  another operation, and whether a model is Form, Ars-local theory, or a contextual
+  reading;
+- whether model lineage participates in identity or provenance only, and how
+  supersession, correction, and counterfactual replay affect those relations;
+- how calibration evidence, independent evaluation, assessment rules, and adaptive
+  interventions remain distinct when a model changes the Context it describes;
 - how a definite world state relates to Reader-relative knowledge and attribution;
 - how source Form, encoded carrier, interpreted artifact, active mechanism,
   execution, and outcome relate without becoming nominal aliases;
