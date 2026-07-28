@@ -20,6 +20,19 @@ This flow exists only under `experiments/` until repeated evidence earns stable
 language representations. Experiments do not import one another or enter the
 installable package.
 
+Neutral domain probes add a one-way discovery layer:
+
+```text
+domain vocabulary
+  -> independently executable mechanics
+  -> optional provisional foundation mapping
+  -> evidence matrix and friction
+```
+
+Foundation vocabulary may depend on the completed neutral mechanics for comparison;
+the neutral mechanics may not depend on foundation representations. This prevents a
+new domain from merely restating the current model in different nouns.
+
 After experiments justify source notation, the tentative implementation flow is:
 
 ```text

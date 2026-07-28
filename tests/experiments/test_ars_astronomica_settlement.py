@@ -14,9 +14,12 @@ from experiments.ars_astronomica_settlement.model import (
     cast,
     elaborate,
     image,
+    independent_family,
     make_experiment,
     project,
     settle,
+    shared_family,
+    twisted_family,
     with_observations,
 )
 
@@ -175,3 +178,17 @@ def test_reversing_candidate_declaration_order_changes_no_observation() -> None:
         assert isinstance(direct_projection, ProjectionEffect)
         assert isinstance(reversed_projection, ProjectionEffect)
         assert direct_projection.prediction == reversed_projection.prediction
+
+
+def test_shared_twisted_and_independent_model_frames_preserve_correlation() -> None:
+    _, _, _, potential = setup()
+
+    direct = shared_family(potential, potential)
+    twist = twisted_family(potential, potential)
+    product = independent_family(potential, potential)
+
+    assert len(direct.graph) == 2
+    assert len(twist.graph) == 2
+    assert len(product.graph) == 4
+    assert all(item.value.first == item.value.second for item in direct.graph)
+    assert all(item.value.first != item.value.second for item in twist.graph)

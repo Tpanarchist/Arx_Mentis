@@ -15,6 +15,8 @@ Astronomica; the prior evidence leaves both models in its stabilizer.
   irrelevant evidence preserves the identical Potential.
 - Projection maps uniformly through the unsettled family, yielding a Potential of
   predictions. It does not inspect, branch on, reject, or settle the model frame.
+- Shared, exchanged, and independent model frames preserve respectively two direct,
+  two twisted, and four product correlations in this domain's local representation.
 - Once evidence chooses a frame, the same projection produces a concrete Effect.
 - Contradictory evidence and missing capability remain owned experimental results.
 

@@ -82,6 +82,43 @@ class EquivariantFamily(Form):
 
 
 @dataclass(frozen=True, slots=True)
+class ModelPair(Form):
+    first: Form
+    second: Form
+
+
+@dataclass(frozen=True, slots=True)
+class JointAssignment(Form):
+    frame: ModelFrame
+    value: ModelPair
+
+
+@dataclass(frozen=True, slots=True)
+class JointFamily(Form):
+    relation: str
+    graph: frozenset[JointAssignment]
+    law: str
+
+
+@dataclass(frozen=True, slots=True)
+class ProductFrame(Form):
+    first: ModelFrame
+    second: ModelFrame
+
+
+@dataclass(frozen=True, slots=True)
+class ProductAssignment(Form):
+    frame: ProductFrame
+    value: ModelPair
+
+
+@dataclass(frozen=True, slots=True)
+class ProductFamily(Form):
+    graph: frozenset[ProductAssignment]
+    law: str
+
+
+@dataclass(frozen=True, slots=True)
 class EvidenceFrame(Form):
     state: ObservedState
     frame: ModelFrame
@@ -353,6 +390,70 @@ def _missing(
 
 def image(potential: Potential) -> frozenset[Form]:
     return frozenset(item.value for item in potential.family.graph)
+
+
+def _at(family: EquivariantFamily, frame: ModelFrame) -> Form:
+    matches = tuple(item.value for item in family.graph if item.frame == frame)
+    if len(matches) != 1:
+        raise ValueError("the model family requires one value at each frame")
+    return matches[0]
+
+
+def _exchange(frame: ModelFrame) -> ModelFrame:
+    token = Swap.EXCHANGE if frame.token is Swap.IDENTITY else Swap.IDENTITY
+    return ModelFrame(token)
+
+
+def shared_family(first: Potential, second: Potential) -> JointFamily:
+    frames = frozenset(item.frame for item in first.family.graph)
+    return JointFamily(
+        "shared",
+        frozenset(
+            JointAssignment(
+                frame,
+                ModelPair(_at(first.family, frame), _at(second.family, frame)),
+            )
+            for frame in frames
+        ),
+        "both model families vary with one shared frame",
+    )
+
+
+def twisted_family(first: Potential, second: Potential) -> JointFamily:
+    frames = frozenset(item.frame for item in first.family.graph)
+    return JointFamily(
+        "twisted",
+        frozenset(
+            JointAssignment(
+                frame,
+                ModelPair(
+                    _at(first.family, frame),
+                    _at(second.family, _exchange(frame)),
+                ),
+            )
+            for frame in frames
+        ),
+        "the second model family varies through the exchanged frame",
+    )
+
+
+def independent_family(first: Potential, second: Potential) -> ProductFamily:
+    first_frames = frozenset(item.frame for item in first.family.graph)
+    second_frames = frozenset(item.frame for item in second.family.graph)
+    return ProductFamily(
+        frozenset(
+            ProductAssignment(
+                ProductFrame(first_frame, second_frame),
+                ModelPair(
+                    _at(first.family, first_frame),
+                    _at(second.family, second_frame),
+                ),
+            )
+            for first_frame in first_frames
+            for second_frame in second_frames
+        ),
+        "independent model frames form the product frame",
+    )
 
 
 def cast(

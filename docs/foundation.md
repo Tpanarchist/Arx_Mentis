@@ -567,6 +567,10 @@ The foundation does not yet settle:
 - how demonstrations become executable or mechanically checkable;
 - how one Ars imports or extends another;
 - how structured choice-spaces and Frames are represented across Contexts;
+- whether visibility, availability, resolution, construction, and verification are
+  independent dimensions in the eventual type structure;
+- whether one construction may retain both a settled public outcome and an
+  unresolved internal mechanism, and how either relates to Effect;
 - surface syntax, type discipline, evaluation order, concurrency, memory behavior,
   and backend target.
 

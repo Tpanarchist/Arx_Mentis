@@ -73,3 +73,19 @@ algebra, Bridge laws, full Ars record, typed Reader composition, default theorem
 independent verification do not. The tension is between promoting locally coherent
 Python types and waiting for backend-neutral recurrence. No new Python behavior or
 surface example was accepted as language law; the notation gate remains closed.
+
+2026-07-27 — State Zero Experiment 005, virtual mediation. The neutral mechanism
+produces a visible endpoint outcome while retaining three definite, indirectly
+observed traces indexed by a cyclic frame. Shared, one-step-twisted, and independent
+composition yield 3, 3, and 9 joint results; an explicit option-bag countermodel
+reduces all three to identical local options and therefore loses the observable
+relationship. Aggregate and signature operations both map uniformly, but only the
+aggregate is invariant. Later signature evidence identifies shared and twisted
+partners without rewriting the prior outcome and leaves an independent partner
+unresolved. The recurring Potential algebra now has a third domain and qualifies for
+ADR discussion. The new tension is that unobserved and unresolved are independent,
+and one construction may retain a settled public result with an unresolved internal
+mechanism. Enum and frozen-set ordering could leak a first channel; reversed-order
+tests and the cyclic fixed-point check reject that selection. The occult analogy is
+motivation only and contributes no evidence that the mechanism describes reality.
+All witnesses in this experiment count as one virtual-mediation source.

@@ -18,6 +18,9 @@ The independent foundation probes are:
   Inspector and Interpreter roles without a nominal Spell class.
 - [Ars Dialectica](ars_dialectica_verification/README.md): independent proof
   verification, separate Will comparison, and Open propositions.
+- [State Zero Experiment 005](virtual_mediation/README.md): neutral three-channel
+  mediation, adversarial option-bag loss, later observation, and a deliberately
+  separate provisional foundation mapping.
 
 These experiments intentionally do not import one another. Agreement counts only at
 the backend-neutral behavior recorded in `docs/foundation-evidence.md`.
