@@ -88,4 +88,6 @@
 : An executable, terminating acceptance predicate over Effect within Context, drawn
   from the fragment declared by an Ars. A target Form is only one special case.
   Experiment 007 leaves open whether that same source Form may also derive a separate
-  guidance role; guidance is not folded into Will by the working definition.
+  guidance role; guidance is not folded into Will by the working definition. ADR
+  0009 accepts production/acceptance separation without accepting this name or
+  representation.

@@ -19,7 +19,7 @@ python -m arx_mentis status
 ```
 
 Stage 0 intentionally implements no syntax, AST, permanent semantics, evaluator,
-runtime values, or IR. Seven disposable foundation probes now live outside the
+runtime values, or IR. Eight disposable foundation probes now live outside the
 installable package:
 
 ```console
@@ -30,6 +30,7 @@ python -m experiments.ars_dialectica_verification
 python -m experiments.virtual_mediation
 python -m experiments.omen_attribution
 python -m experiments.actualization
+python -m experiments.symbolic_release
 python -m pytest tests/experiments
 ```
 

@@ -5,8 +5,8 @@
 Arx Mentis is a language of exact, inspectable construction. Its information takes
 Form through Point and Line. Its construction follows exact Spell steps, elaborated
 and performed as Casts within explicit Contexts; actual Effects are judged separately
-against Will. Experiment 007 leaves open whether one source target can supply both an
-acceptance reading and distinct construction guidance. Its
+against Will. Experiments 007 and 008 leave open whether one source target can supply
+both an acceptance reading and distinct construction guidance. Its
 knowledge is organized into Ars and developed through definitions, postulates,
 constructions, and demonstrations. It treats symmetry-related unresolved
 constructions as equivariant families rather than hiding them behind defaults, while

@@ -123,3 +123,21 @@ weights could leak a mechanism, so every channel is explicit and compared by own
 records. The graph and occult analogy are harness assumptions, not physical,
 magical, control-theoretic, or language claims. This experiment counts as one
 actualization source and does not broaden Will by itself.
+
+2026-07-28 — State Zero Experiment 008, symbolic encoding and release. The neutral
+model separates SourceForm, Carrier, interpretation, Activation, Execution, Outcome,
+and Provenance. Transparent encoding round-trips exactly; compiled encoding remains
+operational after source release while losing acceptance and explanation; and one
+keyed carrier yields policy and audit artifacts under different declared readings.
+Opaque carriers remain inert, forged carriers are well-shaped but underived, lossy
+collisions are explicit, and skipping interpretation or activation returns an owned
+refusal. Safe and fast policies reach the same final state without sharing policy,
+decoding, or provenance. Equal local policies from different sources remain distinct
+from artifacts with shared origin. The recurring tensions are form versus carrier,
+meaning versus operation, and local value versus historical derivation. Python tuple
+order, symbolic tags, and the trusted registry could leak meaning or authorization;
+the harness therefore declares each and makes no cryptographic claim. The source's
+symbolic analogy is motivation only and supplies no evidence that symbols act on
+external reality. This counts as one symbolic-release domain: it is the second direct
+witness for contextual reading after Grammatica and for released derived execution
+after Actualization, so neither distinction crosses the gate.

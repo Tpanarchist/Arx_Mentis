@@ -268,6 +268,11 @@ executable fragment declared by its Ars:
 check(Will, Effect, Context) → Conforms | Counterexample
 ```
 
+ADR 0009 accepts only this observable separation: producing a result does not perform
+its acceptance check, and checking acceptance does not produce or repair the result.
+The name `Will`, checking phase, representation, universality, and effect on control
+flow remain provisional.
+
 A Demonstration is evidence that Will holds for the actual Effect, not prose attached
 afterward. When Effect is Potential, checking is lifted pointwise. An invariant Will
 produces a constant truth family and therefore ordinary Conforms or Counterexample
@@ -592,6 +597,12 @@ The foundation does not yet settle:
 - how unequal evidence, partial narrowing, probability, multiple orbits, or the
   absence of a meaningful transformation action are represented;
 - how a definite world state relates to Reader-relative knowledge and attribution;
+- how source Form, encoded carrier, interpreted artifact, active mechanism,
+  execution, and outcome relate without becoming nominal aliases;
+- whether release changes lifecycle, scope, availability, or only dependency, and
+  where derivation provenance belongs;
+- whether local value and shared historical derivation require separate equality or
+  identity relations;
 - surface syntax, type discipline, evaluation order, concurrency, memory behavior,
   and backend target.
 

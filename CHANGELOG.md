@@ -20,4 +20,9 @@ All notable changes will be documented in this file.
   counterexample that narrows ADR 0008 to declared symmetric constructions.
 - Add neutral actualization countermodels separating acceptance, production guidance,
   causal trace, observer attribution, sustained feedback, and released policy.
+- Accept ADR 0009's backend-neutral separation of production from acceptance without
+  selecting the name, phase, representation, or control-flow role of Will.
+- Add neutral symbolic encoding and release with transparent, compiled, keyed,
+  opaque, colliding, and forged carriers; staged activation; and persistent
+  provenance.
 - Bootstrap the Stage 0 repository around reversible architectural seams.

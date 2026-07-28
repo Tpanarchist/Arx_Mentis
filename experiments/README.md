@@ -27,6 +27,9 @@ The independent foundation probes are:
 - [State Zero Experiment 007](actualization/README.md): criterion-only execution,
   target-derived guidance, explicit hidden weighting, released policy, causal trace,
   and rejected direct assignment.
+- [State Zero Experiment 008](symbolic_release/README.md): transparent and compiled
+  encoding, keyed interpretation, inert and hostile carriers, staged activation,
+  release, and derivation provenance.
 
 These experiments intentionally do not import one another. Agreement counts only at
 the backend-neutral behavior recorded in `docs/foundation-evidence.md`.
