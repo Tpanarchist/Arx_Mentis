@@ -4,6 +4,9 @@ The documentation is part of the Stage 0 executable specification. It separates
 decisions already needed for implementation structure from language choices that
 remain deliberately open.
 
+The current cross-domain synthesis gate is recorded in
+[`foundation-evidence.md`](foundation-evidence.md).
+
 - `vision.md` — purpose, constraints, and non-goals.
 - `foundation.md` — the provisional conceptual basis and first proposition.
 - `bootstrap.md` — the Stage 0 contract and repository surface.

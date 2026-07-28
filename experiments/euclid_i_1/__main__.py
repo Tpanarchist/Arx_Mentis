@@ -1,41 +1,58 @@
-"""Run a small human-readable witness of the Euclid I.1 experiment."""
-
-from __future__ import annotations
+"""Run the equivariant Euclid I.1 evidence witness."""
 
 from .model import (
+    Conforms,
     Effect,
-    IntersectionPoint,
+    ElaborationRefusal,
+    FrameDependentCheck,
+    Parity,
     Potential,
-    Side,
+    Produced,
     cast,
-    make_context,
-    make_proposition,
+    check,
+    elaborate,
+    image,
+    make_experiment,
 )
 
 
-def _apex_side(effect: Effect) -> str:
-    apex = next(
-        point for point in effect.form.points if isinstance(point, IntersectionPoint)
-    )
-    return apex.side.value
-
-
 def main() -> None:
-    line_ab, spell = make_proposition()
-    unresolved = cast(spell, make_context(line_ab))
-    print(f"inspected Spell: {spell.name} ({len(spell.steps)} exact steps)")
-    if isinstance(unresolved, Potential):
-        sides = sorted(_apex_side(effect) for effect in unresolved.options)
-        print(f"unoriented Cast: Potential options={sides}")
-        print("trigger: orientation declared by Context")
-    for side in Side:
-        result = cast(spell, make_context(line_ab, selected_side=side))
-        if isinstance(result, Effect):
-            print(
-                f"{side.value}-oriented Cast: "
-                f"Effect={_apex_side(result)}, "
-                f"demonstration steps={len(result.demonstration.steps)}"
-            )
+    experiment = make_experiment()
+    first = elaborate(experiment.spell, experiment.initial_ars)
+    if isinstance(first, ElaborationRefusal):
+        print(
+            "initial elaboration: Refused at "
+            f"{first.missing_operation.value}; prefix={len(first.elaborated_prefix)}"
+        )
+    second = elaborate(experiment.spell, experiment.extended_ars)
+    if isinstance(second, ElaborationRefusal):
+        return
+    result = cast(second, experiment.context)
+    if not isinstance(result, Produced) or not isinstance(result.effect, Effect):
+        return
+    if not isinstance(result.effect.form, Potential):
+        return
+    print(f"extended Cast: Potential image={len(image(result.effect.form))}")
+    conformity = check(experiment.spell.will, result.effect, experiment.context)
+    if isinstance(conformity, Conforms):
+        print("equilateral Will: Conforms without settlement")
+    side_will = experiment.spell.will.__class__(
+        "apex on positive side",
+        experiment.extended_ars.will_fragment.predicates
+        and next(
+            predicate
+            for predicate in experiment.extended_ars.will_fragment.predicates
+            if predicate.value == "apex-positive"
+        ),
+        experiment.givens.base,
+    )
+    side_result = check(side_will, result.effect, experiment.context)
+    if isinstance(side_result, FrameDependentCheck):
+        print(
+            "side-dependent Will: frame-dependent truth image="
+            f"{len(image(side_result.family))}"
+        )
+    print(f"frame remains unsettled: {Parity.IDENTITY.value}/{Parity.FLIPPED.value}")
 
 
 if __name__ == "__main__":

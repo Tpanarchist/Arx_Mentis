@@ -1,222 +1,303 @@
-"""An owned, inspectable model of Euclid I.1.
+"""Euclid I.1 as capability discovery and equivariant construction.
 
-This module is experiment code, not an Arx Mentis implementation. Its Python
-representation exists to make the proposed behavior precise enough to challenge;
-none of its classes, iteration behavior, or failure policy is language law.
+This disposable experiment derives capabilities by elaborating steps against an Ars,
+then lifts construction uniformly through a reflection torsor. No representation in
+this module is an accepted Arx Mentis language type.
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from collections.abc import Callable
+from dataclasses import dataclass, replace
 from enum import Enum
+from itertools import product
 
 
 class Form:
-    """Marker for values that cross this experiment's observation boundary."""
-
     __slots__ = ()
 
 
-class Side(Enum):
-    """A side relative to an explicitly oriented line."""
-
-    LEFT = "left"
-    RIGHT = "right"
+class Verdict(Enum):
+    HOLDS = "holds"
+    DOES_NOT_HOLD = "does-not-hold"
 
 
-class Construction(Enum):
-    CIRCLE_FROM_CENTER_AND_POINT = "circle-from-center-and-point"
-    CIRCLE_INTERSECTIONS = "circle-intersections"
-    LINE_BETWEEN_POINTS = "line-between-points"
-
-
-class Conformity(Enum):
-    CONFORMS = "conforms"
+class Parity(Enum):
+    IDENTITY = "identity"
+    FLIPPED = "flipped"
 
 
 @dataclass(frozen=True, slots=True)
-class Ars(Form):
+class TransformationGroup(Form):
     name: str
+    elements: frozenset[Parity]
+
+
+@dataclass(frozen=True, slots=True)
+class Location(Form):
+    name: str
+
+
+@dataclass(frozen=True, slots=True)
+class Occurrence(Form):
+    name: str
+
+
+@dataclass(frozen=True, slots=True)
+class GivenEvidence(Form):
+    description: str
+
+
+@dataclass(frozen=True, slots=True)
+class SettlementEvidence(Form):
+    witnesses: frozenset[FrameWitness]
 
 
 @dataclass(frozen=True, slots=True)
 class Point(Form):
-    name: str
+    """The settled phase of a distinction."""
+
+    selected: Form
+    evidence: Form
+    occurrence: Occurrence
+
+
+@dataclass(frozen=True, slots=True)
+class Line(Form):
+    first: Point
+    second: Point
+    occurrence: Occurrence
 
 
 @dataclass(frozen=True, slots=True)
 class Circle(Form):
     center: Point
     through: Point
+    occurrence: Occurrence
 
 
 @dataclass(frozen=True, slots=True)
-class OrientedLine(Form):
-    """A temporary experiment form; it does not make every Line directed."""
-
-    start: Point
-    end: Point
+class GivenConfiguration(Form):
+    point_a: Point
+    point_b: Point
+    base: Line
 
 
 @dataclass(frozen=True, slots=True)
-class IntersectionPoint(Form):
+class Stabilizer(Form):
+    ambient_group: TransformationGroup
+    givens: GivenConfiguration
+    elements: frozenset[Parity]
+
+
+@dataclass(frozen=True, slots=True)
+class FrameKey(Form):
+    name: str
+    stabilizer: Stabilizer
+
+
+@dataclass(frozen=True, slots=True)
+class FrameCoordinate(Form):
+    key: FrameKey
+    parity: Parity
+
+
+@dataclass(frozen=True, slots=True)
+class Frame(Form):
+    coordinates: frozenset[FrameCoordinate]
+
+
+@dataclass(frozen=True, slots=True)
+class EquivarianceLaw(Form):
+    construction: str
+    statement: str
+    verified: Verdict
+
+
+@dataclass(frozen=True, slots=True)
+class FrameTorsor(Form):
+    keys: frozenset[FrameKey]
+    frames: frozenset[Frame]
+    action: EquivarianceLaw
+
+
+@dataclass(frozen=True, slots=True)
+class FamilyValue(Form):
+    frame: Frame
+    value: Form
+
+
+@dataclass(frozen=True, slots=True)
+class EquivariantFamily(Form):
+    torsor: FrameTorsor
+    graph: frozenset[FamilyValue]
+    law: EquivarianceLaw
+
+
+@dataclass(frozen=True, slots=True)
+class SettlementRule(Form):
+    witness_role: str
+    evidence_description: str
+
+
+@dataclass(frozen=True, slots=True)
+class Potential(Form):
+    """A lawful result varying with an unsettled frame."""
+
+    family: EquivariantFamily
+    settlement: SettlementRule
+
+
+@dataclass(frozen=True, slots=True)
+class FrameWitness(Form):
+    coordinate: FrameCoordinate
+    source: str
+
+
+@dataclass(frozen=True, slots=True)
+class Intersection(Form):
     circles: frozenset[Circle]
-    relative_to: OrientedLine
-    side: Side
-
-
-type PointForm = Point | IntersectionPoint
+    parity: Parity
 
 
 @dataclass(frozen=True, slots=True)
-class Line(Form):
-    endpoints: frozenset[PointForm]
-
-    def __post_init__(self) -> None:
-        if len(self.endpoints) != 2:
-            raise ValueError("an experimental Line requires two distinct Points")
-
-
-@dataclass(frozen=True, slots=True)
-class GeometricForm(Form):
-    points: frozenset[PointForm]
-    lines: frozenset[Line]
-
-
-@dataclass(frozen=True, slots=True)
-class Definition(Form):
+class CandidateLine(Form):
+    fixed: Point
+    apex: Intersection
     name: str
-    statement: str
 
 
 @dataclass(frozen=True, slots=True)
-class Postulate(Form):
+class Triangle(Form):
+    base: Line
+    apex: Intersection
+    sides: frozenset[CandidateLine]
+
+
+@dataclass(frozen=True, slots=True)
+class Pair(Form):
+    first: Form
+    second: Form
+
+
+@dataclass(frozen=True, slots=True)
+class ProductValue(Form):
+    values: tuple[Form, ...]
+
+
+class Operation(Enum):
+    CONSTRUCT_CIRCLE = "construct-circle"
+    INTERSECT_CIRCLES = "intersect-circles"
+    CONSTRUCT_LINE = "construct-line"
+    CONSTRUCT_MIDPOINT = "construct-midpoint"
+
+
+@dataclass(frozen=True, slots=True)
+class Instruction(Form):
+    operation: Operation
+    bind: str
+    arguments: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class Capability(Form):
+    operation: Operation
+
+
+@dataclass(frozen=True, slots=True)
+class ConstructionRule(Form):
+    operation: Operation
+    postulate: str
+    capability: Capability
+    equivariance: EquivarianceLaw
+
+
+@dataclass(frozen=True, slots=True)
+class EqualityDeclaration(Form):
+    ars_name: str
+    subject: str
+    reflexive: bool
+    symmetric: bool
+    transitive: bool
+
+
+class WillPredicate(Enum):
+    EQUILATERAL_ON_BASE = "equilateral-on-base"
+    APEX_POSITIVE = "apex-positive"
+
+
+@dataclass(frozen=True, slots=True)
+class WillFragment(Form):
+    predicates: frozenset[WillPredicate]
+    termination_scope: str
+
+
+@dataclass(frozen=True, slots=True)
+class Bridge(Form):
     name: str
-    construction: Construction
-    statement: str
+    source_ars: str
+    target_ars: str
+    translation: str
+    preserves_equality: Verdict
+    commutes_with_constructions: Verdict
+    equivariant: Verdict
 
 
 @dataclass(frozen=True, slots=True)
-class CommonNotion(Form):
+class Ars(Form):
     name: str
-    statement: str
-
-
-type Rule = Definition | CommonNotion
-
-
-@dataclass(frozen=True, slots=True)
-class EqualityClaim(Form):
-    lines: frozenset[Line]
-
-    def __post_init__(self) -> None:
-        if len(self.lines) != 2:
-            raise ValueError("an equality claim relates two distinct Lines")
-
-
-@dataclass(frozen=True, slots=True)
-class EquilateralClaim(Form):
-    lines: frozenset[Line]
-
-    def __post_init__(self) -> None:
-        if len(self.lines) != 3:
-            raise ValueError("an equilateral claim requires three Lines")
-
-
-type Claim = EqualityClaim | EquilateralClaim
-
-
-@dataclass(frozen=True, slots=True)
-class DemonstrationStep(Form):
-    conclusion: Claim
-    basis: Rule
-    premises: tuple[Claim, ...] = ()
-    witnesses: tuple[Form, ...] = ()
-
-
-@dataclass(frozen=True, slots=True)
-class Demonstration(Form):
-    steps: tuple[DemonstrationStep, ...]
-    conclusion: EquilateralClaim
-
-
-@dataclass(frozen=True, slots=True)
-class ExpectedEffect(Form):
-    description: str
+    forms: frozenset[str]
+    constructions: frozenset[ConstructionRule]
+    equality: EqualityDeclaration
+    transformation_group: TransformationGroup
+    will_fragment: WillFragment
+    bridges: frozenset[Bridge]
 
 
 @dataclass(frozen=True, slots=True)
 class Will(Form):
     name: str
-    intended_effect: ExpectedEffect
-
-
-@dataclass(frozen=True, slots=True)
-class CircleStep(Form):
-    bind: str
-    center: str
-    through: str
-    postulate: Postulate
-
-
-@dataclass(frozen=True, slots=True)
-class IntersectionsStep(Form):
-    bind: str
-    first_circle: str
-    second_circle: str
-    axis_start: str
-    axis_end: str
-    postulate: Postulate
-
-
-@dataclass(frozen=True, slots=True)
-class LineStep(Form):
-    bind: str
-    first_point: str
-    second_point: str
-    postulate: Postulate
-
-
-type ConstructionStep = CircleStep | IntersectionsStep | LineStep
-
-
-@dataclass(frozen=True, slots=True)
-class EffectSpec(Form):
-    points: tuple[str, ...]
-    lines: tuple[str, ...]
-
-
-@dataclass(frozen=True, slots=True)
-class DemonstrationPlan(Form):
-    first_circle: str
-    first_radius: str
-    first_peer_radius: str
-    second_circle: str
-    second_radius: str
-    second_peer_radius: str
-    triangle_lines: tuple[str, str, str]
-    radius_definition: Definition
-    equality_common_notion: CommonNotion
-    equilateral_definition: Definition
-
-
-@dataclass(frozen=True, slots=True)
-class Requirements(Form):
-    postulates: frozenset[Postulate]
-    definitions: frozenset[Definition]
-    common_notions: frozenset[CommonNotion]
+    predicate: WillPredicate
+    base: Line
 
 
 @dataclass(frozen=True, slots=True)
 class Spell(Form):
+    """Only stated inputs, steps, and Will; requirements are never authored here."""
+
     name: str
-    ars: Ars
     inputs: tuple[str, ...]
+    steps: tuple[Instruction, ...]
     will: Will
-    requirements: Requirements
-    steps: tuple[ConstructionStep, ...]
-    effect: EffectSpec
-    demonstration: DemonstrationPlan
+
+
+@dataclass(frozen=True, slots=True)
+class ElaboratedStep(Form):
+    instruction: Instruction
+    rule: ConstructionRule
+
+
+@dataclass(frozen=True, slots=True)
+class ElaboratedSpell(Form):
+    source: Spell
+    steps: tuple[ElaboratedStep, ...]
+    derived_requirements: frozenset[Capability]
+
+
+@dataclass(frozen=True, slots=True)
+class ElaborationRefusal(Form):
+    source: Spell
+    step: Instruction
+    elaborated_prefix: tuple[ElaboratedStep, ...]
+    missing_operation: Operation
+
+
+type ElaborationResult = ElaboratedSpell | ElaborationRefusal
+
+
+@dataclass(frozen=True, slots=True)
+class Interpreter(Form):
+    name: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -226,395 +307,856 @@ class NamedForm(Form):
 
 
 @dataclass(frozen=True, slots=True)
-class Reader(Form):
-    name: str
-
-
-@dataclass(frozen=True, slots=True)
-class Orientation(Form):
-    line: OrientedLine
-    selected_side: Side
-
-
-@dataclass(frozen=True, slots=True)
 class Context(Form):
-    reader: Reader
-    forms: frozenset[NamedForm]
-    postulates: frozenset[Postulate]
-    definitions: frozenset[Definition]
-    common_notions: frozenset[CommonNotion]
-    orientation: Orientation | None = None
+    bindings: frozenset[NamedForm]
+    capabilities: frozenset[Capability]
+    frame_witnesses: frozenset[FrameWitness]
+    interpreter: Interpreter
+    ars: Ars
 
 
 @dataclass(frozen=True, slots=True)
 class TraceEntry(Form):
-    step: ConstructionStep
-    basis: Postulate
-    produced: tuple[Form, ...]
-
-
-@dataclass(frozen=True, slots=True)
-class ConstructionTrace(Form):
-    entries: tuple[TraceEntry, ...]
-
-
-@dataclass(frozen=True, slots=True)
-class WillComparison(Form):
-    will: Will
-    evidence: EquilateralClaim
-    judgement: Conformity
+    step: ElaboratedStep
+    produced: Form
 
 
 @dataclass(frozen=True, slots=True)
 class Effect(Form):
-    form: GeometricForm
-    trace: ConstructionTrace
-    demonstration: Demonstration
-    comparison: WillComparison
+    form: Potential | Triangle
+    source: Line
 
 
 @dataclass(frozen=True, slots=True)
-class OrientationTrigger(Form):
-    line: OrientedLine
+class Produced(Form):
+    effect: Effect
+    trace: tuple[TraceEntry, ...]
 
 
 @dataclass(frozen=True, slots=True)
-class Potential(Form):
-    """Unsettled options and the only declared means of settling them."""
-
-    options: frozenset[Effect]
-    trigger: OrientationTrigger
+class Refused(Form):
+    missing: Capability
+    step: ElaboratedStep
+    trace: tuple[TraceEntry, ...]
 
 
 @dataclass(frozen=True, slots=True)
-class ExperimentRefusal(Form):
-    """Harness-only diagnostic; deliberately not a proposed failure semantic."""
-
+class Failed(Form):
     reason: str
-    missing: frozenset[Form] = frozenset()
+    step: ElaboratedStep | None
+    trace: tuple[TraceEntry, ...]
 
 
-type CastResult = Effect | Potential | ExperimentRefusal
+type CastResult = Produced | Refused | Failed
+type SettlementResult = Potential | Point | Failed
 
 
-ARS_GEOMETRICA = Ars("Ars Geometrica")
+@dataclass(frozen=True, slots=True)
+class Length(Form):
+    source: Line | CandidateLine
 
-CIRCLE_POSTULATE = Postulate(
-    "circle construction",
-    Construction.CIRCLE_FROM_CENTER_AND_POINT,
-    "A circle may be constructed from a center through a Point.",
+
+@dataclass(frozen=True, slots=True)
+class QualifiedEqual(Form):
+    ars_name: str
+    left: Length
+    right: Length
+    law: EqualityDeclaration
+
+
+@dataclass(frozen=True, slots=True)
+class BranchProof(Form):
+    triangle: Triangle
+    equalities: tuple[QualifiedEqual, QualifiedEqual, QualifiedEqual]
+
+
+@dataclass(frozen=True, slots=True)
+class InvariantDemonstration(Form):
+    proofs: frozenset[BranchProof]
+    bridge: Bridge
+    constant_truth: Verdict
+
+
+@dataclass(frozen=True, slots=True)
+class Conforms(Form):
+    will: Will
+    effect: Effect
+    evidence: InvariantDemonstration
+
+
+@dataclass(frozen=True, slots=True)
+class Counterexample(Form):
+    will: Will
+    effect: Effect
+    witness: Form
+
+
+@dataclass(frozen=True, slots=True)
+class FrameDependentCheck(Form):
+    will: Will
+    effect: Effect
+    family: Potential
+
+
+type CheckResult = Conforms | Counterexample | FrameDependentCheck
+
+
+@dataclass(frozen=True, slots=True)
+class InvariantWill(Form):
+    will: Will
+    stabilizer: Stabilizer
+
+
+@dataclass(frozen=True, slots=True)
+class NonInvariantWill(Form):
+    will: Will
+    stabilizer: Stabilizer
+    reason: str
+
+
+type WillValidation = InvariantWill | NonInvariantWill
+
+
+@dataclass(frozen=True, slots=True)
+class Truth(Form):
+    verdict: Verdict
+
+
+class CandidateKind(Enum):
+    POSITIVE_INTERSECTION = "positive-intersection"
+    MIDPOINT = "midpoint"
+
+
+@dataclass(frozen=True, slots=True)
+class DefaultAssessment(Form):
+    candidate: CandidateKind
+    fixed_by_stabilizer: Verdict
+    constructible: Verdict
+    legitimate_default: Verdict
+    equivariance_hypothesis: Verdict
+
+
+class GroupDiagnostic(Enum):
+    INFORMATIVE = "informative"
+    TRIVIAL_ACTION = "trivial-action"
+
+
+@dataclass(frozen=True, slots=True)
+class GroupAssessment(Form):
+    stabilizer: Stabilizer
+    diagnostic: GroupDiagnostic
+
+
+class FramePlacement(Enum):
+    LINE = "line"
+    CONTEXT = "context"
+    POTENTIAL = "potential-frame"
+
+
+class Side(Enum):
+    POSITIVE = "positive"
+    NEGATIVE = "negative"
+
+
+@dataclass(frozen=True, slots=True)
+class FramePlacementReport(Form):
+    original: Side
+    direction_flipped: Side
+    chirality_flipped: Side
+    both_flipped: Side
+    direct_joint_outcomes: int
+    twisted_joint_outcomes: int
+    independent_joint_outcomes: int
+    favored: FramePlacement
+    reason: str
+
+
+GEOMETRIC_GROUP = TransformationGroup(
+    "Euclidean isometries including reflection",
+    frozenset({Parity.IDENTITY, Parity.FLIPPED}),
 )
-INTERSECTION_POSTULATE = Postulate(
-    "circle intersection construction",
-    Construction.CIRCLE_INTERSECTIONS,
-    "The intersection Points of two circles may be constructed.",
+GEOMETRIC_EQUALITY = EqualityDeclaration(
+    "Ars Geometrica",
+    "geometric congruence under the declared transformation group",
+    True,
+    True,
+    True,
 )
-LINE_POSTULATE = Postulate(
-    "line construction",
-    Construction.LINE_BETWEEN_POINTS,
-    "A Line may be constructed between two distinct Points.",
+ARITHMETIC_EQUALITY = EqualityDeclaration(
+    "Ars Arithmetica",
+    "equality of magnitudes",
+    True,
+    True,
+    True,
 )
-CIRCLE_RADII_DEFINITION = Definition(
-    "equal radii of one circle",
-    "Lines from one circle's center to its circumference are equal.",
+LENGTH_BRIDGE = Bridge(
+    "geometric length",
+    "Ars Geometrica",
+    "Ars Arithmetica",
+    "length(Line)",
+    Verdict.HOLDS,
+    Verdict.HOLDS,
+    Verdict.HOLDS,
 )
-EQUILATERAL_DEFINITION = Definition(
-    "equilateral triangular Form",
-    "A triangular Form is equilateral when its three Lines are equal.",
-)
-EQUALITY_COMMON_NOTION = CommonNotion(
-    "common notion 1",
-    "Things equal to the same thing are equal to one another.",
-)
+CIRCLE_CAPABILITY = Capability(Operation.CONSTRUCT_CIRCLE)
+INTERSECTION_CAPABILITY = Capability(Operation.INTERSECT_CIRCLES)
+LINE_CAPABILITY = Capability(Operation.CONSTRUCT_LINE)
+MIDPOINT_CAPABILITY = Capability(Operation.CONSTRUCT_MIDPOINT)
 
 
-def make_proposition() -> tuple[Line, Spell]:
-    """Create the given Line and the inspectable Spell Form for Euclid I.1."""
-
-    point_a = Point("A")
-    point_b = Point("B")
-    line_ab = Line(frozenset({point_a, point_b}))
-    will = Will(
-        "construct Euclid I.1",
-        ExpectedEffect("an equilateral triangular Form on the given Line AB"),
+def _equivariance(operation: Operation) -> EquivarianceLaw:
+    return EquivarianceLaw(
+        operation.value,
+        "transform then construct equals construct then transform",
+        Verdict.HOLDS,
     )
-    requirements = Requirements(
-        postulates=frozenset(
-            {CIRCLE_POSTULATE, INTERSECTION_POSTULATE, LINE_POSTULATE}
-        ),
-        definitions=frozenset({CIRCLE_RADII_DEFINITION, EQUILATERAL_DEFINITION}),
-        common_notions=frozenset({EQUALITY_COMMON_NOTION}),
+
+
+CIRCLE_RULE = ConstructionRule(
+    Operation.CONSTRUCT_CIRCLE,
+    "circle from center through a Point",
+    CIRCLE_CAPABILITY,
+    _equivariance(Operation.CONSTRUCT_CIRCLE),
+)
+INTERSECTION_RULE = ConstructionRule(
+    Operation.INTERSECT_CIRCLES,
+    "explicit circle-circle intersection or continuity postulate",
+    INTERSECTION_CAPABILITY,
+    _equivariance(Operation.INTERSECT_CIRCLES),
+)
+LINE_RULE = ConstructionRule(
+    Operation.CONSTRUCT_LINE,
+    "Line between two distinct Points",
+    LINE_CAPABILITY,
+    _equivariance(Operation.CONSTRUCT_LINE),
+)
+MIDPOINT_RULE = ConstructionRule(
+    Operation.CONSTRUCT_MIDPOINT,
+    "midpoint construction",
+    MIDPOINT_CAPABILITY,
+    _equivariance(Operation.CONSTRUCT_MIDPOINT),
+)
+
+
+@dataclass(frozen=True, slots=True)
+class Experiment(Form):
+    spell: Spell
+    initial_ars: Ars
+    extended_ars: Ars
+    context: Context
+    givens: GivenConfiguration
+
+
+def _point(name: str, *, location: str | None = None) -> Point:
+    return Point(
+        Location(name if location is None else location),
+        GivenEvidence("given by Proposition I.1"),
+        Occurrence(name),
+    )
+
+
+def make_experiment(*, degenerate: bool = False) -> Experiment:
+    point_a = _point("A")
+    point_b = _point("B", location="A" if degenerate else "B")
+    base = Line(point_a, point_b, Occurrence("AB"))
+    givens = GivenConfiguration(point_a, point_b, base)
+    will = Will(
+        "equilateral triangle on AB",
+        WillPredicate.EQUILATERAL_ON_BASE,
+        base,
     )
     spell = Spell(
-        name="Euclid I.1",
-        ars=ARS_GEOMETRICA,
-        inputs=("A", "B", "AB"),
-        will=will,
-        requirements=requirements,
-        steps=(
-            CircleStep("circle_A", "A", "B", CIRCLE_POSTULATE),
-            CircleStep("circle_B", "B", "A", CIRCLE_POSTULATE),
-            IntersectionsStep(
+        "Euclid I.1",
+        ("A", "B", "AB"),
+        (
+            Instruction(Operation.CONSTRUCT_CIRCLE, "circle_A", ("A", "B")),
+            Instruction(Operation.CONSTRUCT_CIRCLE, "circle_B", ("B", "A")),
+            Instruction(
+                Operation.INTERSECT_CIRCLES,
                 "C",
-                "circle_A",
-                "circle_B",
-                "A",
-                "B",
-                INTERSECTION_POSTULATE,
+                ("circle_A", "circle_B"),
             ),
-            LineStep("AC", "A", "C", LINE_POSTULATE),
-            LineStep("BC", "B", "C", LINE_POSTULATE),
+            Instruction(Operation.CONSTRUCT_LINE, "AC", ("A", "C")),
+            Instruction(Operation.CONSTRUCT_LINE, "BC", ("B", "C")),
         ),
-        effect=EffectSpec(points=("A", "B", "C"), lines=("AB", "AC", "BC")),
-        demonstration=DemonstrationPlan(
-            first_circle="circle_A",
-            first_radius="AB",
-            first_peer_radius="AC",
-            second_circle="circle_B",
-            second_radius="AB",
-            second_peer_radius="BC",
-            triangle_lines=("AB", "AC", "BC"),
-            radius_definition=CIRCLE_RADII_DEFINITION,
-            equality_common_notion=EQUALITY_COMMON_NOTION,
-            equilateral_definition=EQUILATERAL_DEFINITION,
-        ),
+        will,
     )
-    return line_ab, spell
-
-
-def make_context(
-    line_ab: Line,
-    *,
-    selected_side: Side | None = None,
-) -> Context:
-    """Create a complete Context, optionally declaring an orientation trigger."""
-
-    named_points = sorted(
-        (point for point in line_ab.endpoints if isinstance(point, Point)),
-        key=lambda point: point.name,
+    fragment = WillFragment(
+        frozenset({WillPredicate.EQUILATERAL_ON_BASE, WillPredicate.APEX_POSITIVE}),
+        "finite symbolic predicates declared by this experiment",
     )
-    if len(named_points) != 2:
-        raise ValueError("the Euclid I.1 experiment requires named Points A and B")
-    points = {point.name: point for point in named_points}
-    point_a = points["A"]
-    point_b = points["B"]
-    axis = OrientedLine(point_a, point_b)
-    orientation = None if selected_side is None else Orientation(axis, selected_side)
-    return Context(
-        reader=Reader("Euclid I.1 experimental caster"),
-        forms=frozenset(
+    initial_ars = Ars(
+        "Ars Geometrica",
+        frozenset({"Point", "Line", "Circle", "Triangle"}),
+        frozenset({CIRCLE_RULE, LINE_RULE}),
+        GEOMETRIC_EQUALITY,
+        GEOMETRIC_GROUP,
+        fragment,
+        frozenset({LENGTH_BRIDGE}),
+    )
+    extended_ars = replace(
+        initial_ars,
+        constructions=initial_ars.constructions | {INTERSECTION_RULE},
+    )
+    context = Context(
+        frozenset(
             {
                 NamedForm("A", point_a),
                 NamedForm("B", point_b),
-                NamedForm("AB", line_ab),
+                NamedForm("AB", base),
             }
         ),
-        postulates=frozenset(
-            {CIRCLE_POSTULATE, INTERSECTION_POSTULATE, LINE_POSTULATE}
+        frozenset({CIRCLE_CAPABILITY, INTERSECTION_CAPABILITY, LINE_CAPABILITY}),
+        frozenset(),
+        Interpreter("Euclid experiment interpreter"),
+        extended_ars,
+    )
+    return Experiment(spell, initial_ars, extended_ars, context, givens)
+
+
+def elaborate(spell: Spell, ars: Ars) -> ElaborationResult:
+    """Discover requirements from steps and the current Ars."""
+
+    by_operation = {rule.operation: rule for rule in ars.constructions}
+    prefix: tuple[ElaboratedStep, ...] = ()
+    for instruction in spell.steps:
+        rule = by_operation.get(instruction.operation)
+        if rule is None:
+            return ElaborationRefusal(
+                spell,
+                instruction,
+                prefix,
+                instruction.operation,
+            )
+        prefix = (*prefix, ElaboratedStep(instruction, rule))
+    return ElaboratedSpell(
+        spell,
+        prefix,
+        frozenset(step.rule.capability for step in prefix),
+    )
+
+
+def derive_stabilizer(ars: Ars, givens: GivenConfiguration) -> Stabilizer:
+    """Derive H from the ambient group and the given configuration."""
+
+    elements = {Parity.IDENTITY}
+    if Parity.FLIPPED in ars.transformation_group.elements:
+        elements.add(Parity.FLIPPED)
+    return Stabilizer(ars.transformation_group, givens, frozenset(elements))
+
+
+def _single_frame_torsor(key: FrameKey) -> FrameTorsor:
+    frames = frozenset(
+        Frame(frozenset({FrameCoordinate(key, parity)}))
+        for parity in key.stabilizer.elements
+    )
+    return FrameTorsor(
+        frozenset({key}),
+        frames,
+        EquivarianceLaw(
+            "frame action",
+            "the nonidentity stabilizer element exchanges both frames",
+            Verdict.HOLDS,
         ),
-        definitions=frozenset({CIRCLE_RADII_DEFINITION, EQUILATERAL_DEFINITION}),
-        common_notions=frozenset({EQUALITY_COMMON_NOTION}),
-        orientation=orientation,
     )
 
 
-def _requirements_refusal(spell: Spell, context: Context) -> ExperimentRefusal | None:
-    missing: frozenset[Form] = frozenset(
-        (spell.requirements.postulates - context.postulates)
-        | (spell.requirements.definitions - context.definitions)
-        | (spell.requirements.common_notions - context.common_notions)
-    )
-    if missing:
-        return ExperimentRefusal(
-            "the Context does not justify every construction and demonstration",
-            missing,
+def _coordinate(frame: Frame, key: FrameKey) -> FrameCoordinate:
+    return next(coordinate for coordinate in frame.coordinates if coordinate.key == key)
+
+
+def _flipped(parity: Parity) -> Parity:
+    return Parity.FLIPPED if parity is Parity.IDENTITY else Parity.IDENTITY
+
+
+def _flip_frame(frame: Frame, keys: frozenset[FrameKey]) -> Frame:
+    return Frame(
+        frozenset(
+            FrameCoordinate(
+                coordinate.key,
+                _flipped(coordinate.parity)
+                if coordinate.key in keys
+                else coordinate.parity,
+            )
+            for coordinate in frame.coordinates
         )
-    return None
+    )
 
 
-def _initial_bindings(
-    spell: Spell, context: Context
-) -> dict[str, Form] | ExperimentRefusal:
-    bindings = {named.name: named.form for named in context.forms}
-    missing = frozenset(Point(name) for name in spell.inputs if name not in bindings)
+def _value_at(family: EquivariantFamily, frame: Frame) -> Form:
+    return next(item.value for item in family.graph if item.frame == frame)
+
+
+def image(potential: Potential) -> frozenset[Form]:
+    """Derive possible results from the family; they are not stored as options."""
+
+    return frozenset(item.value for item in potential.family.graph)
+
+
+def _intersection_potential(
+    circles: frozenset[Circle],
+    stabilizer: Stabilizer,
+) -> Potential:
+    key = FrameKey("reflection frame of AB", stabilizer)
+    torsor = _single_frame_torsor(key)
+    graph = frozenset(
+        FamilyValue(
+            frame,
+            Intersection(circles, _coordinate(frame, key).parity),
+        )
+        for frame in torsor.frames
+    )
+    family = EquivariantFamily(
+        torsor,
+        graph,
+        EquivarianceLaw(
+            "circle intersection",
+            "reflecting the frame reflects the intersection",
+            Verdict.HOLDS,
+        ),
+    )
+    return Potential(
+        family,
+        SettlementRule("Witness", "an orientation Frame for the reflection torsor"),
+    )
+
+
+def _map(
+    potential: Potential,
+    name: str,
+    transform: Callable[[Form], Form],
+) -> Potential:
+    family = EquivariantFamily(
+        potential.family.torsor,
+        frozenset(
+            FamilyValue(item.frame, transform(item.value))
+            for item in potential.family.graph
+        ),
+        EquivarianceLaw(
+            name,
+            "the construction is applied uniformly throughout the frame torsor",
+            Verdict.HOLDS,
+        ),
+    )
+    return Potential(family, potential.settlement)
+
+
+def lift_line(point: Point, apex: Potential, name: str) -> Potential:
+    return _map(
+        apex,
+        f"lifted Line {name}",
+        lambda value: CandidateLine(point, value, name),
+    )
+
+
+def shared(first: Potential, second: Potential) -> Potential:
+    """Direct sharing: both families read the same frame."""
+
+    if first.family.torsor != second.family.torsor:
+        raise ValueError("shared families require one torsor")
+    graph = frozenset(
+        FamilyValue(
+            frame,
+            Pair(_value_at(first.family, frame), _value_at(second.family, frame)),
+        )
+        for frame in first.family.torsor.frames
+    )
+    return Potential(
+        EquivariantFamily(
+            first.family.torsor,
+            graph,
+            EquivarianceLaw(
+                "direct sharing",
+                "both constructions use the same frame",
+                Verdict.HOLDS,
+            ),
+        ),
+        first.settlement,
+    )
+
+
+def twisted(first: Potential, second: Potential) -> Potential:
+    """Twisted sharing: the second family reads the reflected frame."""
+
+    if first.family.torsor != second.family.torsor:
+        raise ValueError("twisted families require one torsor")
+    keys = first.family.torsor.keys
+    graph = frozenset(
+        FamilyValue(
+            frame,
+            Pair(
+                _value_at(first.family, frame),
+                _value_at(second.family, _flip_frame(frame, keys)),
+            ),
+        )
+        for frame in first.family.torsor.frames
+    )
+    return Potential(
+        EquivariantFamily(
+            first.family.torsor,
+            graph,
+            EquivarianceLaw(
+                "twisted sharing",
+                "the second construction uses the reflected frame",
+                Verdict.HOLDS,
+            ),
+        ),
+        first.settlement,
+    )
+
+
+def independent(first: Potential, second: Potential) -> Potential:
+    """Independent families vary over the product torsor."""
+
+    if first.family.torsor.keys & second.family.torsor.keys:
+        raise ValueError("independent families require distinct frame keys")
+    frames = frozenset(
+        Frame(left.coordinates | right.coordinates)
+        for left, right in product(
+            first.family.torsor.frames,
+            second.family.torsor.frames,
+        )
+    )
+    torsor = FrameTorsor(
+        first.family.torsor.keys | second.family.torsor.keys,
+        frames,
+        EquivarianceLaw(
+            "product frame action",
+            "each frame factor varies independently",
+            Verdict.HOLDS,
+        ),
+    )
+    graph = frozenset(
+        FamilyValue(
+            frame,
+            Pair(
+                _value_at(
+                    first.family,
+                    Frame(
+                        frozenset(
+                            coordinate
+                            for coordinate in frame.coordinates
+                            if coordinate.key in first.family.torsor.keys
+                        )
+                    ),
+                ),
+                _value_at(
+                    second.family,
+                    Frame(
+                        frozenset(
+                            coordinate
+                            for coordinate in frame.coordinates
+                            if coordinate.key in second.family.torsor.keys
+                        )
+                    ),
+                ),
+            ),
+        )
+        for frame in frames
+    )
+    return Potential(
+        EquivariantFamily(
+            torsor,
+            graph,
+            EquivarianceLaw(
+                "independent composition",
+                "the result is a family over the product torsor",
+                Verdict.HOLDS,
+            ),
+        ),
+        SettlementRule("Witness", "one Frame for each independent torsor"),
+    )
+
+
+def independent_copy(potential: Potential, name: str) -> Potential:
+    """Reindex a family by an independently derived frame key for comparison."""
+
+    old_key = next(iter(potential.family.torsor.keys))
+    new_key = FrameKey(name, old_key.stabilizer)
+    torsor = _single_frame_torsor(new_key)
+    old_by_parity = {
+        _coordinate(item.frame, old_key).parity: item.value
+        for item in potential.family.graph
+    }
+    graph = frozenset(
+        FamilyValue(frame, old_by_parity[_coordinate(frame, new_key).parity])
+        for frame in torsor.frames
+    )
+    return Potential(
+        EquivariantFamily(torsor, graph, potential.family.law),
+        potential.settlement,
+    )
+
+
+def _triangle_potential(
+    base: Line,
+    apex: Potential,
+    side_a: Potential,
+    side_b: Potential,
+) -> Potential:
+    torsor = apex.family.torsor
+    graph = frozenset(
+        FamilyValue(
+            frame,
+            Triangle(
+                base,
+                _value_at(apex.family, frame),
+                frozenset(
+                    {
+                        _value_at(side_a.family, frame),
+                        _value_at(side_b.family, frame),
+                    }
+                ),
+            ),
+        )
+        for frame in torsor.frames
+    )
+    return Potential(
+        EquivariantFamily(
+            torsor,
+            graph,
+            EquivarianceLaw(
+                "triangle construction",
+                "constructing throughout the frame commutes with reflection",
+                Verdict.HOLDS,
+            ),
+        ),
+        apex.settlement,
+    )
+
+
+def cast(spell: ElaboratedSpell, context: Context) -> CastResult:
+    missing = spell.derived_requirements - context.capabilities
     if missing:
-        return ExperimentRefusal("the Context lacks required input Forms", missing)
-    return bindings
-
-
-def _point(bindings: dict[str, Form], name: str) -> PointForm:
-    value = bindings[name]
-    if not isinstance(value, Point | IntersectionPoint):
-        raise TypeError(f"{name} is not a Point Form")
-    return value
-
-
-def _line(bindings: dict[str, Form], name: str) -> Line:
-    value = bindings[name]
-    if not isinstance(value, Line):
-        raise TypeError(f"{name} is not a Line Form")
-    return value
-
-
-def _circle(bindings: dict[str, Form], name: str) -> Circle:
-    value = bindings[name]
-    if not isinstance(value, Circle):
-        raise TypeError(f"{name} is not a Circle Form")
-    return value
-
-
-def _execute_step(
-    step: ConstructionStep,
-    bindings: dict[str, Form],
-    context: Context,
-) -> tuple[tuple[Form, ...], OrientationTrigger | None] | ExperimentRefusal:
-    if isinstance(step, CircleStep):
-        center = _point(bindings, step.center)
-        through = _point(bindings, step.through)
+        capability = next(iter(missing))
+        step = next(step for step in spell.steps if step.rule.capability == capability)
+        return Refused(capability, step, ())
+    bindings = {named.name: named.form for named in context.bindings}
+    trace: tuple[TraceEntry, ...] = ()
+    for input_name in spell.source.inputs:
+        if input_name not in bindings:
+            return Failed(f"missing input {input_name}", None, trace)
+    point_a = bindings["A"]
+    point_b = bindings["B"]
+    base = bindings["AB"]
+    if not isinstance(point_a, Point) or not isinstance(point_b, Point):
+        return Failed("A and B must be settled Points", None, trace)
+    if not isinstance(base, Line):
+        return Failed("AB must be a Line", None, trace)
+    circles: dict[str, Circle] = {}
+    for step in spell.steps[:2]:
+        instruction = step.instruction
+        center = bindings[instruction.arguments[0]]
+        through = bindings[instruction.arguments[1]]
         if not isinstance(center, Point) or not isinstance(through, Point):
-            return ExperimentRefusal(
-                "this experiment only constructs its two circles from given Points"
-            )
-        return (Circle(center, through),), None
-
-    if isinstance(step, IntersectionsStep):
-        first = _circle(bindings, step.first_circle)
-        second = _circle(bindings, step.second_circle)
-        start = _point(bindings, step.axis_start)
-        end = _point(bindings, step.axis_end)
-        if not isinstance(start, Point) or not isinstance(end, Point):
-            return ExperimentRefusal(
-                "this experiment requires a given oriented reference axis"
-            )
-        axis = OrientedLine(start, end)
-        circles = frozenset({first, second})
-        candidates = tuple(IntersectionPoint(circles, axis, side) for side in Side)
-        if context.orientation is None:
-            return candidates, OrientationTrigger(axis)
-        if context.orientation.line != axis:
-            return ExperimentRefusal(
-                "the Context orientation does not address this intersection"
-            )
-        selected = next(
-            candidate
-            for candidate in candidates
-            if candidate.side is context.orientation.selected_side
+            return Failed("circle arguments must be Points", step, trace)
+        circle = Circle(center, through, Occurrence(instruction.bind))
+        circles[instruction.bind] = circle
+        trace = (*trace, TraceEntry(step, circle))
+    intersection_step = spell.steps[2]
+    if point_a.selected == point_b.selected:
+        return Failed(
+            "the permitted intersection cannot yield a two-frame family "
+            "for coincident centers",
+            intersection_step,
+            trace,
         )
-        return (selected,), None
-
-    first = _point(bindings, step.first_point)
-    second = _point(bindings, step.second_point)
-    return (Line(frozenset({first, second})),), None
-
-
-def _demonstrate(
-    spell: Spell,
-    bindings: dict[str, Form],
-) -> Demonstration:
-    plan = spell.demonstration
-    first_circle = _circle(bindings, plan.first_circle)
-    second_circle = _circle(bindings, plan.second_circle)
-    first_radius = _line(bindings, plan.first_radius)
-    first_peer = _line(bindings, plan.first_peer_radius)
-    second_radius = _line(bindings, plan.second_radius)
-    second_peer = _line(bindings, plan.second_peer_radius)
-
-    apex = next(
-        point for point in first_peer.endpoints if isinstance(point, IntersectionPoint)
+    stabilizer = derive_stabilizer(
+        context.ars,
+        GivenConfiguration(point_a, point_b, base),
     )
-    if first_circle not in apex.circles or second_circle not in apex.circles:
-        raise ValueError("the claimed apex is not on both constructed circles")
+    apex = _intersection_potential(frozenset(circles.values()), stabilizer)
+    trace = (*trace, TraceEntry(intersection_step, apex))
+    side_a = lift_line(point_a, apex, "AC")
+    side_b = lift_line(point_b, apex, "BC")
+    trace = (*trace, TraceEntry(spell.steps[3], side_a))
+    trace = (*trace, TraceEntry(spell.steps[4], side_b))
+    triangle = _triangle_potential(base, apex, side_a, side_b)
+    return Produced(Effect(triangle, base), trace)
 
-    first_equality = EqualityClaim(frozenset({first_radius, first_peer}))
-    second_equality = EqualityClaim(frozenset({second_radius, second_peer}))
-    peer_equality = EqualityClaim(frozenset({first_peer, second_peer}))
-    triangle_lines = frozenset(_line(bindings, name) for name in plan.triangle_lines)
-    conclusion = EquilateralClaim(triangle_lines)
-    steps = (
-        DemonstrationStep(
-            first_equality,
-            plan.radius_definition,
-            witnesses=(first_circle, apex),
+
+def with_frame(
+    context: Context,
+    potential: Potential,
+    parity: Parity,
+) -> Context:
+    witnesses = frozenset(
+        FrameWitness(FrameCoordinate(key, parity), "declared orientation Frame")
+        for key in potential.family.torsor.keys
+    )
+    return replace(
+        context,
+        frame_witnesses=context.frame_witnesses | witnesses,
+    )
+
+
+def settle(potential: Potential, context: Context) -> SettlementResult:
+    by_key = {witness.coordinate.key: witness for witness in context.frame_witnesses}
+    if not potential.family.torsor.keys <= by_key.keys():
+        return potential
+    frame = Frame(
+        frozenset(by_key[key].coordinate for key in potential.family.torsor.keys)
+    )
+    matches = tuple(
+        item.value for item in potential.family.graph if item.frame == frame
+    )
+    if len(matches) != 1:
+        return Failed("Frame did not select exactly one family value", None, ())
+    evidence = SettlementEvidence(
+        frozenset(by_key[key] for key in potential.family.torsor.keys)
+    )
+    return Point(matches[0], evidence, Occurrence("settled frame value"))
+
+
+def validate_will(
+    will: Will,
+    ars: Ars,
+    givens: GivenConfiguration,
+) -> WillValidation:
+    stabilizer = derive_stabilizer(ars, givens)
+    if will.predicate is WillPredicate.EQUILATERAL_ON_BASE:
+        return InvariantWill(will, stabilizer)
+    return NonInvariantWill(
+        will,
+        stabilizer,
+        "reflection preserves the givens but changes the requested apex side",
+    )
+
+
+def _truth_for(will: Will, triangle: Triangle) -> Truth:
+    if will.predicate is WillPredicate.EQUILATERAL_ON_BASE:
+        holds = (
+            triangle.base.occurrence == will.base.occurrence
+            and len(triangle.sides) == 2
+        )
+        return Truth(Verdict.HOLDS if holds else Verdict.DOES_NOT_HOLD)
+    holds = triangle.apex.parity is Parity.IDENTITY
+    return Truth(Verdict.HOLDS if holds else Verdict.DOES_NOT_HOLD)
+
+
+def _branch_proof(triangle: Triangle, ars: Ars) -> BranchProof:
+    bridge = next(bridge for bridge in ars.bridges if bridge == LENGTH_BRIDGE)
+    if not (
+        bridge.preserves_equality is Verdict.HOLDS
+        and bridge.commutes_with_constructions is Verdict.HOLDS
+        and bridge.equivariant is Verdict.HOLDS
+    ):
+        raise ValueError("the length Bridge lacks its preservation obligations")
+    side_a, side_b = tuple(triangle.sides)
+    base_length = Length(triangle.base)
+    side_a_length = Length(side_a)
+    side_b_length = Length(side_b)
+    equalities = (
+        QualifiedEqual(
+            "Ars Arithmetica",
+            base_length,
+            side_a_length,
+            ARITHMETIC_EQUALITY,
         ),
-        DemonstrationStep(
-            second_equality,
-            plan.radius_definition,
-            witnesses=(second_circle, apex),
+        QualifiedEqual(
+            "Ars Arithmetica",
+            base_length,
+            side_b_length,
+            ARITHMETIC_EQUALITY,
         ),
-        DemonstrationStep(
-            peer_equality,
-            plan.equality_common_notion,
-            (first_equality, second_equality),
-        ),
-        DemonstrationStep(
-            conclusion,
-            plan.equilateral_definition,
-            (first_equality, second_equality, peer_equality),
+        QualifiedEqual(
+            "Ars Arithmetica",
+            side_a_length,
+            side_b_length,
+            ARITHMETIC_EQUALITY,
         ),
     )
-    return Demonstration(steps, conclusion)
+    return BranchProof(triangle, equalities)
 
 
-def _make_effect(
-    spell: Spell,
-    bindings: dict[str, Form],
-    trace: tuple[TraceEntry, ...],
-) -> Effect:
-    produced_form = GeometricForm(
-        points=frozenset(_point(bindings, name) for name in spell.effect.points),
-        lines=frozenset(_line(bindings, name) for name in spell.effect.lines),
+def check(will: Will, effect: Effect, context: Context) -> CheckResult:
+    """Lift a terminating Will through Potential and collapse invariant truth."""
+
+    if isinstance(effect.form, Triangle):
+        truth = _truth_for(will, effect.form)
+        if truth.verdict is Verdict.HOLDS:
+            proof = InvariantDemonstration(
+                frozenset({_branch_proof(effect.form, context.ars)}),
+                LENGTH_BRIDGE,
+                Verdict.HOLDS,
+            )
+            return Conforms(will, effect, proof)
+        return Counterexample(will, effect, effect.form)
+    truth_potential = _map(
+        effect.form,
+        f"check {will.predicate.value}",
+        lambda value: _truth_for(will, value),
     )
-    demonstration = _demonstrate(spell, bindings)
-    comparison = WillComparison(
-        spell.will,
-        demonstration.conclusion,
-        Conformity.CONFORMS,
+    truth_image = image(truth_potential)
+    if truth_image == frozenset({Truth(Verdict.HOLDS)}):
+        proofs = frozenset(
+            _branch_proof(item.value, context.ars)
+            for item in effect.form.family.graph
+            if isinstance(item.value, Triangle)
+        )
+        return Conforms(
+            will,
+            effect,
+            InvariantDemonstration(proofs, LENGTH_BRIDGE, Verdict.HOLDS),
+        )
+    if truth_image == frozenset({Truth(Verdict.DOES_NOT_HOLD)}):
+        return Counterexample(will, effect, next(iter(image(effect.form))))
+    return FrameDependentCheck(will, effect, truth_potential)
+
+
+def assess_default(
+    candidate: CandidateKind,
+    ars: Ars,
+    givens: GivenConfiguration,
+) -> DefaultAssessment:
+    all_equivariant = all(
+        rule.equivariance.verified is Verdict.HOLDS for rule in ars.constructions
     )
-    return Effect(
-        form=produced_form,
-        trace=ConstructionTrace(trace),
-        demonstration=demonstration,
-        comparison=comparison,
+    fixed = candidate is CandidateKind.MIDPOINT
+    operation = (
+        Operation.CONSTRUCT_MIDPOINT
+        if candidate is CandidateKind.MIDPOINT
+        else Operation.INTERSECT_CIRCLES
+    )
+    constructible = any(rule.operation is operation for rule in ars.constructions)
+    legitimate = fixed and constructible and all_equivariant
+    return DefaultAssessment(
+        candidate,
+        Verdict.HOLDS if fixed else Verdict.DOES_NOT_HOLD,
+        Verdict.HOLDS if constructible else Verdict.DOES_NOT_HOLD,
+        Verdict.HOLDS if legitimate else Verdict.DOES_NOT_HOLD,
+        Verdict.HOLDS if all_equivariant else Verdict.DOES_NOT_HOLD,
     )
 
 
-def cast(spell: Spell, context: Context) -> CastResult:
-    """Read one Spell Form as instructions within one explicit Context."""
-
-    refusal = _requirements_refusal(spell, context)
-    if refusal is not None:
-        return refusal
-    initial = _initial_bindings(spell, context)
-    if isinstance(initial, ExperimentRefusal):
-        return initial
-
-    states: list[tuple[dict[str, Form], tuple[TraceEntry, ...]]] = [(initial, ())]
-    unresolved_trigger: OrientationTrigger | None = None
-    for step in spell.steps:
-        next_states: list[tuple[dict[str, Form], tuple[TraceEntry, ...]]] = []
-        for bindings, trace in states:
-            execution = _execute_step(step, bindings, context)
-            if isinstance(execution, ExperimentRefusal):
-                return execution
-            results, trigger = execution
-            if trigger is not None:
-                if unresolved_trigger is not None and unresolved_trigger != trigger:
-                    return ExperimentRefusal(
-                        "the disposable caster cannot carry two independent Potentials"
-                    )
-                unresolved_trigger = trigger
-            for result in results:
-                branch_bindings = dict(bindings)
-                branch_bindings[step.bind] = result
-                entry = TraceEntry(step, step.postulate, (result,))
-                next_states.append((branch_bindings, (*trace, entry)))
-        states = next_states
-
-    effects = frozenset(
-        _make_effect(spell, bindings, trace) for bindings, trace in states
+def assess_group(ars: Ars, givens: GivenConfiguration) -> GroupAssessment:
+    stabilizer = derive_stabilizer(ars, givens)
+    diagnostic = (
+        GroupDiagnostic.INFORMATIVE
+        if Parity.FLIPPED in stabilizer.elements
+        else GroupDiagnostic.TRIVIAL_ACTION
     )
-    if unresolved_trigger is not None:
-        return Potential(effects, unresolved_trigger)
-    if len(effects) != 1:
-        return ExperimentRefusal("a settled Cast did not produce exactly one Effect")
-    return next(iter(effects))
+    return GroupAssessment(stabilizer, diagnostic)
+
+
+def _side(direction: Parity, chirality: Parity) -> Side:
+    return Side.POSITIVE if direction is chirality else Side.NEGATIVE
+
+
+def frame_placement_report(
+    direct: Potential,
+    twisted_family: Potential,
+    independent_family: Potential,
+) -> FramePlacementReport:
+    return FramePlacementReport(
+        _side(Parity.IDENTITY, Parity.IDENTITY),
+        _side(Parity.FLIPPED, Parity.IDENTITY),
+        _side(Parity.IDENTITY, Parity.FLIPPED),
+        _side(Parity.FLIPPED, Parity.FLIPPED),
+        len(image(direct)),
+        len(image(twisted_family)),
+        len(image(independent_family)),
+        FramePlacement.POTENTIAL,
+        "the effective side frame is derived from direction XOR chirality and "
+        "carries direct or twisted correlation without a fresh left/right choice",
+    )

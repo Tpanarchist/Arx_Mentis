@@ -3,26 +3,34 @@
 The current experimental information flow is:
 
 ```text
-given Forms + inspectable Spell + explicit Context
-  → Cast
-      ↘ Effect + Demonstration + Will comparison
-      ↘ Potential(options, trigger)
+Spell steps + Ars
+  -> elaborate -> derived capabilities | Refusal
+
+Elaborated Spell + explicit Context
+  -> Cast -> Effect | Refusal | Failure
+                |
+                +-> separate Will check -> Conforms | Counterexample
+
+Potential = equivariant family over a derived stabilizer torsor
+  -> uniform map preserves Potential
+  -> Witness evidence may settle it to Point
 ```
 
 This flow exists only under `experiments/` until repeated evidence earns stable
-language representations. It must not be imported into the installable package.
+language representations. Experiments do not import one another or enter the
+installable package.
 
 After experiments justify source notation, the tentative implementation flow is:
 
 ```text
 source
-  → handwritten frontend
-  → spanned AST
-  → resolution and checking
-  → typed checked representation
-  → backend interface
-      ↘ Python reference evaluation
-      ↘ future high-level IR lowering
+  -> handwritten frontend
+  -> spanned AST
+  -> resolution and checking
+  -> typed checked representation
+  -> backend interface
+      +-> Python reference evaluation
+      +-> future high-level IR lowering
 ```
 
 The final two paths are siblings. The Python reference evaluator does not define an

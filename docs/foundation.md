@@ -18,12 +18,14 @@ Arx Mentis is conceived where four traditions meet:
 These are not themes placed over an ordinary programming language. Each contributes
 a different part of the language's operation.
 
-Points connect through Lines to make Forms. Will names an intended Form or change. A
-Spell is a Form containing the exact construction meant to produce that change. A
-Cast performs the Spell within a Context. The Effect is the Form or change actually
-produced. When the available Context cannot justify one outcome among real
-alternatives, the result remains Potential. Related definitions, laws, Forms,
-Spells, constructions, and demonstrations belong to an Ars.
+Distinctions remain Potential until settlement makes Points. Points connect through
+Lines to make Forms. Will supplies the criterion an acceptable Effect must satisfy. A
+Spell states exact steps and that Will contract. An Interpreter elaborates those
+steps under an Ars, discovering their capabilities rather than trusting a handwritten
+requirement list. Cast produces an Effect, Refusal, or Failure. Demonstration supplies
+evidence of Conformity. Shared symmetry correlates Potential across constructions.
+Related definitions, equality, transformation groups, Postulates, Forms, Spells, and
+demonstrations belong to an Ars.
 
 ## 2. The four sources
 
@@ -36,7 +38,7 @@ The Trivium concerns language and reason:
 
 - Grammar — how Forms are made readable.
 - Dialectic — what follows, what conflicts, and what remains unsettled.
-- Rhetoric — how a Form acts upon a Reader within a Context.
+- Rhetoric — how a Form acts upon an Audience within a Context.
 
 The Quadrivium concerns number and proportion:
 
@@ -58,11 +60,11 @@ conformity with Will:
 - Cast performs those means under actual conditions.
 - Effect is what actually happens.
 
-Execution alone is insufficient. A procedure that runs without a declared intended
-change is not yet a complete magical operation; the Effect must be compared with the
-Will. A Spell may be exact while a Cast encounters a different Context. The language
-must preserve the distinction between intended change, attempted construction, and
-actual Effect.
+Execution alone is insufficient. A procedure without a declared acceptance criterion
+is not yet a complete magical operation; Effect must be assessed against Will within
+Context. A Spell may be exact while a Cast refuses a missing capability, fails a
+permitted construction, or produces a nonconforming Effect. These distinctions must
+remain visible.
 
 ### 2.3 Euclid's *Elements*: construction with reasons
 
@@ -105,29 +107,41 @@ perform real work.
 
 | Foundation | Arx Mentis term | Meaning |
 | --- | --- | --- |
-| Smallest settled distinction | Point | A definite “here” rather than elsewhere; the smallest addressable distinction |
-| Relationship or passage | Line | An ordered connection between Points |
+| Open or settled difference | Distinction[A] | The phased family `Potential[A]` or `Point[A]` |
+| Unsettled distinction | Potential[H, K, A] | An equivariant family `K → A` over an `H`-torsor, plus partial settlement by evidence |
+| Settled distinction | Point[A] | A selected `A` together with settlement evidence or provenance |
+| Relationship or passage | Line | A connection between Points; whether direction is intrinsic remains experimental |
 | Structured information | Form | Points and Lines arranged into a readable whole |
-| Intended change | Will | The Form or condition an operation is meant to produce |
-| Exact construction | Spell | A Form containing the steps for causing the intended change |
-| Performing the construction | Cast | Carrying out a Spell |
-| Actual result | Effect | The Form or change produced by a Cast |
-| Unsettled alternatives | Potential | Possible Forms together with what could settle among them |
-| Conditions surrounding execution | Context | The Forms, Readers, permissions, conditions, and Potentials available to a Cast |
-| Organized body of knowledge | Ars | Related definitions, postulates, laws, Forms, Spells, constructions, and demonstrations |
+| Acceptance criterion | Will[E] | A predicate over Context and Effect `E` |
+| Exact construction | Spell[I, E] | A Form containing stated steps and a Will contract; requirements are derived by elaboration |
+| Capability-checked interpretation | Cast | Interpretation of a Spell within explicit Context |
+| Execution outcome | CastResult[E] | Produced Effect, principled Refusal, or construction Failure |
+| Actual result | Effect | The Form or change actually produced by a Cast |
+| Evidence of acceptance | Conformity | Demonstration or Counterexample from a terminating Will check |
+| Conditions surrounding execution | Context | Bindings, capabilities, choice-frames, Interpreter, and conditions |
+| Organized body of knowledge | Ars | Definitions, relation laws, postulates, Forms, Spells, and demonstrations |
 
 These terms are roles inside one system, not unrelated substances.
 
 ## 4. Point, Line, and Form
 
-### 4.1 Point
+### 4.1 Distinction, Potential, and Point
 
-A Point is not a tiny physical object. It is the simplest settled distinction the
-system can address: here, not elsewhere. Ink, voltage, sound, memory, or another
-medium may carry the distinction without defining its meaning.
+A Potential and Point are the open and settled phases of one typed family:
 
-A settled distinction requires real alternatives, an actual settlement, and
-something capable of responding differently because of it.
+```text
+Distinction[A] = Potential[A, K] | Point[A]
+Potential[A, K] ──settlement──▶ Point[A]
+```
+
+A Potential carries an equivariant family and partial settlement rule. A Point
+carries the selected value and evidence or provenance of choosing a frame. A
+geometric Point is therefore `Point[Location]`; the word does not make every kind of
+information an untyped geometric location.
+
+A settled distinction still requires real alternatives, actual settlement, and
+something capable of responding differently because of it. Ink, voltage, sound,
+memory, or another medium may carry the distinction without defining its meaning.
 
 ### 4.2 Line
 
@@ -145,20 +159,45 @@ A Form is an intelligible arrangement of Points and Lines. Ordinary data,
 instructions, definitions, arguments, proofs, Effects, and Spells are all Forms:
 
 ```text
-same Form + examining Reader  → data
-same Form + executing Reader  → Spell
+same Form + Inspector    → data role
+same Form + Interpreter → Spell role
+same Form + Audience    → rhetorical Effect
 ```
 
 Nothing in the underlying substance permanently marks it as instruction or datum.
 Its role depends on how it is read within a Context.
 
+### 4.4 Relations are typed
+
+One undifferentiated equality relation is insufficient. The foundation distinguishes
+at least:
+
+| Relation | Meaning |
+| --- | --- |
+| Same | The same occurrence or identity |
+| Equal | Equal under laws declared by an Ars |
+| Congruent | Equivalent geometric Form under permitted transformations |
+| Equivalent | The same relevant meaning or behavior within Context |
+| Conforms | An Effect satisfies a Will within Context |
+
+Thus AB and AC in Euclid I.1 are different Lines whose lengths are Equal. Source
+preservation is a Same/provenance claim. Meaning preservation is an Ars-specific
+Equivalent relation. Every relation called equality must declare its laws rather
+than silently inherit reflexivity, symmetry, or transitivity from Python.
+
 ## 5. Will, Spell, Cast, and Effect
 
 ### 5.1 Will
 
-Will names the intended change. It is not merely a wish: it must distinguish the
-desired outcome from meaningful alternatives. Without Will, success cannot be
-distinguished from the fact that something happened.
+Will is an acceptance predicate over Effect within Context:
+
+```text
+Conforms(W, E, C) iff W(C, E)
+```
+
+A single target Form is one special case. The Euclid I.1 Will accepts any Effect
+that is a triangle on the given AB whose three side-lengths are Equal. Without Will,
+successful construction cannot be distinguished from conformity.
 
 ### 5.2 Spell
 
@@ -166,20 +205,30 @@ A Spell is a Form placed in the role of exact transformational instructions. The
 programmer supplies the steps; the machine does not secretly invent the method from
 a stated desire.
 
-A Spell should make clear the Forms it receives, the Will it serves, the
-constructions it uses, the Context it requires, and the Effect it expects.
+A Spell states the Forms it receives, exact steps, and Will contract. It does not
+authoritatively declare hidden requirements. The Interpreter elaborates each step
+under the current Ars:
+
+```text
+elaborate(Spell, Ars) → ElaboratedSpell | Refusal
+```
+
+The elaborated result may record derived capabilities as explanation or cache. Adding
+a Postulate must allow the same unchanged Spell to elaborate further.
 
 ### 5.3 Cast
 
-A Cast performs a Spell within an actual Context. The same Spell may produce
-different Effects in different Contexts without changing what the Spell says:
+A Cast is capability-checked interpretation of a Spell within actual Context. It is
+total at the experimental boundary even when a construction cannot run:
 
 ```text
-Spell + Context A → Effect A
-Spell + Context B → Effect B
+CastResult[E] = Produced(E) | Refused(MissingCapability) | Failed(ConstructionFailure)
 ```
 
-The difference must follow from declared Context, not hidden global behavior.
+Unknown instructions are Refused when the Interpreter has no corresponding
+construction. A permitted construction that cannot produce its required Form is a
+Failure. Neither becomes an accidental Python exception. Different results must
+follow from declared Context rather than hidden global behavior.
 
 ### 5.4 Effect
 
@@ -195,22 +244,62 @@ source Form ──Cast──▶ Effect
 Each step produces a new Form rather than silently replacing its source. Possible
 outside action remains a separate question.
 
+### 5.5 Conformity
+
+Construction and assessment remain separate. A Will belongs to a terminating,
+executable fragment declared by its Ars:
+
+```text
+check(Will, Effect, Context) → Conforms | Counterexample
+```
+
+A Demonstration is evidence that Will holds for the actual Effect, not prose attached
+afterward. When Effect is Potential, checking is lifted pointwise. An invariant Will
+produces a constant truth family and therefore ordinary Conforms or Counterexample
+without settling Effect. A non-invariant Will produces a frame-dependent truth family
+and can be rejected as a specification error before Cast.
+
+A general Proposition is distinct:
+
+```text
+prove(Proposition, Context) → Demonstration | Refutation | Open
+```
+
+`Open` is lack of proof, not Potential in the constructed object.
+
 ## 6. Potential
 
 Potential is neither a third truth value nor null, unknown-as-a-value, or a hidden
-default. It has exactly:
+default. Its approximate type is:
 
 ```text
-Potential:
-    options
-    trigger
+Potential[H, K, A]:
+    family: K → A
+    settlement: Evidence ⇀ K
 ```
 
-The options are Forms that could result. The trigger states what could legitimately
-settle among them. An unsettled Potential has no selected result, and its Reader set
-remains empty. When a Reader tries to branch on it, the system must settle it through
-the declared trigger or preserve the boundary between unresolved Potential and
-settled Form.
+The ambient transformation group `G` belongs to the Ars. The stabilizer `H` of the
+givens is derived from `G`; it is not authored per Potential. `K` is an `H`-torsor for
+a default-free choice. A family must be equivariant:
+
+```text
+p(h · k) = h · p(k)
+```
+
+Possible results are the derived image of this family, so an `options` field is
+redundant. Composition is functional:
+
+```text
+map(f, p)(k) = f(p(k))
+shared(p, q)(k) = (p(k), q(k))
+twisted(p, q, t)(k) = (p(k), q(t(k)))
+independent(p, q)(k, l) = (p(k), q(l))
+```
+
+A construction may map uniformly through Potential without inspecting or settling
+its frame. A Ward is therefore mechanical: invariant predicates collapse safely;
+non-invariant predicates remain frame-dependent and may not be collapsed into a
+Boolean or continuation without evidence.
 
 A valid settler must be capable of yielding another outcome. Evidence qualifies
 when it could genuinely have pointed in another direction: different options make a
@@ -219,29 +308,64 @@ rules, independent situations expose the same tension, or an observation could h
 produced another result.
 
 Ease of implementation, existing Python behavior, repetitions of one design episode,
-and taste without an independent check do not qualify. A deadline or new Reader may
+and taste without an independent check do not qualify. A deadline or new Witness may
 force a pressure-driven settlement, but that settlement still owes the system a real
 trigger later.
+
+The default test has two independent gates. Let `H` be the stabilizer of the givens
+inside the Ars's ambient group. An option not fixed by `H` cannot be constructed from
+those givens by equivariant operations. But fixed does not imply constructible:
+
+```text
+legitimate default iff FixedBy(H) and ConstructibleFrom(Postulates)
+```
+
+The midpoint of AB is fixed by reflection yet unavailable before a midpoint
+construction has been derived. Equivariance of every permitted construction is the
+hypothesis that makes the fixed-point obstruction valid. An Ars must declare and
+test it. If `H` acts trivially on a multi-option space, the ambient group may be too
+small and the test is uninformative rather than permissive.
 
 ## 7. Context
 
 Context, rather than Circle, is the general execution boundary. Circle remains an
 important geometric and magical Form.
 
-A Context may contain the Reader, available Forms, permitted constructions, starting
-conditions, orientation and location, relevant history, active Potentials, evidence
-that can settle them, and limits on what the Cast may affect.
+A Context may contain bindings, capabilities, shared choice-frames, Interpreter,
+conditions, relevant history, active Potentials, and evidence supplied by Witnesses.
+Capabilities name primitive constructions; elaboration derives those required by a
+Spell's stated steps under the current Ars.
 
 Context must remain explicit. If it becomes an invisible collection of host-language
 variables, files, global state, and exceptions, the host language becomes the true
 semantics of Arx Mentis. Context must also prevent an unresolved Potential from being
 treated as settled merely because a later step expects an answer.
 
+Reader is a family of typed roles rather than one concrete type:
+
+- **Interpreter:** maps a Form in Spell role to permitted constructions.
+- **Inspector:** examines a Form without executing it.
+- **Audience:** receives or is influenced by a rhetorical Form.
+- **Witness:** supplies or observes evidence capable of settlement.
+
 ## 8. Ars
 
 An Ars is the organized discipline itself, not merely a module that might store it.
-It may contain Definitions, Postulates, Common Notions, Propositions, Forms, Spells,
+At minimum it declares its Forms, permitted constructions with equivariance laws,
+qualified equality, ambient transformation group, terminating Will fragment, and
+Bridges. It may also contain Definitions, Common Notions, Propositions, Spells,
 Casts, Effects, Demonstrations, and Potentials.
+
+The transformation group follows the Erlangen principle: it determines geometric
+congruence, supplies the ambient action from which stabilizers and Potentials are
+derived, and governs default legitimacy. Choosing it too small manufactures false
+defaults; choosing it too large erases structure that should survive.
+
+Forms cross between Artes only through an explicit Bridge. A Bridge must preserve
+the relevant qualified equality, commute with constructions, and respect the
+transformation action. Euclid I.1 already needs the length Bridge from geometric
+Lines to arithmetic magnitudes; Common Notion 1 operates on those magnitudes, not on
+Line identity.
 
 The seven Liberal Ars are:
 
@@ -299,11 +423,10 @@ existing Forms → exact steps → new Form
 It may make information newly useful without creating a genuinely new alternative
 inside a closed system.
 
-Settlement selects among alternatives that could genuinely have resolved
-differently:
+Settlement chooses a frame basepoint using legitimate Witness evidence:
 
 ```text
-Potential + valid trigger → settled Form
+Potential[H, K, A] + Evidence ⇀ K → Point[A, SettlementEvidence]
 ```
 
 A Cast may transform without settling any Potential. A Cast that claims settlement
@@ -317,11 +440,13 @@ The first experiment belongs to Ars Geometrica:
 
 **Given:** a Line AB.
 
-**Will:** construct an equilateral triangular Form on AB.
+**Will:** accept an Effect when it is a triangle containing AB and its three
+side-lengths are Equal under Ars Geometrica.
 
-**Context:** AB exists; a circle may be constructed from a center and radius; a Line
-may be constructed between two Points; equality of radii may be used in
-demonstration; no orientation has been silently chosen.
+**Initial Ars:** circle and Line constructions are Postulates with equivariance
+evidence. No circle-intersection or continuity construction is declared. Ars
+Geometrica supplies an ambient group containing reflection across AB and qualified
+geometric equality.
 
 **Spell:**
 
@@ -331,34 +456,67 @@ demonstration; no orientation has been silently chosen.
 4. Construct a Line from that Point to A.
 5. Construct a Line from that Point to B.
 
-**Cast:** perform the construction within the declared Context.
+**First elaboration:** interpret the unchanged steps within the initial Ars. The first
+two steps are licensed. At `intersect_circles`, elaboration returns:
 
-**Effect:** a triangular Form whose three Lines are equal.
+```text
+Refused:
+    missing capability: circle-circle intersection
+```
 
-**Demonstration:** AB and AC are radii of the first circle and are equal. AB and BC
-are radii of the second and are equal. Things equal to the same thing are equal to
-one another. Therefore AB, AC, and BC are equal.
+This Refusal is the first successful observation of the experiment. Euclid's stated
+postulates license drawing the circles but do not establish that their intersection
+exists. The missing operation must be made explicit rather than inherited from the
+diagram.
+
+**Second Ars:** add a circle-circle intersection or continuity Postulate. The same
+unchanged Spell now elaborates, and its requirements are derived from the interpreted
+steps. Cast constructs an Effect whose Form remains a Potential triangle.
+
+**Effect:** a triangular Form whose three side-lengths are Equal.
+
+**Demonstration:** the length of AB equals the length of AC because both are radii of
+the first circle. The length of AB equals the length of BC because both are radii of
+the second. Under the declared transitivity law, the three lengths are Equal. The
+Demonstration is the evidence that the Effect Conforms to Will.
 
 The two circles normally meet at two Points, one on each side of AB. The instruction
 to find their intersection therefore contains:
 
 ```text
-Potential:
-    options:
-        intersection on one side of AB
-        intersection on the other side of AB
-    trigger:
-        orientation declared by Context
+Potential[H, K, Triangle]:
+    family: K → Triangle
+    settlement: Witness evidence ⇀ K
 ```
 
-Without orientation, the system must not choose the visually upper Point. It must
-preserve both valid Forms, return unresolved Potential, or receive a legitimate
-orientation through Context.
+Here `H` is the stabilizer of A, B, and AB, derived from the Ars's ambient group, and
+`K` is its two-frame torsor. Without Witness evidence, the system does not choose a
+basepoint. Line and triangle construction map uniformly through the family. Direct
+and twisted sharing each yield two related joint results; independent torsors yield
+four. Context transfer without a Frame preserves the family.
 
-This construction tests Point, Line, Form, Will, Spell, Cast, Effect, Context,
-Potential without a default, non-destructive construction, Euclidean demonstration,
-sacred geometry, organization through Ars Geometrica, and code/data identity because
-the Spell remains inspectable.
+Direction and plane chirality form one frame-placement experiment:
+
+```text
+side = segment direction XOR plane chirality
+```
+
+Flipping either component changes side; flipping both preserves it. The experiment
+compares placing direction in Line, Context, or Potential's frame and favors the
+derived Potential frame for I.1 because it carries one shared or twisted relation
+across segments without a fresh arbitrary left/right declaration.
+
+Finally, `check` lifts the equilateral Will through the Potential triangle. Reflection
+preserves the property, so the resulting truth family is constant and collapses to
+Conforms with a Demonstration while the triangle remains unsettled. The length Bridge
+translates geometric Lines into arithmetic magnitudes and supplies its equality,
+commutation, and equivariance obligations. A side-specific Will produces a
+nonconstant truth family and is diagnosed as non-invariant before Cast.
+
+This construction tests derived capability Refusal, phased Point/Potential,
+equivariant construction, shared/twisted/independent composition, the Ward, default
+legitimacy, frame placement, qualified equality, Bridges, and Conformity without
+settlement.
 
 ## 12. Repository implications
 
@@ -366,22 +524,29 @@ The Stage 0 repository remains useful precisely because it has no implemented sy
 or semantics. The immediate learning order is now:
 
 ```text
-formalize the first Forms
-→ model one Spell as an inspectable Form
-→ Cast it through a declared Context
-→ produce and demonstrate its Effect
-→ expose its hidden Potential
+formalize phased Distinctions, Ars declarations, and typed relations
+→ elaborate exact steps and derive their capabilities
+→ refuse the first elaboration at the hidden intersection operation
+→ add the missing Postulate explicitly
+→ lift construction through the derived reflection torsor
+→ check invariant Will without settling Effect
 → then design the source notation needed to express it
 ```
 
 The first work belongs in a disposable experiment, not permanent language
 semantics. It succeeds only if:
 
-- the same Spell Form can be inspected as data and Cast as instructions;
+- the Spell contains no authoritative hand-written requirements;
+- elaboration discovers the missing intersection from the Ars;
 - original Forms remain unchanged and the Effect is a new Form;
-- Context contains every construction required by the Spell;
-- the two-way intersection is represented without a default;
-- the demonstration traces to declared Definitions, Postulates, and Common Notions;
+- missing capability produces Refusal rather than hidden construction or exception;
+- direct, twisted, and independent families compose with the required relationships;
+- construction proceeds through Potential without frame inspection;
+- the Ars declares its group, qualified equality, equivariant constructions, Will
+  fragment, and Bridge obligations;
+- invariant Conformity is decidable without settlement while non-invariant Will is
+  exposed as frame-dependent;
+- legitimate defaults pass both fixed-point and constructibility gates;
 - no Python behavior is mistaken for an Arx Mentis law.
 
 Only then should the project decide which tokens, grammar, AST, or type system can
@@ -391,35 +556,41 @@ express the distinctions the experiment actually required.
 
 The foundation does not yet settle:
 
-- whether Point is always binary or binary distinction arises through relations;
 - whether Line includes direction, order, distance, or only relation;
 - how Forms are represented while remaining equally available as code and data;
-- how a Reader is represented within Context;
-- how Will is compared with Effect;
-- how failure, refusal, and incomplete Casts are represented;
+- how Interpreter, Inspector, Audience, and Witness compose;
+- how Will predicates and Conformity evidence participate in type checking;
+- which distinctions among Refusal, Failure, and incomplete construction survive
+  independent experiments;
 - how Context declares permissions and outside resources;
 - whether an Effect may act outside the information system;
 - how demonstrations become executable or mechanically checkable;
 - how one Ars imports or extends another;
-- how Potential is carried across Contexts;
+- how structured choice-spaces and Frames are represented across Contexts;
 - surface syntax, type discipline, evaluation order, concurrency, memory behavior,
   and backend target.
 
-These are named Potentials awaiting experiments capable of settling them.
+These are open questions awaiting experiments capable of resolving them. They are
+not automatically values of the `Potential` type.
 
 ## 14. Working thesis
 
-Arx Mentis is a language of exact, inspectable construction. Its information takes
-Form through Point and Line. Its operations are directed by Will, expressed as
-Spells, performed as Casts within explicit Contexts, and judged by their Effects. Its
-knowledge is organized into Ars and developed through definitions, postulates,
-constructions, and demonstrations. It treats unresolved alternatives as Potential
-rather than hiding them behind defaults, and it requires its own rules to remain
-subject to the same discipline they impose.
+Arx Mentis is a language of exact, inspectable construction. Distinctions move from
+structured Potential to settled Point. Lines relate Points into Forms. Interpreters
+elaborate Spells and perform capability-checked Casts in explicit Contexts, producing
+Effects, Refusals,
+or Failures. Will supplies a contract and Demonstration supplies evidence of
+Conformity. Ars declare their own relations, laws, Postulates, and proofs. Symmetry
+correlates choices across composition rather than decorating them.
 
 ## References
 
 - Aleister Crowley, *Magick in Theory and Practice*, Introduction and Theorems.
 - Euclid, *Elements*, Book I.
 - Euclid, Book I, Proposition 1.
+- Vincenzo De Risi, [“Intersections and Continuity in Euclid's
+  Elements”](https://pure.mpg.de/rest/items/item_3288290_17/component/file_3323098/content).
+- Mathlib, [torsors and affine spaces](https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/AffineSpace/Defs.html).
+- The Stacks Project, [torsors](https://stacks.math.columbia.edu/tag/0497).
+- Ralph Freese, [universal algebra notes](https://math.hawaii.edu/~ralph/Classes/619/UA-Valeriote.pdf).
 - The Seven Liberal Arts: Trivium and Quadrivium.

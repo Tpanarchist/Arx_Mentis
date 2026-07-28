@@ -1,61 +1,72 @@
-# Euclid I.1 foundation experiment
+# Euclid I.1 equivariant-family experiment
 
-**Question:** Can one immutable, inspectable Spell Form construct and demonstrate
-Euclid I.1 while an undeclared orientation remains a real Potential rather than a
-host-language default?
+**Question:** Can interpretation discover Euclid's hidden continuity assumption, and
+can the remaining construction pass lawfully through an unsettled reflection frame
+while conformity is decided without settlement?
 
-This is the first executable probe of the provisional Arx Mentis foundation. It is
-deliberately outside `src/arx_mentis`: importing it as a library contract or treating
-its Python representation as language semantics would invalidate the experiment.
+## Model under test
 
-## Assumptions made only for this probe
+- A Spell states only inputs, steps, and Will. `elaborate(Spell, Ars)` derives
+  requirements by interpreting each step under the Ars.
+- Ars Geometrica declares its Forms, constructions, qualified equality, ambient
+  transformation group, finite Will fragment, and Bridges.
+- The stabilizer `H` is derived from the givens. Reflection across AB fixes those
+  givens, so the two intersection frames form an `H`-torsor.
+- `Potential(family, settlement)` stores an equivariant family `K → A`; possible
+  results are its derived image, not a stored option list.
+- Lines and the triangle are constructed uniformly throughout that family without
+  selecting a frame.
 
-- A `Line` is modeled as an unordered two-Point relation. A separate
-  `OrientedLine(A, B)` distinguishes left and right without deciding that all Lines
-  are directed.
-- Circle construction, circle intersection, and Line construction are primitive
-  powers only because the Spell requires named Postulates and the Context supplies
-  them.
-- The two intersection Points are relational forms. No floating-point coordinates
-  or Python numeric behavior are involved. The probe specializes to the two
-  equal-radius circles built on distinct A and B; it does not propose a general
-  circle-intersection algorithm.
-- Demonstrations are inspectable traces with declared Definitions and a Common
-  Notion. This probe constructs the trace; it does not yet provide a general proof
-  checker.
-- `ExperimentRefusal` is an owned harness diagnostic for an incomplete probe. It
-  explicitly does not answer the open language question of failure or refusal.
-- Python dictionaries hold private binding state. `frozenset` prevents an option
-  order from becoming a choice, but neither container's host behavior is proposed
-  as an Arx Mentis law.
+## Success signal and observed results
 
-## Success signal
+- The unchanged Spell refuses elaboration at intersection under the initial Ars,
+  after two successfully interpreted circle steps. Adding an explicit intersection
+  Postulate makes the same Spell elaborate and records derived requirements.
+- Direct sharing and twisted sharing each have two joint results but encode different
+  relationships. Independent frame keys yield four.
+- Direction and plane chirality combine by XOR: flipping either flips side, while
+  flipping both preserves it. The effective shared side belongs in Potential's
+  derived frame rather than a fresh left/right declaration.
+- The equilateral Will is reflection-invariant. Pointwise checking yields a constant
+  true family, so Conformity is demonstrated while the triangle remains Potential.
+- “Apex on the positive side” is not invariant. Validation detects that before Cast,
+  and lifted checking produces a nonconstant Potential of truth values.
+- Default legitimacy has two gates: fixed by the stabilizer and constructible from
+  declared Postulates. An intersection branch fails the first; the midpoint passes
+  the first but fails the second before a midpoint construction is added.
+- The equality proof crosses an explicit length Bridge from Ars Geometrica to Ars
+  Arithmetica. The Bridge declares equality preservation, commutation with
+  constructions, and equivariance.
 
-The probe succeeds when all of these observations hold:
+## Assumptions
 
-1. The same `Spell` object is inspectable as a Form and cast as instructions.
-2. The given Line remains unchanged and every Effect contains a new geometric Form.
-3. Every construction and proof rule used is a declared Spell requirement supplied
-   by the Context.
-4. An unoriented Context produces `Potential(options, trigger)` with two Effects and
-   no selected value.
-5. A Context orientation settles that Potential to the corresponding Effect, and
-   left and right Contexts produce different Effects from the same Spell.
-6. Each Effect carries a demonstration trace from equal radii, Common Notion 1, and
-   the definition of an equilateral triangular Form.
+- The finite symbolic `Z/2` action represents only the reflection relevant to I.1.
+- Equivariance evidence is declared and exercised, not mechanically proved by a
+  general theorem prover.
+- The Will fragment contains two terminating symbolic predicates only.
+- Python graphs and frozen sets are disposable carrier choices.
 
-Run the witness and its focused tests from the repository root:
+## Failure conditions exercised
+
+- Intersection elaborates before its Postulate exists.
+- Requirements appear authoritatively in the Spell.
+- Shared, twisted, and independent composition have the wrong cardinalities or
+  relationships.
+- Lifted Line construction forces settlement.
+- A Frame-free Context selects a result.
+- Simultaneously flipping direction and chirality changes side.
+- A non-invariant Will collapses to an ordinary Boolean.
+- Fixed-point status alone makes an unavailable construction a legitimate default.
+
+Run with:
 
 ```console
 python -m experiments.euclid_i_1
 python -m pytest tests/experiments/test_euclid_i_1.py
 ```
 
-Use the repository's Python 3.13+ environment for both commands.
-
 ## Deletion or promotion path
 
-Delete the probe if its distinctions fail to clarify the construction. If repeated,
-independent experiments support some distinction, promote only that distinction
-through examples, conformance tests, an ADR where appropriate, and a lowering
-sketch. Do not move this Python API into `src/arx_mentis` wholesale.
+Delete any representation that fails these algebraic laws. Promote only
+backend-neutral theorems independently exercised in other Artes; never promote this
+Python API wholesale.

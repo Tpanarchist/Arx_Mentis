@@ -19,14 +19,18 @@ python -m arx_mentis status
 ```
 
 Stage 0 intentionally implements no syntax, AST, permanent semantics, evaluator,
-runtime values, or IR. The first disposable probe models Euclid I.1 without entering
-the installable package:
+runtime values, or IR. Four disposable foundation probes now live outside the
+installable package:
 
 ```console
 python -m experiments.euclid_i_1
-python -m pytest tests/experiments/test_euclid_i_1.py
+python -m experiments.ars_astronomica_settlement
+python -m experiments.ars_grammatica_reading
+python -m experiments.ars_dialectica_verification
+python -m pytest tests/experiments
 ```
 
 Start with [the documentation map](docs/README.md), the
-[foundation](docs/foundation.md), and the
-[experiment contract](experiments/euclid_i_1/README.md).
+[foundation](docs/foundation.md), the
+[evidence ledger](docs/foundation-evidence.md), and the
+[experiment contract](experiments/README.md).

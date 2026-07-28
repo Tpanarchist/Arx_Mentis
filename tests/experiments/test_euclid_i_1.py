@@ -3,139 +3,250 @@ from __future__ import annotations
 from dataclasses import fields, replace
 
 from experiments.euclid_i_1.model import (
-    Conformity,
-    Construction,
+    CandidateKind,
+    Conforms,
     Effect,
-    ExperimentRefusal,
-    Form,
-    IntersectionPoint,
-    OrientationTrigger,
+    ElaboratedSpell,
+    ElaborationRefusal,
+    Failed,
+    FrameDependentCheck,
+    FramePlacement,
+    GroupDiagnostic,
+    InvariantWill,
+    NonInvariantWill,
+    Operation,
+    Pair,
+    Parity,
+    Point,
     Potential,
+    Produced,
+    Refused,
     Side,
+    Verdict,
+    Will,
+    WillPredicate,
+    assess_default,
+    assess_group,
     cast,
-    make_context,
-    make_proposition,
+    check,
+    elaborate,
+    frame_placement_report,
+    image,
+    independent,
+    independent_copy,
+    make_experiment,
+    settle,
+    shared,
+    twisted,
+    validate_will,
+    with_frame,
 )
 
 
-def apex(effect: Effect) -> IntersectionPoint:
-    return next(
-        point for point in effect.form.points if isinstance(point, IntersectionPoint)
+def produced_potential() -> tuple[object, ElaboratedSpell, Effect, Potential]:
+    experiment = make_experiment()
+    elaborated = elaborate(experiment.spell, experiment.extended_ars)
+    assert isinstance(elaborated, ElaboratedSpell)
+    result = cast(elaborated, experiment.context)
+    assert isinstance(result, Produced)
+    assert isinstance(result.effect.form, Potential)
+    return experiment, elaborated, result.effect, result.effect.form
+
+
+def test_requirements_are_discovered_and_missing_intersection_refuses() -> None:
+    experiment = make_experiment()
+
+    first = elaborate(experiment.spell, experiment.initial_ars)
+    second = elaborate(experiment.spell, experiment.extended_ars)
+
+    assert not hasattr(experiment.spell, "required_capabilities")
+    assert isinstance(first, ElaborationRefusal)
+    assert first.source is experiment.spell
+    assert first.missing_operation is Operation.INTERSECT_CIRCLES
+    assert len(first.elaborated_prefix) == 2
+    assert isinstance(second, ElaboratedSpell)
+    assert second.source is experiment.spell
+    assert len(second.derived_requirements) == 3
+
+
+def test_potential_is_an_equivariant_family_not_stored_options() -> None:
+    _, _, _, potential = produced_potential()
+
+    assert [field.name for field in fields(Potential)] == ["family", "settlement"]
+    assert not hasattr(potential, "options")
+    assert len(potential.family.torsor.frames) == 2
+    assert len(image(potential)) == 2
+    assert potential.family.law.verified is Verdict.HOLDS
+
+
+def test_construction_passes_through_potential_without_settlement() -> None:
+    experiment, elaborated, effect, potential = produced_potential()
+    result = cast(elaborated, experiment.context)
+
+    assert isinstance(result, Produced)
+    assert isinstance(effect.form, Potential)
+    assert len(result.trace) == 5
+    assert not experiment.context.frame_witnesses
+    assert all(len(triangle.sides) == 2 for triangle in image(potential))
+
+
+def test_direct_twisted_and_independent_composition_are_distinct() -> None:
+    _, _, _, potential = produced_potential()
+    direct = shared(potential, potential)
+    twist = twisted(potential, potential)
+    other = independent_copy(potential, "independent reflection")
+    product_family = independent(potential, other)
+
+    assert len(image(direct)) == 2
+    assert len(image(twist)) == 2
+    assert len(image(product_family)) == 4
+    assert all(
+        isinstance(value, Pair) and value.first == value.second
+        for value in image(direct)
+    )
+    assert all(
+        isinstance(value, Pair) and value.first != value.second
+        for value in image(twist)
     )
 
 
-def test_same_spell_is_inspectable_data_and_castable_instructions() -> None:
-    line_ab, spell = make_proposition()
+def test_frame_transfer_preserves_potential_until_witnessed() -> None:
+    experiment, _, _, potential = produced_potential()
 
-    assert isinstance(spell, Form)
-    assert spell.name == "Euclid I.1"
-    assert len(spell.steps) == 5
-    assert all(isinstance(step, Form) for step in spell.steps)
+    unchanged = settle(potential, experiment.context)
+    witnessed_context = with_frame(experiment.context, potential, Parity.FLIPPED)
+    settled = settle(potential, witnessed_context)
 
-    result = cast(spell, make_context(line_ab, selected_side=Side.LEFT))
-
-    assert isinstance(result, Effect)
-    assert result.comparison.will is spell.will
+    assert unchanged is potential
+    assert isinstance(settled, Point)
+    assert len(settled.evidence.witnesses) == 1
 
 
-def test_unoriented_cast_preserves_both_options_without_a_default() -> None:
-    line_ab, spell = make_proposition()
+def test_invariant_will_conforms_without_settling_effect() -> None:
+    experiment, _, effect, potential = produced_potential()
 
-    result = cast(spell, make_context(line_ab))
+    validation = validate_will(
+        experiment.spell.will,
+        experiment.extended_ars,
+        experiment.givens,
+    )
+    result = check(experiment.spell.will, effect, experiment.context)
 
-    assert isinstance(result, Potential)
-    assert [field.name for field in fields(Potential)] == ["options", "trigger"]
-    assert isinstance(result.options, frozenset)
-    assert len(result.options) == 2
-    assert {apex(effect).side for effect in result.options} == {
-        Side.LEFT,
-        Side.RIGHT,
+    assert isinstance(validation, InvariantWill)
+    assert isinstance(result, Conforms)
+    assert effect.form is potential
+    assert len(result.evidence.proofs) == 2
+    assert result.evidence.bridge.target_ars == "Ars Arithmetica"
+    assert all(
+        equality.ars_name == "Ars Arithmetica"
+        for proof in result.evidence.proofs
+        for equality in proof.equalities
+    )
+
+
+def test_noninvariant_will_is_detected_and_yields_potential_truth() -> None:
+    experiment, _, effect, _ = produced_potential()
+    side_will = Will(
+        "apex on positive side",
+        WillPredicate.APEX_POSITIVE,
+        experiment.givens.base,
+    )
+
+    validation = validate_will(
+        side_will,
+        experiment.extended_ars,
+        experiment.givens,
+    )
+    result = check(side_will, effect, experiment.context)
+
+    assert isinstance(validation, NonInvariantWill)
+    assert isinstance(result, FrameDependentCheck)
+    assert {truth.verdict for truth in image(result.family)} == {
+        Verdict.HOLDS,
+        Verdict.DOES_NOT_HOLD,
     }
-    assert isinstance(result.trigger, OrientationTrigger)
-    assert not hasattr(result, "selected")
 
 
-def test_context_orientation_settles_the_corresponding_effect() -> None:
-    line_ab, spell = make_proposition()
+def test_default_legitimacy_requires_fixed_and_constructible() -> None:
+    experiment = make_experiment()
 
-    left = cast(spell, make_context(line_ab, selected_side=Side.LEFT))
-    right = cast(spell, make_context(line_ab, selected_side=Side.RIGHT))
+    intersection = assess_default(
+        CandidateKind.POSITIVE_INTERSECTION,
+        experiment.extended_ars,
+        experiment.givens,
+    )
+    midpoint = assess_default(
+        CandidateKind.MIDPOINT,
+        experiment.extended_ars,
+        experiment.givens,
+    )
 
-    assert isinstance(left, Effect)
-    assert isinstance(right, Effect)
-    assert apex(left).side is Side.LEFT
-    assert apex(right).side is Side.RIGHT
-    assert left != right
-
-
-def test_cast_preserves_source_and_produces_a_new_form() -> None:
-    line_ab, spell = make_proposition()
-    original = line_ab
-
-    result = cast(spell, make_context(line_ab, selected_side=Side.LEFT))
-
-    assert isinstance(result, Effect)
-    assert line_ab is original
-    assert line_ab in result.form.lines
-    assert result.form is not line_ab
-    assert len(result.form.points) == 3
-    assert len(result.form.lines) == 3
+    assert intersection.fixed_by_stabilizer is Verdict.DOES_NOT_HOLD
+    assert intersection.constructible is Verdict.HOLDS
+    assert intersection.legitimate_default is Verdict.DOES_NOT_HOLD
+    assert midpoint.fixed_by_stabilizer is Verdict.HOLDS
+    assert midpoint.constructible is Verdict.DOES_NOT_HOLD
+    assert midpoint.legitimate_default is Verdict.DOES_NOT_HOLD
+    assert midpoint.equivariance_hypothesis is Verdict.HOLDS
 
 
-def test_spell_names_every_construction_and_context_supplies_it() -> None:
-    line_ab, spell = make_proposition()
-    context = make_context(line_ab)
+def test_ambient_group_is_declared_by_ars_and_must_act_informatively() -> None:
+    experiment = make_experiment()
+    informative = assess_group(experiment.extended_ars, experiment.givens)
+    small_group = replace(
+        experiment.extended_ars.transformation_group,
+        elements=frozenset({Parity.IDENTITY}),
+    )
+    too_small = assess_group(
+        replace(experiment.extended_ars, transformation_group=small_group),
+        experiment.givens,
+    )
 
-    used = {step.postulate.construction for step in spell.steps}
-    required = {postulate.construction for postulate in spell.requirements.postulates}
-    available = {postulate.construction for postulate in context.postulates}
-
-    assert used == required
-    assert {step.postulate for step in spell.steps} == spell.requirements.postulates
-    assert {
-        spell.demonstration.radius_definition,
-        spell.demonstration.equilateral_definition,
-    } == spell.requirements.definitions
-    assert {
-        spell.demonstration.equality_common_notion
-    } == spell.requirements.common_notions
-    assert used == {
-        Construction.CIRCLE_FROM_CENTER_AND_POINT,
-        Construction.CIRCLE_INTERSECTIONS,
-        Construction.LINE_BETWEEN_POINTS,
-    }
-    assert required <= available
-
-    result = cast(spell, make_context(line_ab, selected_side=Side.LEFT))
-    assert isinstance(result, Effect)
-    assert all(entry.basis in context.postulates for entry in result.trace.entries)
-    assert {entry.basis.construction for entry in result.trace.entries} == required
+    assert informative.diagnostic is GroupDiagnostic.INFORMATIVE
+    assert too_small.diagnostic is GroupDiagnostic.TRIVIAL_ACTION
 
 
-def test_demonstration_is_traceable_to_context_rules_and_will() -> None:
-    line_ab, spell = make_proposition()
-    context = make_context(line_ab, selected_side=Side.LEFT)
+def test_direction_chirality_and_frame_placement_obey_xor() -> None:
+    _, _, _, potential = produced_potential()
+    direct = shared(potential, potential)
+    twist = twisted(potential, potential)
+    product_family = independent(
+        potential,
+        independent_copy(potential, "second segment"),
+    )
 
-    result = cast(spell, context)
+    report = frame_placement_report(direct, twist, product_family)
 
-    assert isinstance(result, Effect)
-    available_rules = context.definitions | context.common_notions
-    assert all(step.basis in available_rules for step in result.demonstration.steps)
-    assert len(result.demonstration.steps) == 4
-    assert all(result.demonstration.steps[index].witnesses for index in (0, 1))
-    assert result.demonstration.conclusion.lines == result.form.lines
-    assert result.comparison.evidence == result.demonstration.conclusion
-    assert result.comparison.judgement is Conformity.CONFORMS
+    assert report.original is Side.POSITIVE
+    assert report.direction_flipped is Side.NEGATIVE
+    assert report.chirality_flipped is Side.NEGATIVE
+    assert report.both_flipped is Side.POSITIVE
+    assert report.direct_joint_outcomes == 2
+    assert report.twisted_joint_outcomes == 2
+    assert report.independent_joint_outcomes == 4
+    assert report.favored is FramePlacement.POTENTIAL
 
 
-def test_missing_primitive_returns_an_owned_harness_refusal() -> None:
-    line_ab, spell = make_proposition()
-    context = make_context(line_ab)
-    omitted = next(iter(context.postulates))
-    incomplete = replace(context, postulates=context.postulates - {omitted})
+def test_context_capability_refusal_and_permitted_failure_are_owned() -> None:
+    experiment = make_experiment()
+    elaborated = elaborate(experiment.spell, experiment.extended_ars)
+    assert isinstance(elaborated, ElaboratedSpell)
+    intersection_capability = next(
+        capability
+        for capability in experiment.context.capabilities
+        if capability.operation is Operation.INTERSECT_CIRCLES
+    )
+    missing_context = replace(
+        experiment.context,
+        capabilities=experiment.context.capabilities - {intersection_capability},
+    )
+    refused = cast(elaborated, missing_context)
 
-    result = cast(spell, incomplete)
+    degenerate = make_experiment(degenerate=True)
+    degenerate_spell = elaborate(degenerate.spell, degenerate.extended_ars)
+    assert isinstance(degenerate_spell, ElaboratedSpell)
+    failed = cast(degenerate_spell, degenerate.context)
 
-    assert isinstance(result, ExperimentRefusal)
-    assert omitted in result.missing
-    assert isinstance(result, Form)
+    assert isinstance(refused, Refused)
+    assert refused.missing.operation is Operation.INTERSECT_CIRCLES
+    assert isinstance(failed, Failed)

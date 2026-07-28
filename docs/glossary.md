@@ -1,8 +1,9 @@
 # Glossary
 
 **Ars**
-: An organized body of Definitions, Postulates, Common Notions, Forms, Spells,
-  Casts, Effects, Demonstrations, and unresolved Potentials.
+: An organized discipline declaring its Forms, permitted constructions and their
+  equivariance, qualified equality, ambient transformation group, terminating Will
+  fragment, and Bridges.
 
 **Accepted decision**
 : A choice recorded by an Accepted ADR. It can change through a superseding ADR,
@@ -17,15 +18,18 @@
   lowering are sibling backend paths.
 
 **Cast**
-: The performance of a Spell within an explicit Context.
+: Capability-checked interpretation of an elaborated Spell within explicit Context.
+
+**Conformity**
+: Evidence from a terminating check that an actual Effect satisfies Will in Context.
 
 **Checked representation**
 : The future typed output of resolution and checking, suitable for backend
   consumption. No shape is selected at Stage 0.
 
 **Context**
-: The named Reader, Forms, permissions, constructions, conditions, Potentials, and
-  evidence available to a Cast.
+: The typed Reader Forms, available Forms, permissions, conditions, Potentials,
+  frames, and Witness evidence available to interpretation or Cast.
 
 **Effect**
 : The actual Form or change produced by a Cast, kept distinct from intended Will.
@@ -55,12 +59,17 @@
   behavior does not answer it implicitly.
 
 **Point**
-: The smallest settled distinction the system can address: a definite here rather
-  than elsewhere.
+: The settled phase of a typed Distinction: a selected value with settlement evidence
+  or provenance. A geometric Point is a Point of location.
 
 **Potential**
-: Unsettled alternative Forms represented by exactly their options and the trigger
-  that could legitimately settle among them; it has no selected default.
+: The open phase of a Distinction: an equivariant family from an unsettled frame to
+  results, plus partial settlement by evidence. Its possible results are the derived
+  image of the family, not a stored option bag.
+
+**Reader**
+: A family of concrete typed roles: Interpreter, Inspector, Audience, and Witness.
+  The name does not denote one universal role enum.
 
 **Reversible seam**
 : A boundary that localizes an unsettled choice so the implementation can change
@@ -71,7 +80,9 @@
   resolution, and checking.
 
 **Spell**
-: A Form read as the exact construction intended to serve a declared Will.
+: Exact steps and a Will contract, themselves inspectable as Form. Capabilities are
+  discovered by elaboration under an Ars rather than authored as hidden needs.
 
 **Will**
-: The intended Form or change against which an actual Effect can be judged.
+: An executable, terminating acceptance predicate over Effect within Context, drawn
+  from the fragment declared by an Ars. A target Form is only one special case.

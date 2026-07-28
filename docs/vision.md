@@ -1,10 +1,11 @@
 # Vision
 
 Arx Mentis explores a language of exact, inspectable construction. Points connect
-through Lines to make Forms; Will declares intended change; a Spell supplies exact
-means; a Cast performs it in explicit Context; Effect records what happens; and real
-alternatives remain Potential until a valid trigger settles them. Definitions,
-Postulates, Forms, Spells, and Demonstrations are organized within an Ars.
+through Lines to make Forms; Will supplies a terminating acceptance criterion; a
+Spell supplies exact steps; elaboration derives their capabilities under an Ars; a
+Cast performs them in explicit Context; and Effect records what happens. Real
+alternatives remain equivariant Potential families until Witness evidence chooses a
+frame. Construction and conformity do not require settlement when they are invariant.
 
 This [foundation](foundation.md) is provisional. The language must be learned through
 executable propositions rather than made into a Python library whose incidental
@@ -15,7 +16,7 @@ behavior is retroactively declared semantic law.
 1. Preserve Potential where Context cannot justify settlement.
 2. Keep a Spell inspectable as Form while allowing a Reader to Cast it.
 3. Preserve source Forms and make Effects new Forms.
-4. Require declared primitive constructions and trace claimed Demonstrations.
+4. Derive required capabilities from stated steps and trace claimed Demonstrations.
 5. Keep experimental observations owned by Arx Mentis, even when Python performs
    internal work.
 6. Design notation only after executable propositions reveal the distinctions it
