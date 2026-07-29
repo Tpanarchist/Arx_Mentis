@@ -38,4 +38,10 @@ All notable changes will be documented in this file.
   calibration/holdout isolation, prospective model versions, correction records,
   counterfactual replay, overfit and generalizing revisions, adaptive intervention,
   and hostile retroactive-rewriting models.
+- Add neutral scoped model adoption with exact Amber/Violet specialization,
+  predictive and control roles, scoped authority, operational commitment under
+  epistemic ambiguity, self-fulfillment, revocation modes, switching, and lineage.
+- Record candidate ADRs 0011 and 0012 for explicit contextual use roles and declared
+  source-independent derived operation; neither is accepted or represented in the
+  package.
 - Bootstrap the Stage 0 repository around reversible architectural seams.

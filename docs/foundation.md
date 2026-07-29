@@ -612,6 +612,13 @@ The foundation does not yet settle:
   supersession, correction, and counterfactual replay affect those relations;
 - how calibration evidence, independent evaluation, assessment rules, and adaptive
   interventions remain distinct when a model changes the Context it describes;
+- whether model adoption is a Reader-relative stance, Context authority, capability,
+  binding, interpretation, or another relation, and how purpose and scope constrain
+  it;
+- whether operational commitment can coexist with unresolved epistemic comparison
+  without becoming settlement or truth assertion;
+- how live-linked and snapshot authority, revocation, expiry, and prospective model
+  switching relate to source availability and historical attribution;
 - how a definite world state relates to Reader-relative knowledge and attribution;
 - how source Form, encoded carrier, interpreted artifact, active mechanism,
   execution, and outcome relate without becoming nominal aliases;

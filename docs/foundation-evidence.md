@@ -375,6 +375,63 @@ evidence.
 - Any package representation, source notation, external action, statistical claim,
   or accepted foundation mapping.
 
+## State Zero Experiment 012 baseline
+
+### Observed
+
+- Model X scores 6/6 in Amber and 2/6 in Violet; Model Y scores 2/6 in Amber and 6/6
+  in Violet. Each scores 8/12 globally, while disjoint scoped control reaches 12/12.
+- Model, Assessment, Adoption, Activation, PredictionRule, DerivedPolicy, action,
+  Outcome, TruthAssertion, Revocation, and Lineage remain separate immutable records.
+- Availability and high Assessment do not activate a Model. A weakly assessed Model
+  can act in a controlled trial because explicit scoped authority was granted without
+  changing confidence or asserting truth.
+- One Model derives distinct predictive and control artifacts under explicit UseMode
+  Adoptions. Crossed paths and an unsupported audit role return owned results; Model
+  contains neither role intrinsically.
+- Disjoint incompatible Adoptions coexist. Overlapping same-purpose Adoptions without
+  a discriminator return the same owned conflict under reversed storage order;
+  declared preferred-model or higher-authority policies may select.
+- An Amber Adoption cannot act in Violet. Local success does not widen authority or
+  establish global adequacy.
+- Equal global Assessment remains epistemically ambiguous while a separate limited
+  trial policy makes an operational commitment. The commitment neither settles the
+  comparison nor raises confidence.
+- Model X and Model Y can derive the same successful action with different Lineage,
+  so Outcome does not identify explanation. Adoption and success create no
+  TruthAssertion.
+- A cooperation-model action participates causally in producing its confirming
+  cooperative Outcome; self-fulfilled success remains distinct from passive
+  validation.
+- Live-linked Revocation disables existing artifacts. A declared snapshot blocks new
+  derivation but preserves an existing artifact until explicit expiry. Unspecified
+  revocation behavior returns an owned result.
+- Revocation preserves Adoption and prior action records. A SwitchRecord changes
+  future governance without rewriting earlier action Lineage.
+
+### Assumed by the disposable representation
+
+- Two fixed scopes, binary action signals, and one required action per case adequately
+  isolate scope and authority without an empirical or ontological claim.
+- Integer confidence, authority, cost, expiry, and record order are declared harness
+  values, not proposed semantic units.
+- Frozen Python records and enums are disposable carriers.
+
+### Not established
+
+- A general belief, adoption, authority, activation, policy, truth, revocation,
+  switching, scope, or lifecycle algebra.
+- Whether Adoption is Context relation, Reader stance, capability, binding,
+  interpretation, or another foundation operation.
+- Whether TruthAssertion participates in execution semantics at all.
+- That every model may be useful locally or that disjoint scopes always compose.
+- That prospective-not-retroactive operation is accepted; this is its second direct
+  domain after Feedback and Model Revision.
+- Acceptance of ADR candidates 0011 or 0012, or any representation implied by their
+  evidence.
+- Any package representation, source notation, external action, empirical claim, or
+  accepted foundation mapping.
+
 ## Positive recurrence matrix
 
 | Foundational claim | Geometrica | Astronomica | Grammatica | Dialectica | Virtual mediation | Actualization | Symbolic release | Stress/discharge | Gate result |
@@ -438,6 +495,20 @@ are not treated as shared representations of earlier histories.
 | State change retains causally relevant history | Potential settlement, relation traces, proof history, mediation, causal traces, release provenance, stress residue | Supports: revision, correction, and replay retain prior records | Broad recurrence; prospective-not-retroactive revision is one direct domain |
 | Public success does not identify passive cause | Omen Attribution, Actualization, Probability Bias | Supports: adaptive intervention produces perfect apparent accuracy with an explicit self-fulfilling causal record | Reinforces cause/result separation without a general causal semantics |
 | Observation, judgment, update, and validation are distinct | Dialectica, Omen Attribution, Actualization, Symbolic Release, Probability Bias provide partial stage boundaries | Supports directly: Observation, Assessment, Revision, and holdout evaluation vary independently | One complete revision domain; exact cross-domain job remains unresolved |
+
+## Experiment 012 recurrence addendum
+
+Experiment 012 counts once regardless of witness count and shares no implementation
+types with the earlier role, release, history, or causation domains.
+
+| Backend-neutral claim | Prior independent evidence | Scoped Model Adoption result | Gate result |
+| --- | --- | --- | --- |
+| Explicit context may supply different lawful use roles for one source | Grammatica: examining/executing Form; Symbolic Release: policy/acceptance Carrier | Supports + unsupported boundary: predictive/control Adoptions derive distinct artifacts; crossed and audit uses are owned | **ADR 0011 candidate:** three direct domains; nominal Spell counterexamples preserved |
+| A derived operation may continue without rereading an unavailable source only by declared independence | Actualization: released policy; Symbolic Release: released compiled Carrier | Supports + two boundaries: snapshot continues to expiry, live-linked stops, unspecified is refused | **ADR 0012 candidate:** three direct domains; authority and dependency law needs reconciliation |
+| Incidental order cannot resolve an overlap without a declared discriminator | Geometrica, Virtual Mediation, Stress and Discharge, Probability Bias, Feedback Revision | Supports + hostile boundary: reversed overlapping Adoptions preserve conflict; declared authority/preference may select | Reinforces accepted ADR 0010 and its legitimate-policy boundary |
+| Prospective change does not rewrite historical operation | Feedback and Model Revision provides one direct revision witness; many domains preserve weaker history | Supports: Revocation and SwitchRecord affect future authority while prior action Lineage persists | Two direct domains; prospective-not-retroactive law remains provisional |
+| Operational commitment is separate from epistemic settlement or truth | Actualization, Omen Attribution, Probability Bias, and Feedback Revision provide related assessment/cause pressure | Supports directly: EpistemicAmbiguity coexists with scoped OperationalCommitment and no TruthAssertion | One direct adoption domain; below gate |
+| Equal local output does not establish shared origin | Virtual Mediation, Actualization, Symbolic Release, Stress and Discharge, Feedback Revision | Supports: equal actions retain distinct model and Adoption Lineage | Strong recurrence; identity/provenance consequences remain underspecified |
 
 ## Adversarial scope matrix
 
@@ -528,6 +599,25 @@ are not treated as shared representations of earlier histories.
 | Correction may erase contradiction | Counterexample: original observation, assessment, and evidence survive beside Correction and reassessment | Changed admissibility requires history rather than retroactive repair |
 | A selected working model is world truth | Counterexample: selection records policy and candidate only; observer attribution lacks privileged cause | Operational choice and causal ontology remain distinct |
 
+## Scoped Model Adoption scope matrix
+
+| Claim under test | Scoped Model Adoption result | Cross-domain implication |
+| --- | --- | --- |
+| Every available Model acts automatically | Counterexample: Model and Assessment exist without Adoption or Activation | Availability, evaluation, authority, and operation remain distinct |
+| Highest confidence silently gains authority | Counterexample: confidence and authority vary independently; weak Model Y acts in a declared trial | Epistemic support is not operational permission |
+| Adoption asserts truth | Counterexample: Adoption contains scope and authority while TruthAssertion is a separate operation | Instrumental commitment does not install ontology |
+| One global current model governs every operation | Counterexample: Amber and Violet retain disjoint simultaneous Adoptions | Authority belongs to declared scoped relations, not hidden global state |
+| Local usefulness proves universal validity | Counterexample: each model scores 6/6 locally, 2/6 elsewhere, and 8/12 globally | Operational adequacy must retain its scope |
+| Scope may be chosen after success | Counterexample: PostHocScope records outcome identifiers and is not precommitted | Outcome-conditioned framing cannot become prior authority or evidence |
+| Active Model may switch silently | Counterexample: SwitchRecord names previous and next Adoption while prior action Lineage persists | Prospective transition and historical governance remain separate |
+| First overlapping Adoption wins | Counterexample: forward and reversed storage return identical AdoptionConflict | Reinforces ADR 0010; declared resolution remains lawful |
+| Successful action proves its Model | Counterexample: X and Y produce the same successful action with distinct Lineage | Outcome equality cannot recover explanatory origin |
+| Revocation erases history | Counterexample: prior Adoption and ActionRecord remain after future authority ends | Revocation is prospective in this domain |
+| Revocation policy may be guessed | Counterexample: unspecified live-linked versus snapshot behavior returns an owned result | Lifecycle dependency must be explicit |
+| Confidence and commitment are interchangeable | Counterexamples in both directions: high inactive assessment and weak authorized trial | Knowledge state and action authority are orthogonal |
+| Self-fulfillment validates description | Counterexample: cooperative action is named in the causal record of cooperative response | Intervention-created success is not passive confirmation |
+| Same policy output means same origin | Counterexample: equal local actions retain different Model and Adoption Lineage | Local behavior and derivational identity remain separate |
+
 ## Synthesis gate
 
 A distinction becomes an ADR candidate only when it:
@@ -597,8 +687,25 @@ equal-score hostile witness reinforces ADR 0010, including its allowance for a
 declared secondary policy. The prospective-not-retroactive finding remains
 provisional because this is its first complete domain.
 
-The foundation gate as a whole remains **closed**. Accepting ADRs 0008, 0009, and
-0010 does not satisfy the independent gaps in full Ars declarations, Bridges, default
+Experiment 012 adds no accepted adoption category. It establishes within one neutral
+domain that locally useful incompatible models can be authorized in disjoint scopes,
+and that assessment, authority, activation, operational commitment, truth assertion,
+outcome, lifecycle, and lineage can disagree. Its self-fulfillment case repeats the
+adaptive-causation warning from Experiment 011 specifically through Adoption.
+Revocation and switching provide the second direct prospective-history domain, still
+below threshold.
+
+Two narrower recurrences reach ADR-candidate status without acceptance. ADR 0011
+records that an explicit context may supply different lawful use roles for one source
+after Grammatica, Symbolic Release, and Scoped Model Adoption; nominal Spell
+counterexamples remain unresolved. ADR 0012 records conditional derived independence
+after Actualization, Symbolic Release, and the snapshot/live-linked boundary here.
+Both candidates defer representation and require cross-domain law reconciliation
+before acceptance.
+
+The foundation gate as a whole remains **closed**. Accepted ADRs 0008, 0009, and 0010
+and candidate ADRs 0011 and 0012 do not satisfy the independent gaps in full Ars
+declarations, Bridges, default
 legitimacy, typed Reader composition, independent proof verification, or the identity
 and derivation roles of Will. Therefore this phase produces no tokens, grammar, AST,
 types, runtime values, shared foundation classes, or executable source notation.
@@ -659,13 +766,27 @@ types, runtime values, shared foundation classes, or executable source notation.
   some combination of these;
 - model supersession without retroactively declaring the earlier model false;
 - passive prediction versus adaptive intervention when a model changes the Context
-  it attempts to describe.
+  it attempts to describe;
+- scoped Model Adoption as Reader-relative stance, Context authority, capability,
+  binding, interpretation, or another relation;
+- locally useful incompatible models composing across disjoint scopes without
+  asserting universal validity;
+- operational commitment under unresolved epistemic comparison;
+- TruthAssertion as Proposition, stance, Context relation, or a concept outside
+  execution semantics;
+- revocation as Effect, Context change, permission transition, scope transition, or
+  lifecycle record;
+- live-linked and snapshot-derived authority, including expiry and transfer;
+- model switching, supersession, and historical governance without retroactive
+  alteration.
 
 ## Next evidence
 
 Keep ADR 0008 scoped to declared symmetric constructions, ADR 0009 scoped to
 production/acceptance separation, and ADR 0010 scoped to the prohibition on
-accidental selection; none selects a carrier or source feature. Seek a
+accidental selection; none selects a carrier or source feature. Keep ADR candidates
+0011 and 0012 unaccepted while reconciling role and dependency/authority laws across
+their three direct domains. Seek a
 third independent domain for contextual reading and for source-independent derived
 execution before promotion. Acceptance and guidance must remain independently
 observable even when one source derives both. Continue investigating unequal
@@ -673,7 +794,9 @@ epistemic support and weighted probability separately from Potential. Test
 distributed state, causal triggers, progress, historical residue, and
 distribution-versus-cause in unrelated domains before giving them foundation names.
 Seek independent prospective-revision witnesses before considering a historical
-obligation; preserve correction, replay, assessment, and lineage as separate open
-pressures. Then target Bridge laws, complete Ars declarations, typed Reader
+obligation; Feedback Revision and Scoped Adoption currently provide two. Preserve
+scoped instrumental use, truth assertion, correction, replay, assessment, revocation,
+and lineage as separate open pressures. Then target Bridge laws, complete Ars
+declarations, typed Reader
 composition, default legitimacy, and independent proof verification. The full gate
 remains closed to source notation.

@@ -44,12 +44,18 @@ This order is a constraint on learning, not a release schedule.
    history, calibration/holdout boundaries, replay, lineage, and adaptive causation.
 17. Keep prospective-not-retroactive revision provisional until the same semantic
    job appears independently in unrelated domains.
-18. Continue investigating non-symmetric epistemic uncertainty separately while
+18. Use State Zero Experiment 012 to test purpose- and scope-bound model adoption,
+   contextual predictive/control use, operational commitment under epistemic
+   ambiguity, truth separation, self-fulfillment, revocation, and switching.
+19. Evaluate contextual roles and declared derived independence as candidate ADRs
+   only; keep scoped instrumental adoption provisional and prospective history at two
+   direct domains.
+20. Continue investigating non-symmetric epistemic uncertainty separately while
    targeting Bridge laws, full Ars declarations, typed Reader composition, defaults,
    and verification.
-19. Only after the complete synthesis gate passes, write non-executable source
+21. Only after the complete synthesis gate passes, write non-executable source
    examples for every accepted proposition.
-20. Derive notation requirements from gated distinctions, then introduce tokenizing,
+22. Derive notation requirements from gated distinctions, then introduce tokenizing,
    parsing, checking, owned runtime values, evaluation, lowering, IR discovery, and
    backend selection through the existing reversible seams.
 
@@ -65,8 +71,8 @@ Point, Line, Form, Will, Spell, Cast, Effect, Context, Potential, Demonstration,
 and code/data identity. It lives under `experiments/euclid_i_1` and is evidence, not
 permanent API. Astronomica, Grammatica, Dialectica, Virtual Mediation, Omen
 Attribution, Actualization, Symbolic Release, Stress and Discharge, Probability Bias,
-and Feedback and Model Revision deliberately use independent representations so
-agreement cannot arise from a shared Python foundation.
+Feedback and Model Revision, and Scoped Model Adoption deliberately use independent
+representations so agreement cannot arise from a shared Python foundation.
 
 The current synthesis gate is closed. Symmetry-indexed Potential behavior has three
 positive domain sources and the five scoped semantic obligations are accepted by ADR
@@ -79,8 +85,11 @@ Probability Bias separates weight, support, sample, report, acceptance, and caus
 and ADR 0010 accepts only the cross-domain ban on accidental order-based selection.
 Feedback and Model Revision preserves prediction and correction history while
 separating calibration fit, holdout evaluation, replay, lineage, and adaptive cause;
-its prospective revision finding remains provisional. Several other rows remain
-below threshold. No source notation work begins merely
+Scoped Model Adoption separates assessment, scoped authority, activation, truth,
+lifecycle, and lineage. It brings explicit contextual roles and declared derived
+independence to candidate discussion while scoped adoption and prospective switching
+remain provisional. Several other rows remain below threshold. No source notation
+work begins merely
 because an individual group of rows reached three.
 
 Self-hosting the tokenizer and parser remains a useful later horizontal probe after

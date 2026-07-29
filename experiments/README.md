@@ -40,6 +40,9 @@ The independent foundation probes are:
 - [State Zero Experiment 011](feedback_revision/README.md): committed predictions,
   persistent model versions, calibration/holdout isolation, correction, replay,
   adaptive intervention, and hostile retroactive-rewriting models.
+- [State Zero Experiment 012](scoped_model_adoption/README.md): temporary scoped
+  instrumental models, predictive and control roles, activation, truth separation,
+  self-fulfillment, declared revocation modes, switching, and lineage.
 
 These experiments intentionally do not import one another. Agreement counts only at
 the backend-neutral behavior recorded in `docs/foundation-evidence.md`.

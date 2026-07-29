@@ -198,3 +198,29 @@ its world. Fixed cases, exact-match scores, XOR, memorizer fallback, record orde
 complexity are harness assumptions, not statistical, empirical, magical, or language
 claims. This counts as one feedback-revision domain. It reinforces ADRs 0009 and 0010
 but promotes no new law; prospective-not-retroactive revision remains provisional.
+
+2026-07-28 — State Zero Experiment 012, scoped model adoption. The neutral finite
+world separates Model, Assessment, purpose- and scope-bound Adoption, Activation,
+predictive and control artifacts, operational commitment, TruthAssertion, action,
+Outcome, Revocation, switching, and Lineage. Model X scores 6/6 in Amber and 2/6 in
+Violet; Model Y reverses those scores. Each is 8/12 globally, while disjoint scoped
+Adoptions reach 12/12 without declaring either model universally valid. High
+assessment remains inactive without authority; a weak model can act in a controlled
+trial without becoming true or more credible. One Model derives PredictionRule or
+DerivedPolicy under explicit use, while crossed and unsupported uses are refused.
+Overlapping equal-authority Adoptions retain the same conflict under reversed storage
+order, and declared preferred-model or higher-authority policies resolve lawfully.
+Equal assessment remains epistemically ambiguous beside limited operational
+commitment. Equal successful actions retain different model lineage, and a cooperative
+self-fulfillment case records the action that participated in its confirming result.
+Live-linked Revocation disables an artifact; snapshot authority survives source
+revocation until declared expiry; unspecified behavior is not guessed. SwitchRecord
+changes future authority while preserving prior actions. The recurring tensions are
+instrumental use versus truth, confidence versus authority, role versus carrier,
+source availability versus derived authority, and prospective transition versus
+historical governance. Fixed cases, scores, scopes, integer authority/confidence,
+cost, expiry, and record order are harness assumptions, not empirical, magical,
+ontological, or language claims. This counts as one scoped-adoption domain. It
+reinforces ADRs 0009 and 0010, raises explicit contextual roles and declared derived
+independence to candidate ADRs 0011 and 0012, and leaves scoped adoption plus the
+two-domain prospective-history recurrence unpromoted.
