@@ -44,4 +44,10 @@ All notable changes will be documented in this file.
 - Record candidate ADRs 0011 and 0012 for explicit contextual use roles and declared
   source-independent derived operation; neither is accepted or represented in the
   package.
+- Add neutral bound delegation with dimensioned dependencies, separate reading and
+  authority, pre-mutation scope/budget/lease checks, live and snapshot revocation,
+  attenuated child grants, spillover, blowback, and non-erasing compensation.
+- Narrow and accept ADRs 0011 and 0012 after hostile authority and dependency-vector
+  evidence, and record prospective history as candidate ADR 0013 without selecting
+  any representation.
 - Bootstrap the Stage 0 repository around reversible architectural seams.

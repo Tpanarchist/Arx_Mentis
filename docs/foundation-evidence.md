@@ -432,6 +432,62 @@ evidence.
 - Any package representation, source notation, external action, empirical claim, or
   accepted foundation mapping.
 
+## State Zero Experiment 013 baseline
+
+### Observed
+
+- An immutable SourcePlan derives a distinct compiled Delegate and remains unchanged.
+  After source content becomes unavailable, the Delegate completes three authorized
+  actions and refuses a fourth before mutation because its Budget is exhausted.
+- Independence is recorded across source content, authority, resources, scope,
+  lifecycle, interpretation, and provenance. No total-independence Boolean exists.
+- One Delegate supports Audit and Control readings. An instructions-only copy remains
+  auditable, while Control execution separately requires admitted Lineage, Authority,
+  Activation, capability, scope, active Lease, Budget, and resources.
+- Every action rechecks admission, role, capability, direct scope, transfer limit,
+  Budget, Lease, Revocation, and resources before producing a new Environment. South
+  scope escape, protected-record access, oversize transfer, exhausted Budget, expired
+  Lease, and unavailable resources preserve the prior state.
+- Live-linked principal Revocation blocks future Delegate action. A declared snapshot
+  continues within its own Lease while new derivation after principal Revocation is
+  inadmissible. Unspecified cascade-versus-snapshot behavior returns an owned result.
+- Earlier authorized Actions and Trace remain unchanged after expiry, Revocation, or
+  Delegate switching.
+- Copying instructions without Authority or admitted Lineage produces an inadmissible
+  artifact. Forged Lineage is rejected even when local instructions and Authority are
+  present.
+- A parent with explicit derivation capability creates an attenuated child with
+  reduced capabilities, limits, Budget, and Lease. Amplified authority or derivation
+  by a parent lacking that capability returns an owned result.
+- A lawful North action consumes a shared resource and produces observable South
+  Spillover and resource loss to the Principal. Direct operation scope and
+  consequence extent remain distinct, and both causal chains name the Delegate
+  Action.
+- Compensation restores the South resource while retaining the original Action,
+  shortage, principal loss, causal chain, and an appended repair consequence.
+- Equal-priority overlapping Delegates preserve one AuthorityConflict under reversed
+  storage. A declared higher-priority policy selects lawfully.
+
+### Assumed by the disposable representation
+
+- Three symbolic compartments, integer resources, step Lease, action Budget, and a
+  trusted derivation registry adequately isolate bounded operation without a
+  security, distributed-systems, legal, empirical, or occult claim.
+- The declared transfer and consequence laws are harness mechanics rather than a
+  physical or economic model.
+- Frozen Python records and enums are disposable carriers.
+
+### Not established
+
+- A general authority, capability, delegation, attenuation, lease, resource,
+  lifecycle, revocation, consequence, responsibility, or compensation algebra.
+- How dependency dimensions are represented or composed in the language.
+- That authority always attenuates; this is the first direct delegation domain and
+  explicit external grants remain unmodeled.
+- One universal history representation or acceptance of candidate ADR 0013.
+- Any package representation, source notation, external action, security mechanism,
+  empirical claim, or accepted mapping from Delegate records to foundation types.
+
 ## Positive recurrence matrix
 
 | Foundational claim | Geometrica | Astronomica | Grammatica | Dialectica | Virtual mediation | Actualization | Symbolic release | Stress/discharge | Gate result |
@@ -509,6 +565,22 @@ types with the earlier role, release, history, or causation domains.
 | Prospective change does not rewrite historical operation | Feedback and Model Revision provides one direct revision witness; many domains preserve weaker history | Supports: Revocation and SwitchRecord affect future authority while prior action Lineage persists | Two direct domains; prospective-not-retroactive law remains provisional |
 | Operational commitment is separate from epistemic settlement or truth | Actualization, Omen Attribution, Probability Bias, and Feedback Revision provide related assessment/cause pressure | Supports directly: EpistemicAmbiguity coexists with scoped OperationalCommitment and no TruthAssertion | One direct adoption domain; below gate |
 | Equal local output does not establish shared origin | Virtual Mediation, Actualization, Symbolic Release, Stress and Discharge, Feedback Revision | Supports: equal actions retain distinct model and Adoption Lineage | Strong recurrence; identity/provenance consequences remain underspecified |
+
+## Experiment 013 recurrence addendum
+
+Experiment 013 counts as one domain and imports no earlier carrier. Its hostile cases
+narrow two existing candidates and supply the third direct prospective-history
+witness.
+
+| Backend-neutral claim | Prior independent evidence | Bound Delegation result | Gate result |
+| --- | --- | --- | --- |
+| One settled structure may support multiple explicit readings, but reading does not confer execution authority | Grammatica, Symbolic Release, Scoped Model Adoption | Supports + hostile authority boundary: Audit remains lawful without a grant; Control separately requires admission, authority, capability, scope, lease, budget, and activation | **Accepted ADR 0011:** explicit role multiplicity plus role/authority separation |
+| Derived operation may outlive source access only relative to separately named dependencies | Actualization, Symbolic Release, Scoped Model Adoption | Supports + hostile vector boundary: source content is independent while authority, resource, scope, lifecycle, and provenance remain constrained | **Accepted ADR 0012:** rejects total-independence inference |
+| Lifecycle changes govern future operations without rewriting earlier conditions or actions | Feedback Revision, Scoped Model Adoption | Supports + expiry/revocation/compensation boundaries: past grant and Trace persist while future action stops and assessments may append | **ADR 0013 candidate:** three direct domains; history representation and reassessment law unresolved |
+| Incidental order cannot choose among authority peers | Geometrica, Virtual Mediation, Stress and Discharge, Probability Bias, Feedback Revision, Scoped Adoption | Supports: reversed Delegate storage preserves conflict; declared priority may select | Reinforces accepted ADR 0010 |
+| Delegated authority cannot exceed granted authority | No prior direct domain | Supports + amplification counterexample and lawful attenuation | One direct domain; provisional pressure only |
+| Direct operation scope is distinct from consequence extent | Stress and Discharge provides related network pressure | Supports: North-contained action yields South Spillover and Principal blowback | One direct delegation domain; consequence semantics unresolved |
+| Repair does not rewrite the causal harm it addresses | Feedback Revision preserves correction history; Actualization preserves partial trace | Supports: Compensation appends repair while original harm and responsibility Trace persist | Reinforces ADR 0013 candidate; compensation semantics remain local |
 
 ## Adversarial scope matrix
 
@@ -618,6 +690,26 @@ types with the earlier role, release, history, or causation domains.
 | Self-fulfillment validates description | Counterexample: cooperative action is named in the causal record of cooperative response | Intervention-created success is not passive confirmation |
 | Same policy output means same origin | Counterexample: equal local actions retain different Model and Adoption Lineage | Local behavior and derivational identity remain separate |
 
+## Bound Delegation scope matrix
+
+| Claim under test | Bound Delegation result | Cross-domain implication |
+| --- | --- | --- |
+| A readable role grants authority | Counterexample: Audit reads instructions without a grant; Control execution separately checks Authority | Narrows ADR 0011 to explicit reading without implicit capability |
+| Compilation means unrestricted independence | Counterexample: released source content coexists with lease-, environment-, scope-, lifecycle-, and provenance-dependence | Narrows ADR 0012 to dependency-relative independence |
+| Copying instructions copies permission | Counterexample: equal instruction data without Authority and admitted Lineage is inadmissible | Local artifact value and operational authority remain separate |
+| Direct scope bounds every consequence | Counterexample: North action causes South shortage and Principal resource loss | Containment must expose indirect causal extent rather than deny it |
+| Revocation invalidates past action | Counterexample: future live-linked action stops while prior Trace retains its then-current grant | Supplies the third direct prospective-history domain |
+| Source Revocation always cascades | Counterexample: declared snapshot continues to Lease expiry | Lifecycle dependency must be declared per artifact |
+| Source Revocation never cascades | Counterexample: declared live link stops immediately | Snapshot semantics cannot become a silent default |
+| Child delegation may amplify power | Counterexample: excess capability, scope, limit, Budget, or Lease returns AuthorityAmplification | Attenuation is one-domain provisional pressure |
+| Lease need only be checked at Activation | Counterexample: action at step 6 is refused after valid step-2 Activation | Lifecycle authority is checked at use, not inferred forever |
+| Budget may be checked after mutation | Counterexample: fourth action preserves Environment and three-action Trace | Boundary failures must precede state transition |
+| Successful result excuses excess authority | Counterexample: potentially useful South transfer is refused before mutation | Outcome utility cannot repair missing permission |
+| Compensation deletes harm | Counterexample: repair appends beside original shortage, loss, and causal chain | Present repair and historical occurrence remain distinct |
+| Principal alone caused the outcome | Counterexample: causal chain includes Delegate Action and Environment pressure | Source authority does not erase derived mechanics |
+| Delegate alone caused the outcome | Counterexample: Lineage retains SourcePlan, Principal, and Authority | Derived mechanics do not erase their grant and origin |
+| Same artifact means same authority | Counterexample: equal instructions retain distinct Lineage and copies may lack grants | Equality and authority require separately declared relations |
+
 ## Synthesis gate
 
 A distinction becomes an ADR candidate only when it:
@@ -695,16 +787,25 @@ adaptive-causation warning from Experiment 011 specifically through Adoption.
 Revocation and switching provide the second direct prospective-history domain, still
 below threshold.
 
-Two narrower recurrences reach ADR-candidate status without acceptance. ADR 0011
-records that an explicit context may supply different lawful use roles for one source
-after Grammatica, Symbolic Release, and Scoped Model Adoption; nominal Spell
-counterexamples remain unresolved. ADR 0012 records conditional derived independence
-after Actualization, Symbolic Release, and the snapshot/live-linked boundary here.
-Both candidates defer representation and require cross-domain law reconciliation
-before acceptance.
+Experiment 013 adds no accepted delegation or consequence category. It establishes
+within one neutral domain that compiled source-content independence can coexist with
+separately checked authority, capability, scope, resources, Lease, Budget,
+Revocation, provenance, and causal responsibility. It also establishes lawful
+attenuation and rejects authority amplification, but that remains a one-domain
+pressure. Direct operation scope and indirect consequence extent separate through
+Spillover and blowback; Compensation repairs current state without deleting causal
+history.
 
-The foundation gate as a whole remains **closed**. Accepted ADRs 0008, 0009, and 0010
-and candidate ADRs 0011 and 0012 do not satisfy the independent gaps in full Ars
+The hostile role/authority witness narrows and accepts ADR 0011: one settled structure
+may support multiple explicit readings, but reading does not confer execution
+authority. The dimensioned dependency and unauthorized-copy witnesses narrow and
+accept ADR 0012: derived independence is relative to named dependencies and never
+means total independence. Experiment 013 also supplies the third direct
+prospective-history domain, recorded as candidate ADR 0013 rather than accepted. All
+three decisions defer representation.
+
+The foundation gate as a whole remains **closed**. Accepted ADRs 0008, 0009, 0010,
+0011, and 0012 plus candidate ADR 0013 do not satisfy the independent gaps in full Ars
 declarations, Bridges, default
 legitimacy, typed Reader composition, independent proof verification, or the identity
 and derivation roles of Will. Therefore this phase produces no tokens, grammar, AST,
@@ -778,25 +879,34 @@ types, runtime values, shared foundation classes, or executable source notation.
   lifecycle record;
 - live-linked and snapshot-derived authority, including expiry and transfer;
 - model switching, supersession, and historical governance without retroactive
-  alteration.
+  alteration;
+- Principal, Authority, capability, scope, Lease, Budget, resource, and Activation as
+  separate relations versus one future capability system;
+- authority attenuation as a universal rule versus a domain rule with explicit
+  external grants capable of adding authority;
+- direct action scope versus indirect consequence extent, including Spillover,
+  responsibility, causal attribution, and compensation;
+- admissible derivation Lineage versus trusted registry, proof, authorization,
+  provenance, or identity;
+- preserving historical action and conditions versus allowing later reassessment,
+  correction, redaction, or expiration under candidate ADR 0013.
 
 ## Next evidence
 
 Keep ADR 0008 scoped to declared symmetric constructions, ADR 0009 scoped to
 production/acceptance separation, and ADR 0010 scoped to the prohibition on
-accidental selection; none selects a carrier or source feature. Keep ADR candidates
-0011 and 0012 unaccepted while reconciling role and dependency/authority laws across
-their three direct domains. Seek a
-third independent domain for contextual reading and for source-independent derived
-execution before promotion. Acceptance and guidance must remain independently
-observable even when one source derives both. Continue investigating unequal
+accidental selection. Keep accepted ADR 0011 scoped to explicit reading without
+implicit authority and ADR 0012 scoped to dependency-relative independence; none
+selects a carrier or source feature. Keep ADR 0013 at candidate status while
+reconciling occurrence preservation with later reassessment. Acceptance and guidance
+must remain independently observable even when one source derives both. Continue
+investigating unequal
 epistemic support and weighted probability separately from Potential. Test
 distributed state, causal triggers, progress, historical residue, and
 distribution-versus-cause in unrelated domains before giving them foundation names.
-Seek independent prospective-revision witnesses before considering a historical
-obligation; Feedback Revision and Scoped Adoption currently provide two. Preserve
-scoped instrumental use, truth assertion, correction, replay, assessment, revocation,
-and lineage as separate open pressures. Then target Bridge laws, complete Ars
-declarations, typed Reader
+Test authority attenuation and action/consequence scope in unrelated domains before
+giving them foundation names. Preserve scoped instrumental use, truth assertion,
+correction, replay, assessment, revocation, compensation, and lineage as separate open
+pressures. Then target Bridge laws, complete Ars declarations, typed Reader
 composition, default legitimacy, and independent proof verification. The full gate
 remains closed to source notation.

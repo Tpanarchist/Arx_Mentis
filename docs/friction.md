@@ -224,3 +224,31 @@ ontological, or language claims. This counts as one scoped-adoption domain. It
 reinforces ADRs 0009 and 0010, raises explicit contextual roles and declared derived
 independence to candidate ADRs 0011 and 0012, and leaves scoped adoption plus the
 two-domain prospective-history recurrence unpromoted.
+
+2026-07-28 — State Zero Experiment 013, bound delegation. The neutral three-
+compartment environment separates Principal, immutable SourcePlan, compiled Delegate,
+explicit Audit and Control readings, Authority, capability, scope, Lease, Budget,
+resources, Activation, Action, Revocation, Spillover, blowback, Compensation, Trace,
+and Lineage. A Delegate completes three lawful actions after SourcePlan content is
+released and refuses a fourth before mutation. Its dependency profile marks source
+content independent while authority remains lease-dependent, resources
+environment-dependent, scope fixed, lifecycle revocable, interpretation compiled,
+and provenance retained. Audit remains available for an instructions-only copy;
+Control separately requires admitted lineage and a current grant. Scope escape,
+protected access, transfer excess, Budget exhaustion, Lease expiry, Revocation, and
+resource failure precede state change. Live-linked authority stops immediately;
+snapshot authority continues only to its declared Lease and cannot be newly derived
+after principal Revocation; unspecified behavior is refused. Copies without grants
+and forged lineage remain inadmissible. A parent with explicit delegation capability
+may attenuate but not amplify a child. A lawful North action creates observable South
+shortage and Principal resource loss; Compensation restores current resource state
+while retaining original action, harm, responsibility, and repair records. Reversed
+peer storage preserves AuthorityConflict, while declared priority selects lawfully.
+The recurring tensions are interpretation versus authority, source-content release
+versus total independence, direct scope versus consequence extent, and repair versus
+historical rewriting. The registry, compartments, integer resources, authority,
+priority, Lease steps, Budget, and consequence law are harness assumptions, not
+security, legal, physical, magical, or language claims. This counts as one
+bound-delegation domain. Its hostile boundaries narrow and accept ADRs 0011 and 0012;
+its third prospective-history witness creates candidate ADR 0013; authority
+attenuation remains one-domain provisional pressure.

@@ -619,6 +619,15 @@ The foundation does not yet settle:
   without becoming settlement or truth assertion;
 - how live-linked and snapshot authority, revocation, expiry, and prospective model
   switching relate to source availability and historical attribution;
+- how a settled structure's explicit reading relates to separately granted authority,
+  capability, scope, activation, lease, budget, and resource availability;
+- how source-content, interpretation, authority, resource, scope, lifecycle,
+  provenance, and consequence dependencies are declared without one universal
+  dependency-vector representation;
+- whether delegated authority may only attenuate, and what constitutes an explicit
+  external grant capable of adding authority;
+- how direct operation scope relates to indirect consequence extent, responsibility,
+  compensation, and causal attribution;
 - how a definite world state relates to Reader-relative knowledge and attribution;
 - how source Form, encoded carrier, interpreted artifact, active mechanism,
   execution, and outcome relate without becoming nominal aliases;

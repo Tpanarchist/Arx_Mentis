@@ -43,6 +43,9 @@ The independent foundation probes are:
 - [State Zero Experiment 012](scoped_model_adoption/README.md): temporary scoped
   instrumental models, predictive and control roles, activation, truth separation,
   self-fulfillment, declared revocation modes, switching, and lineage.
+- [State Zero Experiment 013](bound_delegation/README.md): source-released but bounded
+  Delegates, explicit reading and authority, dimensioned dependencies, attenuation,
+  revocation, spillover, blowback, compensation, and historical Trace.
 
 These experiments intentionally do not import one another. Agreement counts only at
 the backend-neutral behavior recorded in `docs/foundation-evidence.md`.

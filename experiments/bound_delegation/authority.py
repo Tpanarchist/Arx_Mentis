@@ -64,6 +64,32 @@ def pressure_authority() -> Authority:
     )
 
 
+def attenuated_authority(parent: Authority) -> Authority:
+    return Authority(
+        "authority:attenuated-child",
+        frozenset({Capability.READ_INVENTORY, Capability.TRANSFER}),
+        parent.scopes,
+        maximum_transfer_units=1,
+        lease=Lease(3, 4),
+        budget=Budget(1),
+        revocation_mode=parent.revocation_mode,
+        priority=parent.priority - 1,
+    )
+
+
+def amplified_authority(parent: Authority) -> Authority:
+    return Authority(
+        "authority:amplified-child",
+        parent.capabilities | frozenset({Capability.ALTER_PROTECTED}),
+        parent.scopes | frozenset({Compartment.SOUTH}),
+        maximum_transfer_units=parent.maximum_transfer_units + 1,
+        lease=Lease(parent.lease.start_step, parent.lease.end_step + 1),
+        budget=Budget(parent.budget.maximum_actions + 1),
+        revocation_mode=parent.revocation_mode,
+        priority=parent.priority + 1,
+    )
+
+
 def dependency_profile() -> IndependenceProfile:
     return IndependenceProfile(
         source_content=DependencyValue.INDEPENDENT,

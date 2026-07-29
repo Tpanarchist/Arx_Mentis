@@ -16,5 +16,6 @@ trigger so host-language behavior cannot resolve them silently.
 | 0008 | Accepted | Equivariant Potential algebra, narrowly scoped |
 | 0009 | Accepted | Production and acceptance are separate operations |
 | 0010 | Accepted | Incidental representation order supplies no discriminator |
-| 0011 | Candidate | Explicit context may supply an artifact's use role |
-| 0012 | Candidate | Derived operation may outlive source availability only by declaration |
+| 0011 | Accepted | Explicit reading is distinct from execution authority |
+| 0012 | Accepted | Derived independence is relative to explicit dependencies |
+| 0013 | Candidate | Lifecycle changes do not rewrite prior operations |

@@ -50,12 +50,18 @@ This order is a constraint on learning, not a release schedule.
 19. Evaluate contextual roles and declared derived independence as candidate ADRs
    only; keep scoped instrumental adoption provisional and prospective history at two
    direct domains.
-20. Continue investigating non-symmetric epistemic uncertainty separately while
+20. Use State Zero Experiment 013 to test source-content independence against
+   separately declared reading, authority, capability, scope, resource, lease,
+   budget, lifecycle, provenance, consequence, and responsibility bounds.
+21. Narrow and accept ADRs 0011 and 0012 only at their hostile role/authority and
+   dependency-vector boundaries; keep prospective history as candidate ADR 0013 and
+   authority attenuation as a one-domain pressure.
+22. Continue investigating non-symmetric epistemic uncertainty separately while
    targeting Bridge laws, full Ars declarations, typed Reader composition, defaults,
    and verification.
-21. Only after the complete synthesis gate passes, write non-executable source
+23. Only after the complete synthesis gate passes, write non-executable source
    examples for every accepted proposition.
-22. Derive notation requirements from gated distinctions, then introduce tokenizing,
+24. Derive notation requirements from gated distinctions, then introduce tokenizing,
    parsing, checking, owned runtime values, evaluation, lowering, IR discovery, and
    backend selection through the existing reversible seams.
 
@@ -72,7 +78,8 @@ and code/data identity. It lives under `experiments/euclid_i_1` and is evidence,
 permanent API. Astronomica, Grammatica, Dialectica, Virtual Mediation, Omen
 Attribution, Actualization, Symbolic Release, Stress and Discharge, Probability Bias,
 Feedback and Model Revision, and Scoped Model Adoption deliberately use independent
-representations so agreement cannot arise from a shared Python foundation.
+representations; Bound Delegation adds another independent carrier so agreement
+cannot arise from a shared Python foundation.
 
 The current synthesis gate is closed. Symmetry-indexed Potential behavior has three
 positive domain sources and the five scoped semantic obligations are accepted by ADR
@@ -88,8 +95,10 @@ separating calibration fit, holdout evaluation, replay, lineage, and adaptive ca
 Scoped Model Adoption separates assessment, scoped authority, activation, truth,
 lifecycle, and lineage. It brings explicit contextual roles and declared derived
 independence to candidate discussion while scoped adoption and prospective switching
-remain provisional. Several other rows remain below threshold. No source notation
-work begins merely
+remain provisional. Bound Delegation separates interpretation from authority and
+source-content independence from every other dependency, earning narrow ADR 0011 and
+0012 acceptance while prospective history becomes candidate ADR 0013. Several other
+rows remain below threshold. No source notation work begins merely
 because an individual group of rows reached three.
 
 Self-hosting the tokenizer and parser remains a useful later horizontal probe after

@@ -359,6 +359,17 @@ class SwitchRecord:
 
 
 @dataclass(frozen=True, slots=True)
+class ContainedSession:
+    source_plan: SourcePlan
+    delegate: Delegate
+    registry: DerivationRegistry
+    source_availability: SourceAvailability
+    activation: Activation
+    environment: Environment
+    trace: Trace
+
+
+@dataclass(frozen=True, slots=True)
 class CountermodelRejection:
     countermodel: str
     reason: str
